@@ -13,20 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: pba@localhost
+  username: pba_app_user
   password: d^.@;U$+L1A^
-  host: 37.187.145.109
+  host: pba.on-rev.com
 
 development:
   <<: *default
-  database: untitled_development
+  database: pba_app_test
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: untitled_test
+  database: none
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: untitled_production
-  username: untitled
-  password: <%= ENV['UNTITLED_DATABASE_PASSWORD'] %>
+  database: pba_app
+  username: pba_app_user
+  password: d^.@;U$+L1A^

@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_04_11_050402) do
 
-  create_table "devotions", force: :cascade do |t|
+  create_table "devotions", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.text "body"
