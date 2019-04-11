@@ -1,0 +1,2 @@
+class Devotion < ApplicationRecord
+end
