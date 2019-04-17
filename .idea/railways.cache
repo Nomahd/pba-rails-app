@@ -7,6 +7,22 @@
                           PATCH  /devotions/:id(.:format)                                                                 devotions#update
                           PUT    /devotions/:id(.:format)                                                                 devotions#update
                           DELETE /devotions/:id(.:format)                                                                 devotions#destroy
+                   audios GET    /audios(.:format)                                                                        audios#index
+                          POST   /audios(.:format)                                                                        audios#create
+                new_audio GET    /audios/new(.:format)                                                                    audios#new
+               edit_audio GET    /audios/:id/edit(.:format)                                                               audios#edit
+                    audio GET    /audios/:id(.:format)                                                                    audios#show
+                          PATCH  /audios/:id(.:format)                                                                    audios#update
+                          PUT    /audios/:id(.:format)                                                                    audios#update
+                          DELETE /audios/:id(.:format)                                                                    audios#destroy
+                   videos GET    /videos(.:format)                                                                        videos#index
+                          POST   /videos(.:format)                                                                        videos#create
+                new_video GET    /videos/new(.:format)                                                                    videos#new
+               edit_video GET    /videos/:id/edit(.:format)                                                               videos#edit
+                    video GET    /videos/:id(.:format)                                                                    videos#show
+                          PATCH  /videos/:id(.:format)                                                                    videos#update
+                          PUT    /videos/:id(.:format)                                                                    videos#update
+                          DELETE /videos/:id(.:format)                                                                    videos#destroy
                      root GET    /                                                                                        top#index
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show

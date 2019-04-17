@@ -1,0 +1,6 @@
+<% locals[:model].attributes.each do |name, value| %>
+  <p>
+    <strong><%= name.titleize %></strong><br>
+    <%= value %>
+  </p>
+<% end %>

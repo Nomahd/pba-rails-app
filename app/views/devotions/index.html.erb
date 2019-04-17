@@ -1,1 +1,20 @@
-<h1>Hi</h1>
+<h1>Devotions List</h1>
+<%=link_to "Add New Devotions", action: :new, controller: 'devotions' %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+  </tr>
+
+  <% @devotion.each do |devotion| %>
+    <tr>
+      <td><%= devotion.title %></td>
+      <td><%= link_to 'Show', devotion_path(devotion) %></td>
+      <td><%= link_to 'Edit', edit_devotion_path(devotion) %></td>
+      <td><%= link_to 'Destroy', devotion_path(devotion),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

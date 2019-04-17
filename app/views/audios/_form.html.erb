@@ -1,0 +1,32 @@
+<%=form_with model: @devotion, local: true do |form| %>
+
+  <%= render 'layouts/error', locals: { model: @devotion } %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :date %><br>
+    <%= date_select :devotion, :date%><br>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.label :passage %><br>
+    <%= form.text_field :passage %>
+  </p>
+  <p>
+    <%= form.label :messenger %><br>
+    <%= form.text_field :messenger %>
+  </p>
+  <p>
+    <%= form.label :book_title %><br>
+    <%= form.text_field :book_title %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

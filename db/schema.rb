@@ -10,17 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_050402) do
+ActiveRecord::Schema.define(version: 2019_04_16_081153) do
+
+  create_table "audios", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "description"
+    t.string "speaker"
+    t.string "passage"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "devotions", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.text "body"
     t.string "passage"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "messenger"
     t.string "book_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "videos", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "description"
+    t.string "speaker"
+    t.string "passage"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
