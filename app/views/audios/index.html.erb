@@ -1,2 +1,31 @@
-<h1>Audios#index</h1>
-<p>Find me in app/views/audios/index.html.erb</p>
+<h1>Audios List</h1>
+<%=link_to "Add New Audio", action: :new, controller: 'audios' %>
+
+<table>
+  <% if @audio.first.nil? %>
+    <tr>
+      <th>No content</th>
+    </tr>
+  <% else %>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Speaker</th>
+      <th>Bible Passage</th>
+    </tr>
+    <% @audio.each do |audio| %>
+      <tr>
+        <td><%= audio.title %></td>
+        <td><%= audio.date %></td>
+        <td><%= audio.speaker %></td>
+        <td><%= audio.passage %></td>
+        <td><%= link_to 'Show', audio_path(audio) %></td>
+        <td><%= link_to 'Edit', edit_audio_path(audio) %></td>
+        <td><%= link_to 'Destroy', audio_path(audio),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<%=link_to "Back to Top", controller:'top' %>

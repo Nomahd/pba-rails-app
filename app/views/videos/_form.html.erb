@@ -1,6 +1,6 @@
-<%=form_with model: @audio, local: true do |form| %>
+<%=form_with model: @video, local: true do |form| %>
 
-  <%= render 'layouts/error', locals: { model: @audio } %>
+  <%= render 'layouts/error', locals: { model: @video } %>
 
   <p>
     <%= form.label :title, :class => "required" %><br>
@@ -8,15 +8,15 @@
   </p>
   <p>
     <%= form.label :date %><br>
-    <%= date_select :audio, :date%><br>
+    <%= date_select :video, :date%><br>
   </p>
   <p>
     <%= form.label :description, :class => "required" %><br>
     <%= form.text_area :description %>
   </p>
   <p>
-    <%= form.label "Select audio file", :class => "required" %><br>
-    <%= form.file_field :audio_file %>
+    <%= form.label "Link to video file", :class => "required" %><br>
+    <%= form.text_field :link %>
   </p>
   <p>
     <%= form.label :passage %><br>

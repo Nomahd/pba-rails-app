@@ -3,7 +3,7 @@
   <%= render 'layouts/error', locals: { model: @devotion } %>
 
   <p>
-    <%= form.label :title %><br>
+    <%= form.label :title, :class => "required" %><br>
     <%= form.text_field :title %>
   </p>
   <p>
@@ -11,7 +11,7 @@
     <%= date_select :devotion, :date%><br>
   </p>
   <p>
-    <%= form.label :body %><br>
+    <%= form.label :body, :class => "required" %><br>
     <%= form.text_area :body %>
   </p>
   <p>

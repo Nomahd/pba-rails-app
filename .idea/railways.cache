@@ -1,4 +1,5 @@
                    Prefix Verb   URI Pattern                                                                              Controller#Action
+                     root GET    /                                                                                        top#index
                 devotions GET    /devotions(.:format)                                                                     devotions#index
                           POST   /devotions(.:format)                                                                     devotions#create
              new_devotion GET    /devotions/new(.:format)                                                                 devotions#new
@@ -23,7 +24,6 @@
                           PATCH  /videos/:id(.:format)                                                                    videos#update
                           PUT    /videos/:id(.:format)                                                                    videos#update
                           DELETE /videos/:id(.:format)                                                                    videos#destroy
-                     root GET    /                                                                                        top#index
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show

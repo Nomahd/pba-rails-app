@@ -4,6 +4,15 @@ class DevotionsController < ApplicationController
     @devotion = Devotion.all
   end
 
+  def create
+    @devotion = Devotion.new(devotion_params)
+    if @devotion.save
+      redirect_to @devotion
+    else
+      render 'new'
+    end
+  end
+
   def show
     @devotion = Devotion.find(params[:id])
   end
@@ -14,15 +23,6 @@ class DevotionsController < ApplicationController
 
   def edit
     @devotion = Devotion.find(params[:id])
-  end
-
-  def create
-    @devotion = Devotion.new(devotion_params)
-    if @devotion.save
-      redirect_to @devotion
-    else
-      render 'new'
-    end
   end
 
   def update

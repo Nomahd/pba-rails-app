@@ -2,19 +2,32 @@
 <%=link_to "Add New Devotions", action: :new, controller: 'devotions' %>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-  </tr>
-
-  <% @devotion.each do |devotion| %>
+  <% if @devotion.first.nil? %>
     <tr>
-      <td><%= devotion.title %></td>
-      <td><%= link_to 'Show', devotion_path(devotion) %></td>
-      <td><%= link_to 'Edit', edit_devotion_path(devotion) %></td>
-      <td><%= link_to 'Destroy', devotion_path(devotion),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %></td>
+      <th>No content</th>
     </tr>
+  <% else %>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Messenger</th>
+      <th>Bible Passage</th>
+      <th>Book Title</th>
+    </tr>
+    <% @devotion.each do |devotion| %>
+      <tr>
+        <td><%= devotion.title %></td>
+        <td><%= devotion.date %></td>
+        <td><%= devotion.messenger %></td>
+        <td><%= devotion.passage %></td>
+        <td><%= devotion.book_title %></td>
+        <td><%= link_to 'Show', devotion_path(devotion) %></td>
+        <td><%= link_to 'Edit', edit_devotion_path(devotion) %></td>
+        <td><%= link_to 'Destroy', devotion_path(devotion),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
+<%=link_to "Back to Top", controller:'top' %>
