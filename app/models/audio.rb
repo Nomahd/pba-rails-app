@@ -39,7 +39,11 @@ class Audio < ApplicationRecord
 
   before_destroy do
     ftp_open do |ftp|
-      ftp.delete(self.filename)
+      begin
+        ftp.delete(self.filename)
+      rescue Net::FTPPermError
+        nil
+      end
       ftp.close
     end
   end
