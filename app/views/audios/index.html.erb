@@ -1,7 +1,5 @@
 <h1><%= t :audios_list %></h1>
 <%=link_to "#{t :audios_new}", action: :new, controller: 'audios' %>
-<br>
-<br>
 <table>
   <% if @audio.first.nil? %>
     <tr>
@@ -33,5 +31,4 @@
     <% end %>
   <% end %>
 </table>
-<br>
 <%=link_to "#{t :back}", controller:'top' %>

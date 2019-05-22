@@ -43,6 +43,6 @@ class AudiosController < ApplicationController
 
   private
   def audio_params
-    params.require(:audio).permit(:title, :date, :description, :speaker, :passage, :audio_file)
+    params.require(:audio).permit(:title, :date, :description, :speaker, :passage, :audio_file, :filename, :original_air, :program_num)
   end
 end
