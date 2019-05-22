@@ -1,18 +1,17 @@
-<h1>Devotions List</h1>
-<%=link_to "Add New Devotions", action: :new, controller: 'devotions' %>
-
+<h1><%= t :devotions_list %></h1>
+<%=link_to "#{t :devotions_add}", action: :new, controller: 'devotions' %>
 <table>
   <% if @devotion.first.nil? %>
     <tr>
-      <th>No content</th>
+      <th><%= t :none %></th>
     </tr>
   <% else %>
     <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Messenger</th>
-      <th>Bible Passage</th>
-      <th>Book Title</th>
+      <th><%= t :'activerecord.attributes.devotion.title' %></th>
+      <th><%= t :'activerecord.attributes.devotion.date' %></th>
+      <th><%= t :'activerecord.attributes.devotion.messenger' %></th>
+      <th><%= t :'activerecord.attributes.devotion.passage' %></th>
+      <th><%= t :'activerecord.attributes.devotion.book_title' %></th>
     </tr>
     <% @devotion.each do |devotion| %>
       <tr>
@@ -21,13 +20,13 @@
         <td><%= devotion.messenger %></td>
         <td><%= devotion.passage %></td>
         <td><%= devotion.book_title %></td>
-        <td><%= link_to 'Show', devotion_path(devotion) %></td>
-        <td><%= link_to 'Edit', edit_devotion_path(devotion) %></td>
-        <td><%= link_to 'Destroy', devotion_path(devotion),
+        <td><%= link_to "#{t :table_view}", devotion_path(devotion) %></td>
+        <td><%= link_to "#{t :table_edit}", edit_devotion_path(devotion) %></td>
+        <td><%= link_to "#{t :table_delete}", devotion_path(devotion),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: "#{t :table_confirm}" } %></td>
       </tr>
     <% end %>
   <% end %>
 </table>
-<%=link_to "Back to Top", controller:'top' %>
+<%=link_to "#{t :back}", controller:'top' %>

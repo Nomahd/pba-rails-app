@@ -1,17 +1,20 @@
-<h1>Audios List</h1>
-<%=link_to "Add New Audio", action: :new, controller: 'audios' %>
-
+<h1><%= t :audios_list %></h1>
+<%=link_to "#{t :audios_new}", action: :new, controller: 'audios' %>
+<br>
+<br>
 <table>
   <% if @audio.first.nil? %>
     <tr>
-      <th>No content</th>
+      <th><%= t :none %></th>
     </tr>
   <% else %>
     <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Speaker</th>
-      <th>Bible Passage</th>
+      <th><%= t :'activerecord.attributes.audio.title' %></th>
+      <th><%= t :'activerecord.attributes.audio.date' %></th>
+      <th><%= t :'activerecord.attributes.audio.speaker' %></th>
+      <th><%= t :'activerecord.attributes.audio.passage' %></th>
+      <th><%= t :'activerecord.attributes.audio.original_air' %></th>
+      <th><%= t :'activerecord.attributes.audio.program_num' %></th>
     </tr>
     <% @audio.each do |audio| %>
       <tr>
@@ -19,13 +22,16 @@
         <td><%= audio.date %></td>
         <td><%= audio.speaker %></td>
         <td><%= audio.passage %></td>
-        <td><%= link_to 'Show', audio_path(audio) %></td>
-        <td><%= link_to 'Edit', edit_audio_path(audio) %></td>
-        <td><%= link_to 'Destroy', audio_path(audio),
+        <td><%= audio.original_air %></td>
+        <td><%= audio.program_num %></td>
+        <td><%= link_to "#{t :table_view}", audio_path(audio) %></td>
+        <td><%= link_to "#{t :table_edit}", edit_audio_path(audio) %></td>
+        <td><%= link_to "#{t :table_delete}", audio_path(audio),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: "#{t :table_confirm}" } %></td>
       </tr>
     <% end %>
   <% end %>
 </table>
-<%=link_to "Back to Top", controller:'top' %>
+<br>
+<%=link_to "#{t :back}", controller:'top' %>

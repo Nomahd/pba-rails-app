@@ -1,5 +1,6 @@
-<h1>Devotions</h1>
-<p>Select the content you would like to edit</p>
-<%=link_to "Devotions", devotions_path %><br>
-<%=link_to "Audios", audios_path %><br>
-<%=link_to "Videos", videos_path %>
+<h1><%= t :app_name %></h1>
+<p><%= t :top_intro %></p>
+<%=link_to "#{t :top_devotions}", devotions_path, class: "top_nav" %>
+<%=link_to "#{t :top_audios}", audios_path, class: "top_nav" %>
+<%=link_to "#{t :top_videos}", videos_path, class: "top_nav" %>
+<%#=link_to "#{t :top_images}", images_path, class: "top_nav" %>

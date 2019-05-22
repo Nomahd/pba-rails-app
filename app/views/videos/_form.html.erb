@@ -15,7 +15,7 @@
     <%= form.text_area :description %>
   </p>
   <p>
-    <%= form.label "Link to video file", :class => "required" %><br>
+    <%= form.label :link, :class => "required" %><br>
     <%= form.text_field :link %>
   </p>
   <p>
@@ -25,6 +25,14 @@
   <p>
     <%= form.label :speaker %><br>
     <%= form.text_field :speaker %>
+  </p>
+  <p>
+    <%= form.label :original_air %><br>
+    <%= date_select :audio, :original_air%>
+  </p>
+  <p>
+    <%= form.label :program_num %><br>
+    <%= form.text_field :program_num %>
   </p>
   <p>
     <%= form.submit %>

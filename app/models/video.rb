@@ -7,10 +7,11 @@ class Video < ApplicationRecord
   validates :description,
             presence: true
   validates :speaker,
-            length: {maximum: 255}
+            length: {maximum: 255 }
   validates :passage,
             length: {maximum: 255 }
   validates :link,
             presence: true,
             length: { maximum: 255 }
+
 end

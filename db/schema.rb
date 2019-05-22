@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_110514) do
+ActiveRecord::Schema.define(version: 2019_05_22_051048) do
 
-  create_table "audios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "audios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.text "description"
     t.string "speaker"
     t.string "passage"
     t.string "filename"
+    t.date "original_air"
+    t.integer "program_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "devotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "devotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.text "body"
@@ -34,13 +36,32 @@ ActiveRecord::Schema.define(version: 2019_04_30_110514) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "order"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.text "description"
     t.string "speaker"
     t.string "passage"
     t.string "link"
+    t.string "filename"
+    t.date "original_air"
+    t.integer "program_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

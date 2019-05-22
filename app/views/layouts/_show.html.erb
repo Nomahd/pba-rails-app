@@ -1,6 +1,10 @@
-<% locals[:model].attributes.each do |name, value| %>
+<% locals[:record].attributes.each do |name, value| %>
   <p>
-    <strong><%= name.titleize %></strong><br>
-    <%= value %>
+    <strong><%= locals[:record].class.human_attribute_name(name) %></strong><br>
+    <% if value != "" %>
+      <%= value %>
+    <% else %>
+      <span class="nothing"><%= t :nothing %></span>
+    <% end %>
   </p>
 <% end %>

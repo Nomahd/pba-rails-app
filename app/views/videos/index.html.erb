@@ -1,17 +1,19 @@
-<h1>Videos List</h1>
-<%=link_to "Add New Videos", action: :new, controller: 'videos' %>
+<h1><%= t :videos_list %></h1>
+<%=link_to "#{t :videos_new}", action: :new, controller: 'videos' %>
 
 <table>
   <% if @video.first.nil? %>
     <tr>
-      <th>No content</th>
+      <th><%= t :none %></th>
     </tr>
   <% else %>
     <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Speaker</th>
-      <th>Bible Passage</th>
+      <th><%= t :'activerecord.attributes.video.title' %></th>
+      <th><%= t :'activerecord.attributes.video.date' %></th>
+      <th><%= t :'activerecord.attributes.video.speaker' %></th>
+      <th><%= t :'activerecord.attributes.video.passage' %></th>
+      <th><%= t :'activerecord.attributes.video.original_air' %></th>
+      <th><%= t :'activerecord.attributes.video.program_num' %></th>
     </tr>
     <% @video.each do |video| %>
       <tr>
@@ -19,13 +21,15 @@
         <td><%= video.date %></td>
         <td><%= video.speaker %></td>
         <td><%= video.passage %></td>
-        <td><%= link_to 'Show', video_path(video) %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video_path(video),
+        <td><%= video.original_air %></td>
+        <td><%= video.program_num %></td>
+        <td><%= link_to "#{t :table_view}", video_path(video) %></td>
+        <td><%= link_to "#{t :table_edit}", edit_video_path(video) %></td>
+        <td><%= link_to "#{t :table_delete}", video_path(video),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm:  "#{t :table_confirm}" } %></td>
       </tr>
     <% end %>
   <% end %>
 </table>
-<%=link_to "Back to Top", controller:'top' %>
+<%=link_to "#{t :back}", controller:'top' %>
