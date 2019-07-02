@@ -1,32 +1,68 @@
-<%=form_with model: @devotion, local: true do |form| %>
+<%= render 'partials/error', locals: { model: @devotion } %>
+<div id="form-area">
+  <%= form_with scope: :messenger, url: messengers_path, remote: true, id: 'messenger-form', html: { autocomplete: 'off' } do %><% end %>
+  <%= form_with model: @devotion, local: true, id: 'main-form', html: { autocomplete: 'off' } do |form| %>
 
-  <%= render 'layouts/error', locals: { model: @devotion } %>
-
-  <p>
-    <%= form.label :title, :class => "required" %><br>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :date %><br>
-    <%= date_select :devotion, :date%><br>
-  </p>
-  <p>
-    <%= form.label :body, :class => "required" %><br>
+    <div class="form-row">
+      <%= form.label :pba_id %>
+      <%= form.text_field :pba_id %>
+    </div>
+    <div>
+      <%= form.label :title, :class => 'required' %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :release_date, "#{t :'activerecord.attributes.devotion.date'}" %>
+      <%= date_select :devotion, :release_date%>
+    </div>
+    <%= form.label :body, :class => 'required' %>
     <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.label :passage %><br>
-    <%= form.text_field :passage %>
-  </p>
-  <p>
-    <%= form.label :messenger %><br>
-    <%= form.text_field :messenger %>
-  </p>
-  <p>
-    <%= form.label :book_title %><br>
-    <%= form.text_field :book_title %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+    <div>
+
+    </div>
+    <%= form.label :messenger %>
+    <div id="div-messenger-dropdown">
+
+      <%= form.select :messenger, Messenger.all.collect {|p| [ p.name ]}, { include_blank: true } %>
+      <%= button_tag "#{t :form_messenger_add}", type: 'button', id: 'btn-new-messenger' %>
+      <div id="div-new-messenger" style="display: none">
+        <input type="text" name="messenger[name]" id="messenger_name" form="messenger-form"/>
+        <input type="submit" name="commit" value="<%= "#{t :form_messenger_add}" %>" form="messenger-form"/>
+      </div>
+    </div>
+    <div>
+      <%= form.label :bible_book, "#{t :form_bible_passage}" %>
+      <% if params[:locale] == "ja" %>
+        <%= form.select :bible_book, BibleBook.all.collect {|p| [ p.book_ja ]}, { include_blank: true } %>
+      <% else %>
+        <%= form.select :bible_book, BibleBook.all.collect {|p| [ p.book_en ]}, { include_blank: true } %>
+      <% end %>
+      <%= form.text_field :bible_chapter_verse %>
+    </div>
+<!--      <div id="div-genre-tags">-->
+      <%#= form.label nil, "#{t :form_genre_tag}" %>
+      <%#= form.select nil, @devotion.genre_list, { include_blank: true}  %>
+      <%#= button_tag "#{t :form_genre_add}", type: 'button', id: 'btn-new-genre' %>
+<!--      </div>-->
+
+    <!--      <div id="div-new-genre" style="display: none">-->
+    <!--        <input type="text" name="messenger[name]" id="messenger_name" form="messenger_form"/>-->
+    <!--        <input type="submit" name="commit" value="<%#= "#{t :form_genre_add}" %>" form="messenger_form"/>-->
+    <!--      </div>-->
+<!--      <div id="div-theme-tags">-->
+      <%#= form.label nil, "#{t :form_genre_tag}" %>
+      <%#= form.select nil, @devotion.genre_list, { include_blank: true}  %>
+      <%#= button_tag "#{t :form_genre_add}", type: 'button', id: 'btn-new-genre' %>
+<!--      </div>-->
+
+<!--      <div id="div-special-tags">-->
+      <%#= form.label nil, "#{t :form_genre_tag}" %>
+      <%#= form.select nil, @devotion.genre_list, { include_blank: true}  %>
+      <%#= button_tag "#{t :form_genre_add}", type: 'button', id: 'btn-new-genre' %>
+<!--      </div>-->
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
+

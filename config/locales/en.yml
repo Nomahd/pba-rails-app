@@ -34,14 +34,26 @@ en:
   back: "Back"
   none: "No Content"
   nothing: "Nothing"
+  or: "or"
   error: "error"
   error_desc: " prohibited this article from being saved: "
+  row: "row"
+  row_index: "Line Number"
 
-  top_intro: "Select the content you would like to edit"
+  form_bible_passage: "Bible Passage"
+  form_genre_tag: "Genre Tag"
+  form_genre_add: "Add New Genre Tag"
+  form_messenger_add: "Add New Messenger"
+
   top_devotions: "Devotions"
-  top_audios: "Audios"
+  top_audios: "Audio"
   top_videos: "Videos"
-  top_images: "Images"
+  top_images: "App Images"
+  top_dropdown: "Dropdown Settings"
+
+  menu_list: "List"
+  menu_create: "Create New"
+  menu_bulk: "Bulk Create"
 
   table_view: "View"
   table_edit: "Edit"
@@ -54,17 +66,29 @@ en:
   table_bible: "Bible Passage"
   table_book: "Book Title"
 
+  bulk_header: "Bulk Create"
+  bulk_desc: "Quickly insert data by using a .CSV file"
+  bulk_drag_drop: "Drag and Drop"
+  bulk_success: "Success"
+  bulk_success_desc: " successfully inserted"
+  bulk_fail: "Problems"
+  bulk_fail_desc: " failed to insert"
+
+
   audios_list: "Audio List"
   audios_add: "Add New Audio"
   audios_new: "New Audio"
   audios_edit: "Edit Audio"
   audios_back: "Return to Audio"
-  
+
   devotions_list: "Devotions List"
   devotions_add: "Add New Devotions"
   devotions_new: "New Devotion"
+  devotions_new_desc: "Add a single new devotion"
   devotions_edit: "Edit Devotion"
   devotions_back: "Return to Devotions"
+
+
 
   videos_list: "Videos List"
   videos_add: "Add New Video"
@@ -88,12 +112,11 @@ en:
         updated_at: "Updated At"
 
       devotion:
+        pba_id: "ID"
         title: "Title"
-        date: "Date"
+        date: "Release Date"
         body: "Body"
-        passage: "Bible Passage"
         messenger: "Messenger"
-        book_title: "Book Title"
         created_at: "Created At"
         updated_at: "Updated At"
 

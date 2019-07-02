@@ -1,0 +1,27 @@
+var messageSuccessDiv = document.querySelector('#messenger-success')
+var messageFailDiv = document.querySelector('#messenger-fail')
+if (messageSuccessDiv)
+    messageSuccessDiv.remove()
+if (messageFailDiv)
+    messageFailDiv.remove()
+
+<% if !@messenger.errors.any? %>
+var option = document.createElement('option')
+option.text = '<%= @messenger.name %>'
+option.value = '<%= @messenger.name %>'
+document.querySelector('#devotion_messenger').appendChild(option)
+  document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-success">Success</div>')
+<% else %>
+  switch(JSON.parse('<%= j raw @messenger.errors.as_json.to_json %>').name.toString()) {
+    case 'has already been taken':
+        document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-fail">Failed - name already exists</div>')
+        break
+    case "can't be blank":
+        document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-fail">Failed - name can\'t be blank</div>')
+        break;
+    default:
+        document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-fail">Failed</div>')
+
+  }
+
+<% end %>

@@ -1,0 +1,25 @@
+#bulk-h2 {
+  margin: 30px auto;
+}
+
+#submit-button {
+  margin-top: 50px;
+  height: 50px;
+  width: 150px;
+}
+#drag-drop {
+  margin: auto;
+  height: 250px;
+  width: 250px;
+  border: 2px dashed #333333;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+  img {
+    height: 120px;
+    width: 120px;
+    margin-top: 50px;
+    object-fit: contain;
+  }
+}

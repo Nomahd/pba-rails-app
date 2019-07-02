@@ -1,0 +1,32 @@
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  td, th {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+}
+
+.index-table {
+
+}
+
+.error-table {
+
+  width: 300px;
+
+  th {
+    background-color: red;
+    color: white;
+  }
+  td {
+    width: 100px;
+  }
+
+  td:hover {
+    background-color: #ddd
+  }
+}
+

@@ -1,3 +1,3 @@
-require '../../lib/ftp.rb'
+require '../../lib/ftp_util.rb'
 
 FtpModule.ftp_add("", "")

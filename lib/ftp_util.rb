@@ -1,6 +1,6 @@
 require 'net/ftp'
 
-class FTP
+class FTPUtil
 
   def self.ftp_add(local, remote)
     is_connected

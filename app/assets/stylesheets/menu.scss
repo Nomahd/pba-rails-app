@@ -1,0 +1,25 @@
+#menu {
+  height: 1000px;
+  width: 160px;
+  background-color: #111;
+  float: left;
+  list-style-type: none;
+
+  padding-left: 0;
+
+  z-index: -1;
+  li {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #CCCCCC;
+  }
+  .menu-active {
+    background: midnightblue;
+  }
+
+}

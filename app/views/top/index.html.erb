@@ -1,6 +1,25 @@
-<h1><%= t :app_name %></h1>
-<p><%= t :top_intro %></p>
-<%=link_to "#{t :top_devotions}", devotions_path, class: "top_nav" %>
-<%=link_to "#{t :top_audios}", audios_path, class: "top_nav" %>
-<%=link_to "#{t :top_videos}", videos_path, class: "top_nav" %>
-<%#=link_to "#{t :top_images}", images_path, class: "top_nav" %>
+<h1 id="h1-top-header"><%= t :app_name %></h1>
+<div id="top-button-container">
+  <%=link_to devotions_path, class: "top_nav" do %>
+    <%= image_tag('book.png') %>
+    <div><%= "#{t :top_devotions}" %></div>
+  <% end %>
+  <%=link_to audios_path, class: "top_nav" do %>
+    <%= image_tag('headphones.png') %>
+    <div><%= "#{t :top_audios}" %></div>
+  <% end %>
+  <%=link_to videos_path, class: "top_nav" do %>
+    <%= image_tag('monitor.png') %>
+    <div><%= "#{t :top_videos}" %></div>
+  <% end %>
+  <%=link_to images_path, class: "top_nav" do %>
+    <%= image_tag('photo-camera.png') %>
+    <div><%= "#{t :top_images}" %></div>
+  <% end %>
+  <%=link_to "", class: "top_nav" do %>
+    <%= image_tag('tag.png') %>
+    <div><%= "#{t :top_dropdown}" %></div>
+  <% end %>
+</div>
+
+

@@ -1,6 +1,6 @@
 <h1><%= t :devotions_list %></h1>
-<%=link_to "#{t :devotions_add}", action: :new, controller: 'devotions' %>
-<table>
+
+<table class="index-table">
   <% if @devotion.first.nil? %>
     <tr>
       <th><%= t :none %></th>
@@ -10,16 +10,12 @@
       <th><%= t :'activerecord.attributes.devotion.title' %></th>
       <th><%= t :'activerecord.attributes.devotion.date' %></th>
       <th><%= t :'activerecord.attributes.devotion.messenger' %></th>
-      <th><%= t :'activerecord.attributes.devotion.passage' %></th>
-      <th><%= t :'activerecord.attributes.devotion.book_title' %></th>
     </tr>
     <% @devotion.each do |devotion| %>
       <tr>
         <td><%= devotion.title %></td>
-        <td><%= devotion.date %></td>
+        <td><%= devotion.release_date %></td>
         <td><%= devotion.messenger %></td>
-        <td><%= devotion.passage %></td>
-        <td><%= devotion.book_title %></td>
         <td><%= link_to "#{t :table_view}", devotion_path(devotion) %></td>
         <td><%= link_to "#{t :table_edit}", edit_devotion_path(devotion) %></td>
         <td><%= link_to "#{t :table_delete}", devotion_path(devotion),
@@ -29,4 +25,4 @@
     <% end %>
   <% end %>
 </table>
-<%=link_to "#{t :back}", controller:'top' %>
+<%= link_to_next_page @devotion, 'Next Page' %>

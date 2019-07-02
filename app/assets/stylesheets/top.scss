@@ -1,3 +1,45 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#top-button-container {
+  margin: 50px auto 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.top_nav {
+  border-radius: 10px;
+  border: #333333 solid 3px;
+  width: 250px;
+  height: 225px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #666666;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #DADADA;
+
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    margin: 50px auto 10px auto;
+    object-fit: contain;
+  }
+}
+
+#h1-top-header {
+  font-size: 42px;
+  margin: 0;
+  padding-bottom: 40px;
+  background: #2E2F30;
+  text-align: center;
+  line-height: 1em;
+  color: #ffffff;
+}

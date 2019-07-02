@@ -1,4 +1,4 @@
-require 'ftp'
+require 'ftp_util'
 
 class Audio < ApplicationRecord
   validates :title,
@@ -28,18 +28,14 @@ class Audio < ApplicationRecord
   end
 
   before_create do
-    # begin
-      FTP.ftp_add(audio_file.path, "/audio/" + self.filename)
-    # rescue StandardError
-    #   throw :abort
-    # end
+    FTPUtil.ftp_add(audio_file.path, "/audio/" + self.filename)
   end
 
   before_update do
-    FTP.ftp_replace("/audio/" + old_file, audio_file.path, "/audio/" + self.filename)
+    FTPUtil.ftp_replace("/audio/" + old_file, audio_file.path, "/audio/" + self.filename)
   end
 
   before_destroy do
-    FTP.ftp_delete("/audio/" + self.filename)
+    FTPUtil.ftp_delete("/audio/" + self.filename)
   end
 end

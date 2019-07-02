@@ -1,0 +1,14 @@
+<h1><%= "#{t :bulk_fail}" %></h1>
+<h2><%= pluralize(@result[0], "#{t :row}") %><%= "#{t :bulk_success_desc}" %></h2>
+<h2 class="error"><%= pluralize(@result[1].length, "#{t :row}") %><%= "#{t :bulk_fail_desc}" %></h2>
+<table class="error error-table">
+  <th colspan="3"><%= "#{t :row_index}" %></th>
+  <% @result[1].each_with_index do |v, i| %>
+    <% if i % 3 == 0%>
+    <tr>
+      <td><%= v %></td>
+    <% else %>
+      <td><%= v %></td>
+    <% end %>
+  <% end %>
+</table>

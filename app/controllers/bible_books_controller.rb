@@ -1,0 +1,2 @@
+class BibleBooksController < ApplicationController
+end

@@ -3,31 +3,54 @@ ja:
   back: "戻る"
   none: "コンテント無し"
   nothing: "無し"
+  or: "または"
   error: "エラー"
   error_desc: "があります"
+  row: "列"
+  row_index: "行番号"
 
-  top_intro: "編集したいコンテンツを選択してください"
+  form_bible_passage: "聖書箇所"
+  form_genre_tag: "番組内容"
+  form_genre_add: "新しい番組内容を入れる"
+  form_messenger_add: "新しいメッセンジャーを入れる"
+
   top_devotions: "デボーション"
   top_audios: "オーディオ"
   top_videos: "ビデオ"
-  top_images: "イメージ"
+  top_images: "アップリノイメージ"
+  top_dropdown: "ドロップダウン設定"
+
+  menu_list: "リスト"
+  menu_create: "新しい作成"
+  menu_bulk: "一括作成"
 
   table_view: "見る"
   table_edit: "変更"
   table_delete: "消す"
   table_confirm: "良いですか"
 
+  bulk_header: "一括作成"
+  bulk_desc: ".CSVファイルでたくさんデータアップロードする"
+  bulk_drag_drop: "ドラッグアンドドロップ"
+  bulk_success: "正常"
+  bulk_success_desc: "を正常に入れた"
+  bulk_fail: "問題"
+  bulk_fail_desc: "を入れるのが失敗した"
+
   audios_list: "オーディオのリスト"
   audios_add: "オーディオを入れる"
   audios_new: "新しいオーディオ"
   audios_edit: "オーディオを変更する"
   audios_back: "オーディオへ戻る"
-  
+
   devotions_list: "デボーションのリスト"
   devotions_add: "デボーションを入れる"
   devotions_new: "新しいデボーション"
+  devotions_new_desc: "一つのデボーションを入れる"
   devotions_edit: "デボーションを変更する"
   devotions_back: "デボーションへ戻る"
+
+
 
   videos_list: "ビデオのリスト"
   videos_add: "ビデオを入れる"
@@ -39,7 +62,7 @@ ja:
     attributes:
       audio:
         title: "タイトル"
-        date: "年月日"
+        date: "出る年月日"
         description: "説明"
         speaker: "講演者"
         passage: "聖書の節"
@@ -51,12 +74,11 @@ ja:
         updated_at: "変更された日時"
 
       devotion:
+        pba_id: "ID"
         title: "タイトル"
-        date: "年月日"
+        date: "出る年月日"
         body: "本文"
-        passage: "聖書の節"
         messenger: "メッセンジャー"
-        book_title: "書名"
         created_at: "作られた日時"
         updated_at: "変更された日時"
 

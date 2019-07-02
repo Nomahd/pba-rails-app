@@ -10,7 +10,16 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
+    <div id="container">
+      <%= render 'partials/nav' %>
+      <%= render 'partials/menu' %>
+      <% if controller.controller_name == :top.to_s %>
+        <%= yield %>
+      <% else %>
+        <div id="main-content">
+          <%= yield %>
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>

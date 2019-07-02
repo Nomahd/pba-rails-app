@@ -1,0 +1,11 @@
+<% if controller.controller_name != 'top' %>
+  <ul id="menu">
+    <% if controller.controller_name == :devotions.to_s or
+        controller.controller_name == :audios.to_s or
+        controller.controller_name == :videos.to_s %>
+      <li class="<%= 'menu-active' if controller.action_name == :index.to_s %>"><%= link_to "#{t :menu_list}", controller: controller.controller_name %></li>
+      <li class="<%= 'menu-active' if controller.action_name == :new.to_s %>"><%= link_to "#{t :menu_create}", controller: controller.controller_name, action: :new %></li>
+      <li class="<%= 'menu-active' if controller.action_name == :bulk.to_s %>"><%= link_to "#{t :menu_bulk}", controller: controller.controller_name, action: :bulk %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -15,10 +15,6 @@
     <%= form.text_area :description %>
   </p>
   <p>
-    <%= form.label :link, :class => "required" %><br>
-    <%= form.text_field :link %>
-  </p>
-  <p>
     <%= form.label :passage %><br>
     <%= form.text_field :passage %>
   </p>
@@ -27,8 +23,16 @@
     <%= form.text_field :speaker %>
   </p>
   <p>
+    <%= form.label :link, :class => "required" %><br>
+    <%= form.text_field :link %>
+  </p>
+  <p>
+    <%= form.label :filename %><br>
+    <%= form.text_field :filename %>
+  </p>
+  <p>
     <%= form.label :original_air %><br>
-    <%= date_select :audio, :original_air%>
+    <%= date_select :video, :original_air%>
   </p>
   <p>
     <%= form.label :program_num %><br>

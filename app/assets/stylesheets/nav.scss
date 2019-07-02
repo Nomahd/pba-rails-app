@@ -1,0 +1,45 @@
+#nav {
+  background: #2E2F30;
+  color: #ffffff;
+  height: 100px;
+  margin: 0;
+
+  list-style-type: none;
+  padding-left: 120px;
+  overflow: hidden;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #666666;
+
+    }
+  }
+
+  li:not(.nav-right) {
+    float: left;
+  }
+
+  li {
+    font-size: 18px;
+    text-align: center;
+    padding: 40px 16px;
+  }
+
+  @media screen and (max-width: 950px ) {
+    li {
+      font-size: 14px;
+      padding: 40px 12px;
+    }
+  }
+
+  .nav-active a {
+    color: steelblue;
+  }
+}
+
+.nav-right {
+  float: right
+}

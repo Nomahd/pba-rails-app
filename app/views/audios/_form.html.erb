@@ -1,41 +1,34 @@
-<%=form_with model: @audio, local: true do |form| %>
+<div id="main-content">
+  <%=form_with model: @audio, local: true do |form| %>
 
-  <%= render 'layouts/error', locals: { model: @audio } %>
+    <%= render 'partials/error', locals: { model: @audio } %>
 
-  <p>
-    <%= form.label :title, :class => "required" %><br>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :date %><br>
-    <%= date_select :audio, :date%><br>
-  </p>
-  <p>
-    <%= form.label :description, :class => "required" %><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.label :audio_file, :class => "required" %><br>
-    <%= form.file_field :audio_file %>
-  </p>
-  <p>
-    <%= form.label :passage %><br>
-    <%= form.text_field :passage %>
-  </p>
-  <p>
-    <%= form.label :speaker %><br>
-    <%= form.text_field :speaker %>
-  </p>
-  <p>
-  <p>
-    <%= form.label :original_air %><br>
-    <%= date_select :audio, :original_air%>
-  </p>
-  <p>
-    <%= form.label :program_num %><br>
-    <%= form.text_field :program_num %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+
+      <%= form.label :title, :class => "required" %><br>
+      <%= form.text_field :title %>
+
+      <%= form.label :date %><br>
+      <%= date_select :audio, :date%><br>
+
+      <%= form.label :description, :class => "required" %><br>
+      <%= form.text_area :description %>
+
+      <%= form.label :audio_file, :class => "required" %><br>
+      <%= form.file_field :audio_file %>
+
+      <%= form.label :passage %><br>
+      <%= form.text_field :passage %>
+
+      <%= form.label :speaker %><br>
+      <%= form.text_field :speaker %>
+
+      <%= form.label :original_air %><br>
+      <%= date_select :audio, :original_air%>
+
+      <%= form.label :program_num %><br>
+      <%= form.text_field :program_num %>
+
+      <%= form.submit %>
+
+  <% end %>
+</div>

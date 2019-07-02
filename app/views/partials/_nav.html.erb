@@ -1,0 +1,10 @@
+<ul id="nav">
+  <li class="nav-right"><%= link_to "日本語", {locale: :ja} %> | <%= link_to "English", {locale: :en} %></li>
+  <% if controller.controller_name != :top.to_s%>
+    <li class="<%= 'nav-active' if controller.controller_name == :devotions.to_s %>"><%= link_to "#{t :top_devotions}", devotions_path %></li>
+    <li class="<%= 'nav-active' if controller.controller_name == :audios.to_s %>"><%= link_to "#{t :top_audios}", audios_path %></li>
+    <li class="<%= 'nav-active' if controller.controller_name == :videos.to_s %>"><%= link_to "#{t :top_videos}", videos_path %></li>
+    <li class="<%= 'nav-active' if controller.controller_name == :images.to_s %>"><%= link_to "#{t :top_images}", images_path %></li>
+    <li class="<%= 'nav-active' if controller.controller_name == "" %>"><%= link_to "#{t :top_dropdown}", "" %></li>
+  <% end %>
+</ul>

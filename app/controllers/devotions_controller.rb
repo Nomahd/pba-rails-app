@@ -1,7 +1,9 @@
+require 'csv'
+
 class DevotionsController < ApplicationController
 
   def index
-    @devotion = Devotion.all
+    @devotion = Devotion.page(1)
   end
 
   def create
@@ -19,6 +21,21 @@ class DevotionsController < ApplicationController
 
   def new
     @devotion = Devotion.new
+  end
+
+  def bulk
+    render 'common/bulk'
+  end
+
+  def bulk_submit
+
+    @result = Devotion.bulk(params[:bulk_csv].path)
+
+    if @result[1].length > 0
+      render 'common/bulk-fail'
+    else
+      render 'common/bulk-success'
+    end
   end
 
   def edit
@@ -43,6 +60,6 @@ class DevotionsController < ApplicationController
 
   private
     def devotion_params
-      params.require(:devotion).permit(:title, :date, :body, :passage, :messenger, :book_title)
+      params.require(:devotion).permit(:pba_id, :title, :release_date, :body, :messenger, :bible_book, :bible_chapter_verse, :genre_list, :theme_list, :special_list)
     end
 end
