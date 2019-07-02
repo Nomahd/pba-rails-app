@@ -7,22 +7,30 @@
     </tr>
   <% else %>
     <tr>
+      <th>PBA ID</th>
       <th><%= t :'activerecord.attributes.devotion.title' %></th>
       <th><%= t :'activerecord.attributes.devotion.date' %></th>
       <th><%= t :'activerecord.attributes.devotion.messenger' %></th>
+      <th><%= t :'activerecord.attributes.devotion.bible_passage' %></th>
+      <th><%= t :'activerecord.attributes.devotion.genre_tags' %></th>
+      <th><%= t :'activerecord.attributes.devotion.theme_tags' %></th>
+      <th><%= t :'activerecord.attributes.devotion.special_tags' %></th>
     </tr>
     <% @devotion.each do |devotion| %>
       <tr>
+        <td><%= devotion.pba_id %></td>
         <td><%= devotion.title %></td>
         <td><%= devotion.release_date %></td>
         <td><%= devotion.messenger %></td>
+        <td><%= devotion.bible_book + " " + devotion.bible_chapter_verse %></td>
+        <td><%= devotion.genre_list %></td>
+        <td><%= devotion.theme_list %></td>
+        <td><%= devotion.special_list %></td>
         <td><%= link_to "#{t :table_view}", devotion_path(devotion) %></td>
         <td><%= link_to "#{t :table_edit}", edit_devotion_path(devotion) %></td>
-        <td><%= link_to "#{t :table_delete}", devotion_path(devotion),
-                        method: :delete,
-                        data: { confirm: "#{t :table_confirm}" } %></td>
+        <td><input type="checkbox"></td>
       </tr>
     <% end %>
   <% end %>
 </table>
-<%= link_to_next_page @devotion, 'Next Page' %>
+<%= paginate @devotion, window: 4 %>

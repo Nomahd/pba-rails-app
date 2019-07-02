@@ -3,7 +3,13 @@ require 'csv'
 class DevotionsController < ApplicationController
 
   def index
-    @devotion = Devotion.page(1)
+    page = params[:page]
+    if page == nil
+      @devotion = Devotion.page(1)
+    else
+      @devotion = Devotion.page(page)
+    end
+
   end
 
   def create

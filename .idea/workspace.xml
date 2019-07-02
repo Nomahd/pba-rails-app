@@ -2,59 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/book.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/files.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/headphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/monitor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/photo-camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/tag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/browser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/bulk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/bulk.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/menu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/common/bulk-fail.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/common/bulk-success.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/common/bulk.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/devotions/_tags.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/messengers/create.js.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_bulk-form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_menu.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_nav.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/partials/_top-nav.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pba-rails-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pba-rails-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/top.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/top.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/initializers/kaminari_config.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/devotions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/devotions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/top_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/top_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/audio.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/audio.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/devotion.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/devotion.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/audios/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/audios/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/audios/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/audios/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/audios/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/audios/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devotions/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devotions/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/devotions/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devotions/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devotions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devotions/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/devotions/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devotions/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_error.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/partials/_error.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/partials/_show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/top/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/top/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/locales/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/en.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/locales/ja.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/ja.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ftp.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ftp_util.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/lib/ftp_test_script.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/lib/ftp_test_script.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,8 +57,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="210">
-                    <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+                  <state relative-caret-position="295">
+                    <caret line="121" column="31" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
                   </state>
                 </provider>
               </entry>
@@ -111,8 +66,17 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/config/locales/ja.yml">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="170">
-                    <caret line="10" selection-start-line="10" selection-end-line="10" />
+                  <state relative-caret-position="306">
+                    <caret line="81" selection-start-line="81" selection-end-line="83" selection-end-column="30" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/app/views/videos/_form.html.erb">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="34">
+                    <caret line="2" column="21" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="21" />
                   </state>
                 </provider>
               </entry>
@@ -125,10 +89,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/devotion.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/devotions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="-586">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -136,35 +109,79 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/common.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-668">
+            <state relative-caret-position="-872">
               <caret line="29" column="5" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devotions/index.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menu.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/table.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="340">
+              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/devotions/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="10" column="65" lean-forward="true" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+              <folding>
+                <element signature="e#160#203#0#ruby" expanded="true" />
+                <element signature="e#226#268#0#ruby" expanded="true" />
+                <element signature="e#333#380#0#ruby" expanded="true" />
+                <element signature="e#403#454#0#ruby" expanded="true" />
+                <element signature="e#477#525#0#ruby" expanded="true" />
+                <element signature="e#548#596#0#ruby" expanded="true" />
+                <element signature="e#619#669#0#ruby" expanded="true" />
+                <element signature="e#562#575#1#ruby" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devotions/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="n#t#0;n#!!top" expanded="true" />
+                <element signature="n#t#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devotions/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/_show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+              <folding>
+                <element signature="e#233#243#0#ruby" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/view_tester_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="161" selection-start-line="2" selection-start-column="161" selection-end-line="2" selection-end-column="161" />
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -237,7 +254,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/messengers_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/video.rb" />
         <option value="$PROJECT_DIR$/app/models/content.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tags_controller.rb" />
@@ -268,26 +284,27 @@
         <option value="$PROJECT_DIR$/app/views/devotions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devotions/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/partials/_bulk-form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/devotions/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/common/bulk.html.erb" />
         <option value="$PROJECT_DIR$/app/models/devotion.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/nav.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/menu.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/common/bulk-success.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/test_view_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/_menu.html.erb" />
-        <option value="$PROJECT_DIR$/config/locales/ja.yml" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/views/common/bulk-fail.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/devotions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/devotions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/table.scss.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/common.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/table.scss" />
         <option value="$PROJECT_DIR$/app/controllers/view_tester_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/menu.scss" />
+        <option value="$PROJECT_DIR$/config/initializers/kaminari_config.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/devotions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/devotions/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/locales/ja.yml" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
+        <option value="$PROJECT_DIR$/app/views/devotions/index.html.erb" />
       </list>
     </option>
   </component>
@@ -299,10 +316,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="18" />
-    <option name="y" value="-21" />
+    <option name="x" value="114" />
+    <option name="y" value="-20" />
     <option name="width" value="1920" />
-    <option name="height" value="904" />
+    <option name="height" value="894" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -797,7 +814,7 @@
       <workItem from="1559930053062" duration="42008000" />
       <workItem from="1560419108638" duration="103330000" />
       <workItem from="1562049777390" duration="12029000" />
-      <workItem from="1562078875002" duration="1033000" />
+      <workItem from="1562078875002" duration="4923000" />
     </task>
     <task id="LOCAL-00001" summary="Changed DB config and added /test/system/db_connection_test.rb file">
       <created>1554962157767</created>
@@ -876,11 +893,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558532945514</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Version 0.3&#10;&#10;Big changes especially in style">
+      <created>1562080008168</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562080008168</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350276000" />
+    <option name="totallyTimeSpent" value="354166000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -933,7 +957,8 @@
     <MESSAGE value="Changed to double quotes" />
     <MESSAGE value="Version 0.1" />
     <MESSAGE value="Version 0.2&#10;&#10;Added controller permits&#10;Got rid of uglifier since it breaks stuff&#10;Made styles more consistent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.2&#10;&#10;Added controller permits&#10;Got rid of uglifier since it breaks stuff&#10;Made styles more consistent" />
+    <MESSAGE value="Version 0.3&#10;&#10;Big changes especially in style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.3&#10;&#10;Big changes especially in style" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -964,7 +989,7 @@
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate_DEV.rcov" NAME="db:migrate DEV Coverage Results" MODIFIED="1560342378561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1559621187997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate__pba_app.rcov" NAME="db:migrate: pba-app Coverage Results" MODIFIED="1556622322177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
-    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1562079500416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
+    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1562081954854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@Unnamed.rcov" NAME="Unnamed Coverage Results" MODIFIED="1558104935681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@assets_precompile__pba_rails_app.rcov" NAME="assets:precompile: pba-rails-app Coverage Results" MODIFIED="1558532184959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_seed__pba_rails_app.rcov" NAME="db:seed: pba-rails-app Coverage Results" MODIFIED="1559623145011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
@@ -973,26 +998,6 @@
     <SUITE FILE_PATH="coverage/pba_rails_app@active_storage_install__pba_rails_app.rcov" NAME="active_storage:install: pba-rails-app Coverage Results" MODIFIED="1556610068812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/db_connection_error.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/_top-nav.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/top.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/photos/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/audios_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1104,16 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devotions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devotions/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/devotions.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1121,13 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devotions/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1142,13 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -1173,27 +1154,6 @@
           <folding>
             <element signature="e#803#818#1#ruby" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/ja.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/devotion.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1256,27 +1216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/devotions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devotions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-668">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/table.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1286,8 +1225,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/view_tester_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-872">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/kaminari_config.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#233#243#0#ruby" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devotions/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devotions/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-620">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190416070810_create_audios.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/videos/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="161" selection-start-line="2" selection-start-column="161" selection-end-line="2" selection-end-column="161" />
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/ja.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="81" selection-start-line="81" selection-end-line="83" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="121" column="31" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devotions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="n#t#0;n#!!top" expanded="true" />
+            <element signature="n#t#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/devotion.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/devotions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-586">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devotions/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="10" column="65" lean-forward="true" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+          <folding>
+            <element signature="e#160#203#0#ruby" expanded="true" />
+            <element signature="e#226#268#0#ruby" expanded="true" />
+            <element signature="e#333#380#0#ruby" expanded="true" />
+            <element signature="e#403#454#0#ruby" expanded="true" />
+            <element signature="e#477#525#0#ruby" expanded="true" />
+            <element signature="e#548#596#0#ruby" expanded="true" />
+            <element signature="e#619#669#0#ruby" expanded="true" />
+            <element signature="e#562#575#1#ruby" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
