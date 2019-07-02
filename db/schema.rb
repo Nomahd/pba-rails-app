@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_12_122552) do
+ActiveRecord::Schema.define(version: 2019_07_02_170702) do
 
   create_table "audios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_122552) do
 
   create_table "messengers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.index ["name"], name: "index_messengers_on_name", unique: true
+    t.index ["name"], name: "msg", unique: true
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
