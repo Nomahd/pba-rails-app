@@ -1,0 +1,5 @@
+<div id='<%= locals[:type] %>-tag-group' class="form-flex">
+    <% locals[:tag_list].each do |t| %>
+      <%= render 'partials/tag', locals: {tag: t}%>
+    <% end %>
+</div>

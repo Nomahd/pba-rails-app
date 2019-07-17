@@ -4,12 +4,7 @@ class DevotionsController < ApplicationController
 
   def index
     page = params[:page]
-    if page == nil
-      @devotion = Devotion.page(1)
-    else
-      @devotion = Devotion.page(page)
-    end
-
+    @devotion = Devotion.get_page(page)
   end
 
   def create
@@ -27,10 +22,6 @@ class DevotionsController < ApplicationController
 
   def new
     @devotion = Devotion.new
-  end
-
-  def bulk
-    render 'common/bulk'
   end
 
   def bulk_submit
@@ -60,7 +51,6 @@ class DevotionsController < ApplicationController
   def destroy
     @devotion = Devotion.find(params[:id])
     @devotion.destroy
-
     redirect_to devotions_path
   end
 

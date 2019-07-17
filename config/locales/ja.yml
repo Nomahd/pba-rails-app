@@ -8,11 +8,23 @@ ja:
   error_desc: "があります"
   row: "列"
   row_index: "行番号"
+  browser_warning: "インターネットエクスプローラーかエッジ以外のブラウザはこのサイトが正しく機能するために使ったほうがいいです。"
+  ok: "了解"
+
+  messenger_enter: "名前を入れる"
+  messenger_success: "成功　－　名前はリストに入ってる"
+  messenger_fail_exists: "失敗　－　名前もあります"
+  messenger_fail_blank: "失敗　－　名前を入れてください"
+  messenger_fail: "失敗"
+
+  form_tag_enter: "一つのタッグ入力"
 
   form_bible_passage: "聖書箇所"
-  form_genre_tag: "番組内容"
-  form_genre_add: "新しい番組内容を入れる"
-  form_messenger_add: "新しいメッセンジャーを入れる"
+  form_genre_create: "新しい番組内容タッグの作成"
+  form_theme_create: "新しいどんなときタッグの作成"
+  form_special_create: "新しい特集タッグの作成"
+  form_messenger_add: "新しいメッセンジャーの作成"
+  form_messenger_create: "作成"
 
   top_devotions: "デボーション"
   top_audios: "オーディオ"
@@ -28,12 +40,13 @@ ja:
   table_edit: "変更"
   table_delete: "消す"
   table_confirm: "良いですか"
+  table_action: "作用"
 
   bulk_header: "一括作成"
   bulk_desc: ".CSVファイルでたくさんデータアップロードする"
   bulk_drag_drop: "ドラッグアンドドロップ"
-  bulk_success: "正常"
-  bulk_success_desc: "を正常に入れた"
+  bulk_success: "成功"
+  bulk_success_desc: "を入れた"
   bulk_fail: "問題"
   bulk_fail_desc: "を入れるのが失敗した"
 
@@ -49,8 +62,7 @@ ja:
   devotions_new_desc: "一つのデボーションを入れる"
   devotions_edit: "デボーションを変更する"
   devotions_back: "デボーションへ戻る"
-
-
+  devotions_viewing: "デボーションの視察"
 
   videos_list: "ビデオのリスト"
   videos_add: "ビデオを入れる"
@@ -74,14 +86,20 @@ ja:
         updated_at: "変更された日時"
 
       devotion:
+        devotion: "デボーション"
         pba_id: "ID"
         title: "タイトル"
-        date: "出る年月日"
+        release_date: "出る年月日"
         body: "本文"
-        bible_passage: "聖書箇所"
+        bible_passage: "聖書の箇所"
+        bible_book: "聖書の本"
+        bible_chapter_verse: "聖書の章と節"
         genre_tags: "番組内容タッグ"
         special_tags: "特集タッグ"
         theme_tags: "こんなときタッグ"
+        genre_list: "番組内容タッグ"
+        special_list: "特集タッグ"
+        theme_list: "こんなときタッグ"
         messenger: "メッセンジャー"
         created_at: "作られた日時"
         updated_at: "変更された日時"
@@ -243,6 +261,16 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "%{entry_name}はない"
+          one: "<b>一つ</b>の%{entry_name}を見せる"
+          other: "全部の<b>%{count}</b>つの%{entry_name}を見せる"
+      more_pages:
+        display_entries: "%{entry_name}の<b>%{first}&nbsp;-&nbsp;%{last}</b>分の<b>%{total}</b>を見せる"
+
   number:
     currency:
       format:
@@ -303,3 +331,11 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "&hellip;"

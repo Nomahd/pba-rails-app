@@ -17,6 +17,29 @@ class Devotion < ApplicationRecord
 
   attr_reader :success_count, :fail_array
 
+  after_save do
+    self.genre_list.each do |tag|
+      TagMeta.create(:name => tag, :context => 'devotion', :category => 'genre')
+    end
+
+    self.theme_list.each do |tag|
+      TagMeta.create(:name => tag, :context => 'devotion', :category => 'theme')
+
+    end
+
+    self.special_list.each do |tag|
+      TagMeta.create(:name => tag, :context => 'devotion', :category => 'special')
+    end
+  end
+
+  def self.get_page(page)
+    if page == nil
+      Devotion.page(1)
+    else
+      Devotion.page(page)
+    end
+  end
+
   def self.bulk(file)
     @success_count = 0
     @fail_array = []

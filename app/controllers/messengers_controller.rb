@@ -9,12 +9,8 @@ class MessengersController < ApplicationController
     respond_to do |format|
       if @messenger.save
         format.js
-        format.html
-        format.json
       else
         format.js
-        format.html
-        format.json
       end
     end
   end

@@ -1,0 +1,93 @@
+@import 'common';
+
+.required::after {
+  content: "*";
+  color: red;
+}
+
+#form-area {
+
+  margin: 0 auto 50px;
+  text-align: left;
+  width: 75%;
+
+  input:not([type="submit"]) {
+    width: 250px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .inline-label {
+    @extend label;
+    display: inline-block;
+  }
+  select:not([id*="release_date"]) {
+    min-width: 150px;
+    max-width: 150px;
+  }
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-float {
+  margin-bottom: 10px;
+  float: left;
+}
+.btn-create {
+  background-color: #d7004d;
+  border-radius: 2px;
+  margin: 0 10px;
+
+  &:enabled {
+    &:hover {
+      background-color: #f64d90;
+    }
+  }
+}
+
+.btn-add {
+  border-radius: 2px;
+}
+.submit-ajax {
+  @extend button
+}
+
+#submit-form {
+  display: block;
+  padding: 10px 30px;
+  margin: 50px auto;
+  border: none;
+  background-color: mediumseagreen;
+  color: white;
+
+  &:hover {
+    background-color: darkseagreen;
+  }
+}
+
+#messenger-form {
+  display: none;
+}
+
+
+.status {
+  visibility: hidden;
+}
+
+#messenger-fail {
+  color: red;
+}
+
+.new-row {
+  margin-left: 5px;
+}
+
+.form-flex {
+  display: flex;
+  flex-flow: row wrap;
+}

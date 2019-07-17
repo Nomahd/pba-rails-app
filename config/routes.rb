@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'genres/create'
+  get 'genre/create'
   get '/:locale' => 'top#index'
   root 'top#index'
 
@@ -8,10 +10,11 @@ Rails.application.routes.draw do
       collection do
         get :bulk
         post :bulk, action: :bulk_submit
+        post :add_tag
       end
     end
 
-    resources :messengers
+    resources :messengers, :genres
     resources :photos
 
     if Rails.env.development?

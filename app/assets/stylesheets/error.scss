@@ -1,0 +1,56 @@
+.bulk-error {
+  color: red;
+}
+
+.bulk-error-table {
+
+  width: 300px;
+
+  th {
+    background-color: red;
+    color: white;
+  }
+  td {
+    width: 100px;
+  }
+
+  td:hover {
+    background-color: #ddd
+  }
+}
+
+.field_with_errors {
+
+  color: red;
+  input {
+    border-color: red;
+  }
+
+  textarea {
+    border-color: red;
+  }
+
+}
+
+#error_explanation {
+  width: 100%;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: red;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

@@ -1,0 +1,27 @@
+.tag {
+  background-color: indianred;
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.tag-content {
+  color: white;
+  margin: 0 10px;
+}
+
+.tag-name {
+  width: 80%;
+  line-height: 40px;
+}
+
+.tag-delete {
+  background-color: indianred;
+
+  &:enabled {
+    &:hover {
+      color:darkgrey;
+      background-color: indianred;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  # rescue_from Mysql2::Error::ConnectionError, with: :db_connection_error
   around_action :switch_locale
 
   def switch_locale(&action)
@@ -11,8 +10,4 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
-  private
-  # def db_connection_error
-    # render :status => 500
-  # end
 end

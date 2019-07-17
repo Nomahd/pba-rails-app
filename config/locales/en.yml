@@ -39,11 +39,23 @@ en:
   error_desc: " prohibited this article from being saved: "
   row: "row"
   row_index: "Line Number"
+  browser_warning: "A browser besides Internet Explorer or Edge should be used for this site to function correctly."
+  ok: "OK"
+
+  messenger_enter: "Enter Name"
+  messenger_success: "Success - name is now in the dropdown list"
+  messenger_fail_exists: "Failed - name already exists"
+  messenger_fail_blank: "Failed - name can't be blank"
+  messenger_fail: "Failed"
+
+  form_tag_enter: "Enter a single new tag"
 
   form_bible_passage: "Bible Passage"
-  form_genre_tag: "Genre Tag"
-  form_genre_add: "Add New Genre Tag"
-  form_messenger_add: "Add New Messenger"
+  form_genre_create: "Create New Genre Tag"
+  form_theme_create: "Create New Theme Tag"
+  form_special_create: "Create New Special Tag"
+  form_messenger_add: "Create New Messenger"
+  form_messenger_create: "Create"
 
   top_devotions: "Devotions"
   top_audios: "Audio"
@@ -59,12 +71,8 @@ en:
   table_edit: "Edit"
   table_delete: "Delete"
   table_confirm: "Are you sure?"
+  table_action: "Actions"
 
-  table_title: "Title"
-  table_date: "Date"
-  table_messenger: "Messenger"
-  table_bible: "Bible Passage"
-  table_book: "Book Title"
 
   bulk_header: "Bulk Create"
   bulk_desc: "Quickly insert data by using a .CSV file"
@@ -87,8 +95,7 @@ en:
   devotions_new_desc: "Add a single new devotion"
   devotions_edit: "Edit Devotion"
   devotions_back: "Return to Devotions"
-
-
+  devotions_viewing: "Viewing Devotion"
 
   videos_list: "Videos List"
   videos_add: "Add New Video"
@@ -112,14 +119,20 @@ en:
         updated_at: "Updated At"
 
       devotion:
+        devotion: "Devotion"
         pba_id: "ID"
         title: "Title"
-        date: "Release Date"
+        release_date: "Release Date"
         body: "Body"
         bible_passage: "Bible Passage"
+        bible_book: "Bible Book"
+        bible_chapter_verse: "Chapter and Verse"
         genre_tags: "Genre Tags"
         special_tags: "Special Tags"
         theme_tags: "Theme Tags"
+        genre_list: "Genre Tags"
+        special_list: "Special Tags"
+        theme_list: "Theme Tags"
         messenger: "Messenger"
         created_at: "Created At"
         updated_at: "Updated At"
@@ -287,6 +300,16 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+
   number:
     currency:
       format:
@@ -349,3 +372,11 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"

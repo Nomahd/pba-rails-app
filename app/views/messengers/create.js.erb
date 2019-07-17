@@ -10,18 +10,17 @@ var option = document.createElement('option')
 option.text = '<%= @messenger.name %>'
 option.value = '<%= @messenger.name %>'
 document.querySelector('#devotion_messenger').appendChild(option)
-  document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-success">Success</div>')
+document.querySelector('#messenger-status').innerHTML =  '<div id="messenger-success">' + I18n.t('messenger_success') + '</div>'
 <% else %>
   switch(JSON.parse('<%= j raw @messenger.errors.as_json.to_json %>').name.toString()) {
-    case 'has already been taken':
-        document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-fail">Failed - name already exists</div>')
+    case I18n.t('errors.messages.blank'):
+        document.querySelector('#messenger-status').innerHTML = '<div id="messenger-fail">' + I18n.t('messenger_fail_blank') + '</div>'
         break
-    case "can't be blank":
-        document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-fail">Failed - name can\'t be blank</div>')
+    case I18n.t('errors.messages.taken'):
+        document.querySelector('#messenger-status').innerHTML = '<div id="messenger-fail">' + I18n.t('messenger_fail_exists') + '</div>'
         break;
     default:
-        document.querySelector('#messenger_name').insertAdjacentHTML('beforebegin', '<div id="messenger-fail">Failed</div>')
+        document.querySelector('#messenger-status').innerHTML = '<div id="messenger-fail">' + I18n.t('messenger_fail') + '</div>'
 
   }
-
 <% end %>

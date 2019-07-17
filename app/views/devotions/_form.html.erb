@@ -1,36 +1,34 @@
-<%= render 'partials/error', locals: { model: @devotion } %>
 <div id="form-area">
+  <%= render 'partials/error', locals: { model: @devotion } %>
   <%= form_with scope: :messenger, url: messengers_path, remote: true, id: 'messenger-form', html: { autocomplete: 'off' } do %><% end %>
   <%= form_with model: @devotion, local: true, id: 'main-form', html: { autocomplete: 'off' } do |form| %>
 
+<!--    PBA ID row-->
     <div class="form-row">
       <%= form.label :pba_id %>
       <%= form.text_field :pba_id %>
     </div>
-    <div>
+
+<!--    Title row-->
+    <div class="form-row">
       <%= form.label :title, :class => 'required' %>
       <%= form.text_field :title %>
     </div>
-    <div>
-      <%= form.label :release_date, "#{t :'activerecord.attributes.devotion.date'}" %>
+
+<!--    Release date row-->
+    <div class="form-row">
+      <%= form.label :release_date, "#{t :'activerecord.attributes.devotion.release_date'}" %>
       <%= date_select :devotion, :release_date%>
     </div>
-    <%= form.label :body, :class => 'required' %>
-    <%= form.text_area :body %>
-    <div>
 
+<!--    Body row-->
+    <div class="form-row">
+      <%= form.label :body, :class => 'required' %>
+      <%= form.text_area :body %>
     </div>
-    <%= form.label :messenger %>
-    <div id="div-messenger-dropdown">
 
-      <%= form.select :messenger, Messenger.all.collect {|p| [ p.name ]}, { include_blank: true } %>
-      <%= button_tag "#{t :form_messenger_add}", type: 'button', id: 'btn-new-messenger' %>
-      <div id="div-new-messenger" style="display: none">
-        <input type="text" name="messenger[name]" id="messenger_name" form="messenger-form"/>
-        <input type="submit" name="commit" value="<%= "#{t :form_messenger_add}" %>" form="messenger-form"/>
-      </div>
-    </div>
-    <div>
+<!--    Bible Passage row-->
+    <div class="form-row">
       <%= form.label :bible_book, "#{t :form_bible_passage}" %>
       <% if params[:locale] == "ja" %>
         <%= form.select :bible_book, BibleBook.all.collect {|p| [ p.book_ja ]}, { include_blank: true } %>
@@ -39,29 +37,95 @@
       <% end %>
       <%= form.text_field :bible_chapter_verse %>
     </div>
-<!--      <div id="div-genre-tags">-->
-      <%#= form.label nil, "#{t :form_genre_tag}" %>
-      <%#= form.select nil, @devotion.genre_list, { include_blank: true}  %>
-      <%#= button_tag "#{t :form_genre_add}", type: 'button', id: 'btn-new-genre' %>
-<!--      </div>-->
 
-    <!--      <div id="div-new-genre" style="display: none">-->
-    <!--        <input type="text" name="messenger[name]" id="messenger_name" form="messenger_form"/>-->
-    <!--        <input type="submit" name="commit" value="<%#= "#{t :form_genre_add}" %>" form="messenger_form"/>-->
-    <!--      </div>-->
-<!--      <div id="div-theme-tags">-->
-      <%#= form.label nil, "#{t :form_genre_tag}" %>
-      <%#= form.select nil, @devotion.genre_list, { include_blank: true}  %>
-      <%#= button_tag "#{t :form_genre_add}", type: 'button', id: 'btn-new-genre' %>
-<!--      </div>-->
+<!--    Messenger row-->
+    <div class="form-float">
+      <%= form.label :messenger, :class => "inline-label" %>
+      <div>
+        <%= form.select :messenger, Messenger.all.collect {|p| [ p.name ]}, { include_blank: true } %>
+      </div>
+    </div>
+    <div class="form-float new-row">
+      <div id="messenger-status" class="status">
+        <%= "#{t :messenger_enter}" %>
+      </div>
+        <%= button_tag "#{t :form_messenger_add}", type: 'button', id: 'btn-new-messenger', class: 'btn-create'%>
+        <div id="new-messenger" style="display: none">
+          <input type="text" name="messenger[name]" id="messenger_name" form="messenger-form"/>
+          <input type="submit" class="submit-ajax" name="commit" value="<%= "#{t :form_messenger_create}" %>" form="messenger-form"/>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
 
-<!--      <div id="div-special-tags">-->
-      <%#= form.label nil, "#{t :form_genre_tag}" %>
-      <%#= form.select nil, @devotion.genre_list, { include_blank: true}  %>
-      <%#= button_tag "#{t :form_genre_add}", type: 'button', id: 'btn-new-genre' %>
-<!--      </div>-->
-    <div>
-      <%= form.submit %>
+<!--    Genre Tag row-->
+    <div class="form-float">
+      <%= form.label 'genre_tag', "#{t 'activerecord.attributes.devotion.genre_tags'}", :class => "inline-label" %>
+      <div>
+        <%= select_tag 'genre_tags', options_from_collection_for_select(TagMeta.get('devotion', 'genre'), 'name', 'name'), {include_blank: true}  %>
+        <%= button_tag "+", type: 'button', id: 'btn-add-genre', class: 'btn-add' %>
+      </div>
+    </div>
+    <div class="form-float new-row" id="new-genre-row">
+      <div id="genre-status" class="status">
+        <%= "#{t :form_tag_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_genre_create}", type: 'button', id: 'btn-new-genre', class: 'btn-create' %>
+      <div id="new-genre" style="display: none">
+        <input type="text" name="new_genre" id="new-genre-field"/>
+        <%= button_tag "+", type: 'button', id: 'btn-create-genre', class: 'btn-add' %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <%= render 'partials/tags-list', locals: {tag_list: @devotion.genre_list, type: 'genre'} %>
+    <%= form.text_field :genre_list, value: form.object.genre_list.join(","), style: "visibility:hidden" %>
+    <div style="clear:both;"></div>
+
+<!--    Theme Tag row-->
+    <div class="form-float">
+      <%= form.label "theme_tag","#{t 'activerecord.attributes.devotion.theme_tags'}", :class => "inline-label" %>
+      <div>
+        <%= select_tag 'theme_tags', options_from_collection_for_select(TagMeta.get('devotion', 'theme'), 'name', 'name'), {include_blank: true}  %>
+        <%= button_tag "+", type: 'button', id: 'btn-add-theme', class: 'btn-add' %>
+      </div>
+    </div>
+    <div class="form-float new-row" id="new-theme-row">
+      <div id="theme-status" class="status">
+        <%= "#{t :form_tag_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_theme_create}", type: 'button', id: 'btn-new-theme', class: 'btn-create' %>
+      <div id="new-theme" style="display: none">
+        <input type="text" name="new_theme" id="new-theme-field"/>
+        <%= button_tag "+", type: 'button', id: 'btn-create-theme', class: 'btn-add' %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <%= render 'partials/tags-list', locals: {tag_list: @devotion.theme_list, type: 'theme'} %>
+    <%= form.text_field :theme_list, value: form.object.theme_list.join(","), style: "visibility:hidden" %>
+    <div style="clear:both;"></div>
+<!--    Special Tag row-->
+    <div class="form-float">
+      <%= form.label "special_tag","#{t 'activerecord.attributes.devotion.special_tags'}", :class => "inline-label" %>
+      <div>
+        <%= select_tag 'special_tags', options_from_collection_for_select(TagMeta.get('devotion', 'special'), 'name', 'name'), {include_blank: true}  %>
+        <%= button_tag "+", type: 'button', id: 'btn-add-special', class: 'btn-add' %>
+      </div>
+    </div>
+    <div class="form-float new-row" id="new-special-row">
+      <div id="special-status" class="status">
+        <%= "#{t :form_tag_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_special_create}", type: 'button', id: 'btn-new-special', class: 'btn-create' %>
+      <div id="new-special" style="display: none">
+        <input type="text" name="new_special" id="new-special-field"/>
+        <%= button_tag "+", type: 'button', id: 'btn-create-special', class: 'btn-add' %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <%= render 'partials/tags-list', locals: {tag_list: @devotion.special_list, type: 'special'} %>
+    <%= form.text_field :special_list, value: form.object.special_list.join(","), style: "visibility:hidden" %>
+    <div style="clear:both;"></div>
+
+      <%= form.submit :id => "submit-form"%>
     </div>
   <% end %>
 </div>

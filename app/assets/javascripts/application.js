@@ -13,4 +13,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require i18n.js
+//= require i18n/translations
 //= require_tree .

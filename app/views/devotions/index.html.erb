@@ -9,12 +9,14 @@
     <tr>
       <th>PBA ID</th>
       <th><%= t :'activerecord.attributes.devotion.title' %></th>
-      <th><%= t :'activerecord.attributes.devotion.date' %></th>
+      <th><%= t :'activerecord.attributes.devotion.release_date' %></th>
       <th><%= t :'activerecord.attributes.devotion.messenger' %></th>
       <th><%= t :'activerecord.attributes.devotion.bible_passage' %></th>
       <th><%= t :'activerecord.attributes.devotion.genre_tags' %></th>
       <th><%= t :'activerecord.attributes.devotion.theme_tags' %></th>
       <th><%= t :'activerecord.attributes.devotion.special_tags' %></th>
+      <th colspan="3"><%= t :table_action %></th>
+      <th><input type="checkbox"></th>
     </tr>
     <% @devotion.each do |devotion| %>
       <tr>
@@ -28,9 +30,11 @@
         <td><%= devotion.special_list %></td>
         <td><%= link_to "#{t :table_view}", devotion_path(devotion) %></td>
         <td><%= link_to "#{t :table_edit}", edit_devotion_path(devotion) %></td>
+        <td><%= link_to "#{t :table_delete}", devotion_path(devotion) %></td>
         <td><input type="checkbox"></td>
       </tr>
     <% end %>
   <% end %>
 </table>
 <%= paginate @devotion, window: 4 %>
+<%= page_entries_info @devotion, entry_name: "#{t :'activerecord.attributes.devotion.devotion'}"%>
