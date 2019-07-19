@@ -41,6 +41,7 @@ en:
   row_index: "Line Number"
   browser_warning: "A browser besides Internet Explorer or Edge should be used for this site to function correctly."
   ok: "OK"
+  submit: "Submit"
 
   messenger_enter: "Enter Name"
   messenger_success: "Success - name is now in the dropdown list"
@@ -127,9 +128,6 @@ en:
         bible_passage: "Bible Passage"
         bible_book: "Bible Book"
         bible_chapter_verse: "Chapter and Verse"
-        genre_tags: "Genre Tags"
-        special_tags: "Special Tags"
-        theme_tags: "Theme Tags"
         genre_list: "Genre Tags"
         special_list: "Special Tags"
         theme_list: "Theme Tags"
@@ -138,6 +136,7 @@ en:
         updated_at: "Updated At"
 
       video:
+        video:
         title: "Title"
         date: "Date"
         description: "Description"

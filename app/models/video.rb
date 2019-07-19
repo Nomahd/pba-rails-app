@@ -2,7 +2,7 @@ class Video < ApplicationRecord
   validates :title,
             presence: true,
             length: {maximum: 255}
-  validates :date,
+  validates :release_date,
             presence: true
   validates :description,
             presence: true

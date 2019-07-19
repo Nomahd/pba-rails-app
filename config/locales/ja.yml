@@ -10,6 +10,7 @@ ja:
   row_index: "行番号"
   browser_warning: "インターネットエクスプローラーかエッジ以外のブラウザはこのサイトが正しく機能するために使ったほうがいいです。"
   ok: "了解"
+  submit: "保存する"
 
   messenger_enter: "名前を入れる"
   messenger_success: "成功　－　名前はリストに入ってる"
@@ -94,9 +95,6 @@ ja:
         bible_passage: "聖書の箇所"
         bible_book: "聖書の本"
         bible_chapter_verse: "聖書の章と節"
-        genre_tags: "番組内容タッグ"
-        special_tags: "特集タッグ"
-        theme_tags: "こんなときタッグ"
         genre_list: "番組内容タッグ"
         special_list: "特集タッグ"
         theme_list: "こんなときタッグ"

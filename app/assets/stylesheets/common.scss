@@ -106,7 +106,7 @@ ul {
   margin: 0;
 }
 
-a {
+a:not(.top_nav) {
   text-decoration: none;
   &:visited {
     text-decoration: none;

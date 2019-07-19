@@ -5,9 +5,9 @@
 
   <div id="drag-drop">
     <%= image_tag('files.png', id: 'drag-drop-img') %>
-    <p><%= "#{t :bulk_drag_drop}" %>"</p>
+    <p><%= "#{t :bulk_drag_drop}" %></p>
   </div>
 
-  <%= button_tag "Submit", id: 'submit-button', disabled: true %>
+  <%= button_tag "#{t :submit}", type: 'submit', id: 'submit-button', disabled: true %>
 
 <% end %>

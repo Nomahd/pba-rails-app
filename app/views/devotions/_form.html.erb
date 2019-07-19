@@ -59,7 +59,7 @@
 
 <!--    Genre Tag row-->
     <div class="form-float">
-      <%= form.label 'genre_tag', "#{t 'activerecord.attributes.devotion.genre_tags'}", :class => "inline-label" %>
+      <%= form.label 'genre_tag', "#{t 'activerecord.attributes.devotion.genre_list'}", :class => "inline-label" %>
       <div>
         <%= select_tag 'genre_tags', options_from_collection_for_select(TagMeta.get('devotion', 'genre'), 'name', 'name'), {include_blank: true}  %>
         <%= button_tag "+", type: 'button', id: 'btn-add-genre', class: 'btn-add' %>
@@ -82,7 +82,7 @@
 
 <!--    Theme Tag row-->
     <div class="form-float">
-      <%= form.label "theme_tag","#{t 'activerecord.attributes.devotion.theme_tags'}", :class => "inline-label" %>
+      <%= form.label "theme_tag","#{t 'activerecord.attributes.devotion.theme_list'}", :class => "inline-label" %>
       <div>
         <%= select_tag 'theme_tags', options_from_collection_for_select(TagMeta.get('devotion', 'theme'), 'name', 'name'), {include_blank: true}  %>
         <%= button_tag "+", type: 'button', id: 'btn-add-theme', class: 'btn-add' %>
@@ -104,7 +104,7 @@
     <div style="clear:both;"></div>
 <!--    Special Tag row-->
     <div class="form-float">
-      <%= form.label "special_tag","#{t 'activerecord.attributes.devotion.special_tags'}", :class => "inline-label" %>
+      <%= form.label "special_tag","#{t 'activerecord.attributes.devotion.special_list'}", :class => "inline-label" %>
       <div>
         <%= select_tag 'special_tags', options_from_collection_for_select(TagMeta.get('devotion', 'special'), 'name', 'name'), {include_blank: true}  %>
         <%= button_tag "+", type: 'button', id: 'btn-add-special', class: 'btn-add' %>
