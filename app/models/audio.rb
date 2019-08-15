@@ -101,7 +101,6 @@ class Audio < ApplicationRecord
                  .where("program_name LIKE ?", "%#{params[:search_program_name]}%")
                  .where("messenger LIKE ?", "%#{params[:search_messenger]}%")
                  .where("bible_book LIKE ?", "%#{params[:search_bible_book]}%")
-                 .where("link LIKE ?", "%#{params[:search_link]}%")
                  .where("filename LIKE ?", "%#{params[:search_filename]}%")
 
     unless params[:search_genre_tag].blank?
