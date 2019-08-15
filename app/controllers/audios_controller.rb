@@ -9,7 +9,7 @@ class AudiosController < ApplicationController
   end
 
   def search
-    @audio = Audio.search(params).page params[:page]
+    @audio = Audio.search(params).order('broadcast_date DESC, program_num, title').page params[:page]
     render 'index'
   end
 

@@ -10,7 +10,7 @@ class VideosController < MediaController
   end
 
   def search
-    @video = Video.search(params).page params[:page]
+    @video = Video.search(params).order('broadcast_date DESC, program_num, title').page params[:page]
     render 'index'
   end
 
