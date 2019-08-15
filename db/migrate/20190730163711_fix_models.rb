@@ -1,6 +1,6 @@
 class FixModels < ActiveRecord::Migration[5.2]
   def change
-    rename_column :devotions, :date, :broadcast_date
+    rename_column :devotions, :release_date, :broadcast_date
     rename_column :audios, :date, :broadcast_date
     rename_column :videos, :date, :broadcast_date
     rename_column :videos, :speaker, :guest
