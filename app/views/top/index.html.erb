@@ -1,14 +1,14 @@
 <h1 id="h1-top-header"><%= t :app_name %></h1>
 <div id="top-button-container">
-  <%=link_to devotions_path, class: "top_nav" do %>
+  <%=link_to summary_devotions_path, class: "top_nav" do %>
     <%= image_tag('book.png') %>
     <div><%= "#{t :top_devotions}" %></div>
   <% end %>
-  <%=link_to audios_path, class: "top_nav" do %>
+  <%=link_to summary_audios_path, class: "top_nav" do %>
     <%= image_tag('headphones.png') %>
     <div><%= "#{t :top_audios}" %></div>
   <% end %>
-  <%=link_to videos_path, class: "top_nav" do %>
+  <%=link_to summary_videos_path, class: "top_nav" do %>
     <%= image_tag('monitor.png') %>
     <div><%= "#{t :top_videos}" %></div>
   <% end %>
