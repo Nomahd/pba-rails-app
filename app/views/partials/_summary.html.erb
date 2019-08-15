@@ -1,0 +1,15 @@
+<div id="summary-area">
+
+  <div class="summary-div">
+    <h4><%= "#{t :summary_total}" %></h4>
+    <%= locals[:summary][0] %>
+  </div>
+
+  <div class="summary-div">
+    <h4><%= "#{t :summary_next}" %></h4>
+    <% unless locals[:summary][1].nil? %>
+    <%= link_to locals[:summary][1].title, locals[:summary][1] %>
+    <% end %>
+  </div>
+</div>
+

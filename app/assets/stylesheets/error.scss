@@ -3,19 +3,15 @@
 }
 
 .bulk-error-table {
-
-  width: 300px;
+  width: 90%;
 
   th {
     background-color: red;
     color: white;
   }
-  td {
-    width: 100px;
-  }
 
-  td:hover {
-    background-color: #ddd
+  td {
+    text-align: center;
   }
 }
 
@@ -33,12 +29,12 @@
 }
 
 #error_explanation {
-  width: 100%;
+  width: 95%;
   border: 2px solid red;
-  padding: 7px 7px 0;
+  padding: 7px 6px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
-  border-radius: 5px;
+  border-radius: 1px;
   h2 {
     text-align: left;
     font-weight: bold;

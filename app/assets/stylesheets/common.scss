@@ -1,5 +1,4 @@
-
-button {
+button, input[type='submit'] {
   border: none;
   background-color: steelblue;
   border-radius: 5px;
@@ -15,18 +14,6 @@ button {
       background-color: #579bdc;
     }
   }
-}
-
-#error_explanation {
-  border: 1px solid red;
-  padding: 5px;
-  color: red;
-}
-
-.nothing {
-  margin: 0;
-  padding: 0;
-  color: purple;
 }
 
 textarea  {
@@ -118,3 +105,15 @@ a:not(.top_nav) {
   }
 
 }
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  td, th {
+    padding: 5px;
+  }
+
+}
+
+

@@ -1,20 +1,77 @@
 #index-table {
+  table-layout: fixed;
   width: 95%;
   text-align: left;
+
+  th, td {
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  td:not(.no-expand):hover {
+    background-color: steelblue;
+    color: white;
+    word-break: break-all;
+    white-space: unset;
+    overflow: unset;
+  }
 }
 
-#cell-id {
-  width: 10%;
+.cell-shrink {
+  white-space: nowrap;
+  width: 1px;
 }
 
-#cell-title {
-  width: 20%;
-}
+.table-small-font {
+  * {
+    font-size: 11px;
+  }
 
-.cell-release-date {
-  white-space:nowrap;
-  width: 1%;
+}
+tr:nth-child(odd):not(#index-header-row) {
+  background-color: #DADADA;
 }
 td {
+    text-align: left;
+}
+
+#index-toolbar {
+  display: flex;
+  flex-flow: row wrap;
+  width: 95%;
+  margin: auto;
   text-align: left;
+  * {
+    margin-bottom: 3px;
+  }
+
+  input[type='submit'] {
+    margin-left: 20px;
+  }
+  input:not([type="submit"]) {
+    width: 200px;
+  }
+
+  select:not([id*="search_date"]) {
+    min-width: 120px;
+    max-width: 120px;
+  }
+
+  div {
+    margin-bottom: 5px;
+  }
+
+  label {
+    margin-left: 20px;
+  }
+}
+
+#delete-button-div {
+  width: 95%;
+  margin: 10px auto 0;
+  #delete-selected {
+    float: right;
+  }
 }

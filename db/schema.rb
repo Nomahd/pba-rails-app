@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_022912) do
+ActiveRecord::Schema.define(version: 2019_08_15_080013) do
 
   create_table "audios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "program_num"
     t.string "title"
-    t.date "date"
+    t.date "broadcast_date"
+    t.string "program_name"
     t.text "description"
-    t.string "speaker"
-    t.string "passage"
+    t.string "messenger"
+    t.string "bible_book"
+    t.text "bible_chapter_verse"
     t.string "filename"
     t.date "original_air"
-    t.integer "program_num"
+    t.boolean "for_sale", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_07_17_022912) do
   create_table "devotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "pba_id"
     t.string "title"
-    t.date "release_date"
+    t.date "broadcast_date"
     t.text "body"
     t.string "messenger"
     t.string "bible_book"
@@ -52,9 +55,12 @@ ActiveRecord::Schema.define(version: 2019_07_17_022912) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messengers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "people", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.index ["name"], name: "index_messengers_on_name", unique: true
+    t.string "context"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,9 +71,15 @@ ActiveRecord::Schema.define(version: 2019_07_17_022912) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tag_meta", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "programs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "context"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_meta", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,15 +111,19 @@ ActiveRecord::Schema.define(version: 2019_07_17_022912) do
   end
 
   create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "program_num"
     t.string "title"
-    t.date "date"
+    t.date "broadcast_date"
+    t.string "program_name"
     t.text "description"
-    t.string "speaker"
-    t.string "passage"
+    t.string "guest"
+    t.string "messenger"
+    t.string "bible_book"
+    t.text "bible_chapter_verse"
     t.string "link"
     t.string "filename"
     t.date "original_air"
-    t.integer "program_num"
+    t.boolean "for_sale", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

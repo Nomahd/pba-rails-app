@@ -1,0 +1,100 @@
+<%= form_tag :search_videos, method: :get do %>
+  <div id="index-toolbar">
+    <span>
+      <%= label nil, :search_program_num, "#{t :'activerecord.attributes.video.program_num'}"%>
+      <%= text_field nil, :search_program_num, :value => params[:search_program_num] %>
+    </span>
+
+    <span>
+      <%= label nil, :search_title, "#{t :'activerecord.attributes.video.title'}" %>
+      <%= text_field nil, :search_title, :value => params[:search_title] %>
+    </span>
+
+    <span>
+      <%= label nil, :search_date_start, "#{t :index_search_start_date}" %>
+      <%= date_select nil, :search_date_start, { include_blank: true,
+                                                 selected: if params["search_date_start(1i)"].blank?
+                                                             nil
+                                                           else
+                                                             Date.parse("%04d" % params["search_date_start(1i)"].to_s +
+                                                                            "%02d" % params["search_date_start(2i)"].to_s +
+                                                                            "%02d" % params["search_date_start(3i)"].to_s)
+                                                           end } %>
+    </span>
+
+    <span>
+      <%= label nil, :search_date_end, "#{t :index_search_end_date}" %>
+      <%= date_select nil, :search_date_end, { include_blank: true,
+                                               selected: if params["search_date_end(1i)"].blank?
+                                                           nil
+                                                         else
+                                                           Date.parse("%04d" % params["search_date_end(1i)"].to_s +
+                                                                          "%02d" % params["search_date_end(2i)"].to_s +
+                                                                          "%02d" % params["search_date_end(3i)"].to_s)
+                                                         end }%>
+    </span>
+
+    <span>
+      <%= label nil, :search_program_name, "#{t 'activerecord.attributes.video.program_name'}" %>
+      <%= select nil, :search_program_name, Program.where(context: :video).collect { |p| [p.name, p.name] },
+                 {include_blank: true, selected: params[:search_program_name]} %>
+    </span>
+
+    <span>
+      <%= label nil, :search_guest, "#{t :'activerecord.attributes.video.guest'}"  %>
+      <%= select nil, :search_guest, Person.where(category: :guest, context: :video).collect { |p| [p.name, p.name ] }, {include_blank: true,
+                                                                                        selected: params[:search_guest]} %>
+    </span>
+
+    <span>
+      <%= label nil, :search_messenger, "#{t :'activerecord.attributes.video.messenger'}" %>
+      <%= select nil, :search_messenger, Person.where(category: :messenger, context: :video).collect { |p| [p.name, p.name ] }, {include_blank: true, selected: params[:search_messenger]} %>
+    </span>
+
+    <span>
+      <%= label nil, :search_bible_book, "#{t :'activerecord.attributes.video.bible_book'}" %>
+      <% if params[:locale] == "ja" %>
+        <%= select nil, :search_bible_book, BibleBook.all.collect { |p| [ p.book_ja, p.book_ja ] }, {include_blank: true,
+                                                                                                     selected: params[:search_bible_book]} %>
+      <% else %>
+        <%= select nil, :search_bible_book, BibleBook.all.collect { |p| [ p.book_en, p.book_en ] }, {include_blank: true, selected: params[:search_bible_book]} %>
+      <% end %>
+    </span>
+
+    <span>
+      <%= label nil, :search_link, "#{t :'activerecord.attributes.video.link'}"%>
+      <%= text_field nil, :search_link, :value => params[:search_link] %>
+    </span>
+
+    <span>
+      <%= label nil, :search_filename, "#{t :'activerecord.attributes.video.filename'}"%>
+      <%= text_field nil, :search_filename, :value => params[:search_filename] %>
+    </span>
+
+    <span>
+      <%= label nil, :search_genre_tag, "#{t :tag_genre}" %>
+      <%= select nil, :search_genre_tag, TagMeta.where(category: :genre).collect { |p| [p.name, p.name] },
+                 {include_blank: true, selected: params[:search_genre_tag]} %>
+    </span>
+
+    <span>
+      <%= label nil, :search_theme_tag, "#{t :tag_theme}" %>
+      <%= select nil, :search_theme_tag, TagMeta.where(category: :theme).collect { |p| [p.name, p.name] },
+                 {include_blank: true, selected: params[:search_theme_tag]} %>
+    </span>
+
+    <span>
+      <%= label nil, :search_special_tag,"#{t :tag_special}" %>
+      <%= select nil, :search_special_tag, TagMeta.where(category: :special).collect { |p| [p.name, p.name] },
+                 {include_blank: true, selected: params[:search_special_tag]} %>
+    </span>
+
+    <%= submit_tag "#{t :index_search}" %>
+  </div>
+<% end %>
+
+<div id="delete-button-div">
+  <% unless @video.first.nil? %>
+    <%= submit_tag "#{t :general_delete_selected}", form: "delete-selected-form", id: 'delete-selected', disabled: true, data: {confirm: "#{t :general_delete_confirm}"} %>
+  <% end %>
+</div>

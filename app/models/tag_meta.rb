@@ -1,11 +1,9 @@
 class TagMeta < ApplicationRecord
   validates :name,
             presence: true,
-            uniqueness: { scope: :context },
-            length: {maximum: 255}
-
-
-  def self.get(context, category)
-    TagMeta.where(context: context, category: category)
-  end
+            uniqueness: { scope: :category },
+            length: { maximum: 255 }
+  validates :category,
+            presence: true,
+            length: { maximum: 255 }
 end

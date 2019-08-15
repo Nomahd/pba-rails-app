@@ -1,4 +1,4 @@
-#bulk-h2 {
+.bulk-or {
   margin: 30px auto;
 }
 
@@ -7,7 +7,7 @@
   height: 50px;
   width: 150px;
 }
-#drag-drop {
+.drag-drop {
   margin: auto;
   height: 250px;
   width: 250px;
@@ -22,3 +22,11 @@
   }
 }
 
+#bulk-area {
+  margin: auto;
+  display: flex;
+}
+
+.bulk-div {
+  width: 50%;
+}

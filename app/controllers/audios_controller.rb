@@ -1,7 +1,16 @@
 class AudiosController < ApplicationController
 
+  def summary
+    @summary = Audio.summary
+  end
+
   def index
-    @audio = Audio.all
+    @audio = Audio.order('broadcast_date DESC, program_num, title').page params[:page]
+  end
+
+  def search
+    @audio = Audio.search(params).page params[:page]
+    render 'index'
   end
 
   def create
@@ -19,6 +28,26 @@ class AudiosController < ApplicationController
 
   def new
     @audio = Audio.new
+  end
+
+  def bulk_submit
+    @result = Audio.bulk(params[:bulk_csv].path, params[:bulk_zip].path)
+
+    if @result == false
+      render 'bulk/bulk-fail-unequal'
+    elsif @result[1].length > 0
+      render 'bulk/bulk-fail'
+    else
+      if Audio.zip_check(params[:bulk_csv].path, params[:bulk_zip].path)
+        Audio.zip_upload(params[:bulk_zip].path)
+        @result[0].each do |instance|
+          instance.save
+        end
+        render 'bulk/bulk-success'
+      else
+        render 'bulk/bulk-fail-mismatch'
+      end
+    end
   end
 
   def edit
@@ -41,8 +70,13 @@ class AudiosController < ApplicationController
     redirect_to audios_path
   end
 
+  def destroy_selected
+    Audio.destroy(params[:selected])
+    redirect_to audios_path
+  end
+
   private
   def audio_params
-    params.require(:audio).permit(:title, :date, :description, :speaker, :passage, :audio_file, :filename, :original_air, :program_num)
+    params.require(:audio).permit(:program_num, :title, :broadcast_date, :program_name, :description, :messenger,  :bible_book, :bible_chapter_verse, :filename, :original_air, :for_sale, :audio_file)
   end
 end

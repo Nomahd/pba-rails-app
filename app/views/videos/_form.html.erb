@@ -1,12 +1,14 @@
 <div id="form-area">
   <%= render 'partials/error', locals: { model: @video } %>
-  <%= form_with scope: :messenger, url: messengers_path, remote: true, id: 'messenger-form', html: { autocomplete: 'off' } do %><% end %>
-  <%= form_with model: @video, local: true, id: 'main-form', html: { autocomplete: 'off' } do |form| %>
+  <%= form_with url: programs_path, remote: true, id: 'form-program' do %><% end %>
+  <%= form_with url: people_path, remote: true, id: 'form-messenger' do %><% end %>
+  <%= form_with url: people_path, remote: true, id: 'form-guest' do %><% end %>
+  <%= form_with model: @video, local: true, id: 'form-main', html: { autocomplete: 'off' } do |form| %>
 
-    <!--    PBA ID row-->
+    <!--    Program Number row-->
     <div class="form-row">
-      <%= form.label :pba_id %>
-      <%= form.text_field :pba_id %>
+      <%= form.label :program_num %>
+      <%= form.text_field :program_num %>
     </div>
 
     <!--    Title row-->
@@ -15,16 +17,48 @@
       <%= form.text_field :title %>
     </div>
 
-    <!--    Release date row-->
+    <!--    Broadcast Date row-->
     <div class="form-row">
-      <%= form.label :release_date, "#{t :'activerecord.attributes.video.release_date'}" %>
-      <%= date_select :video, :release_date%>
+      <%= form.label :broadcast_date, "#{t :'activerecord.attributes.video.broadcast_date'}" %>
+      <%= date_select :video, :broadcast_date%>
     </div>
 
-    <!--    Body row-->
+    <!--    Program row-->
+    <div class="form-float">
+      <%= form.label :program_name, "#{t :'activerecord.attributes.video.program_name'}", class: "inline-label" %>
+      <div>
+        <%= form.select :program_name, Program.where(context: :video).collect {|p| [p.name ]}, { include_blank: true }, id: 'video_program' %>
+      </div>
+    </div>
+    <div class="form-float form-new-row">
+      <div id="program-dropdown-status" class="dropdown-hidden">
+        <%= "#{t :program_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_program_add}", type: 'button', id: 'btn-dropdown-program', class: 'btn-create'%>
+      <div id="program-dropdown-new" style="display: none">
+        <%= text_field :program, :name, { form: 'form-program'} %>
+        <%= hidden_field :program, :context, {form: 'form-program', value: :video} %>
+        <%= submit_tag "#{t :form_program_create}", { class: 'submit-ajax', form: 'form-program'} %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <!--    Description row-->
     <div class="form-row">
-      <%= form.label :body, :class => 'required' %>
-      <%= form.text_area :body %>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <!--    Link row-->
+    <div class="form-row">
+      <%= form.label :link, :class => 'required' %>
+      <%= form.text_field :link %>
+    </div>
+
+    <!--    Filename row-->
+    <div class="form-row">
+      <%= form.label :filename %>
+      <%= form.text_field :filename %>
     </div>
 
     <!--    Bible Passage row-->
@@ -38,95 +72,65 @@
       <%= form.text_field :bible_chapter_verse %>
     </div>
 
+    <!--    Guest row-->
+    <div class="form-float">
+      <%= form.label :guest, :class => "inline-label" %>
+      <div>
+        <%= form.select :guest, Person.where(context: :video, category: :guest).order(:name).collect {|p| [p.name ]}, { include_blank: true } %>
+      </div>
+    </div>
+    <div class="form-float form-new-row">
+      <div id="guest-dropdown-status" class="dropdown-hidden">
+        <%= "#{t :dropdown_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_guest_add}", type: 'button', id: 'btn-dropdown-guest', class: 'btn-create'%>
+      <div id="guest-dropdown-new" style="display: none">
+        <%= text_field :person, :name, { form: 'form-guest'} %>
+        <%= hidden_field :person, :context, {form: 'form-guest', value: :video} %>
+        <%= hidden_field :person, :category, { form: 'form-guest', value: :guest} %>
+        <%= submit_tag "#{t :form_guest_create}", { class: 'submit-ajax', form: 'form-guest'} %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+
     <!--    Messenger row-->
     <div class="form-float">
       <%= form.label :messenger, :class => "inline-label" %>
       <div>
-        <%= form.select :messenger, Messenger.all.collect {|p| [ p.name ]}, { include_blank: true } %>
+        <%= form.select :messenger, Person.where(context: :video, category: :messenger).order(:name).collect {|p| [p.name ]}, {include_blank: true } %>
       </div>
     </div>
-    <div class="form-float new-row">
-      <div id="messenger-status" class="status">
-        <%= "#{t :messenger_enter}" %>
+    <div class="form-float form-new-row">
+      <div id="messenger-dropdown-status" class="dropdown-hidden">
+        <%= "#{t :dropdown_enter}" %>
       </div>
-      <%= button_tag "#{t :form_messenger_add}", type: 'button', id: 'btn-new-messenger', class: 'btn-create'%>
-      <div id="new-messenger" style="display: none">
-        <input type="text" name="messenger[name]" id="messenger_name" form="messenger-form"/>
-        <input type="submit" class="submit-ajax" name="commit" value="<%= "#{t :form_messenger_create}" %>" form="messenger-form"/>
+      <%= button_tag "#{t :form_messenger_add}", type: 'button', id: 'btn-dropdown-messenger', class: 'btn-create'%>
+      <div id="messenger-dropdown-new" style="display: none">
+        <%= text_field :person, :name, { form: 'form-messenger'} %>
+        <%= hidden_field :person, :context, {form: 'form-messenger', value: :video} %>
+        <%= hidden_field :person, :category, { form: 'form-messenger', value: :messenger} %>
+        <%= submit_tag "#{t :form_messenger_create}", { class: 'submit-ajax', form: 'form-messenger'} %>
       </div>
     </div>
     <div style="clear:both;"></div>
 
-    <!--    Genre Tag row-->
-    <div class="form-float">
-      <%= form.label 'genre_tag', "#{t 'activerecord.attributes.video.genre_tags'}", :class => "inline-label" %>
-      <div>
-        <%= select_tag 'genre_tags', options_from_collection_for_select(TagMeta.get('video', 'genre'), 'name', 'name'), {include_blank: true}  %>
-        <%= button_tag "+", type: 'button', id: 'btn-add-genre', class: 'btn-add' %>
-      </div>
-    </div>
-    <div class="form-float new-row" id="new-genre-row">
-      <div id="genre-status" class="status">
-        <%= "#{t :form_tag_enter}" %>
-      </div>
-      <%= button_tag "#{t :form_genre_create}", type: 'button', id: 'btn-new-genre', class: 'btn-create' %>
-      <div id="new-genre" style="display: none">
-        <input type="text" name="new_genre" id="new-genre-field"/>
-        <%= button_tag "+", type: 'button', id: 'btn-create-genre', class: 'btn-add' %>
-      </div>
-    </div>
-    <div style="clear:both;"></div>
-    <%= render 'partials/tags-list', locals: {tag_list: @video.genre_list, type: 'genre'} %>
-    <%= form.text_field :genre_list, value: form.object.genre_list.join(","), style: "visibility:hidden" %>
-    <div style="clear:both;"></div>
+    <%= render 'partials/tag_form', locals: { form: form, model: @video} %>
 
-    <!--    Theme Tag row-->
-    <div class="form-float">
-      <%= form.label "theme_tag","#{t 'activerecord.attributes.video.theme_tags'}", :class => "inline-label" %>
-      <div>
-        <%= select_tag 'theme_tags', options_from_collection_for_select(TagMeta.get('video', 'theme'), 'name', 'name'), {include_blank: true}  %>
-        <%= button_tag "+", type: 'button', id: 'btn-add-theme', class: 'btn-add' %>
-      </div>
+    <!--    Original Broadcast row-->
+    <div class="form-row">
+      <%= form.label :original_air, "#{t :'activerecord.attributes.video.original_air'}" %>
+      <%= date_select :video, :original_air, { include_blank: true } %>
     </div>
-    <div class="form-float new-row" id="new-theme-row">
-      <div id="theme-status" class="status">
-        <%= "#{t :form_tag_enter}" %>
-      </div>
-      <%= button_tag "#{t :form_theme_create}", type: 'button', id: 'btn-new-theme', class: 'btn-create' %>
-      <div id="new-theme" style="display: none">
-        <input type="text" name="new_theme" id="new-theme-field"/>
-        <%= button_tag "+", type: 'button', id: 'btn-create-theme', class: 'btn-add' %>
-      </div>
+    <!--    For Sale row-->
+    <div class="form-row">
+      <%= form.label :for_sale %>
+      <%= form.check_box :for_sale %>
     </div>
-    <div style="clear:both;"></div>
-    <%= render 'partials/tags-list', locals: {tag_list: @video.theme_list, type: 'theme'} %>
-    <%= form.text_field :theme_list, value: form.object.theme_list.join(","), style: "visibility:hidden" %>
-    <div style="clear:both;"></div>
-    <!--    Special Tag row-->
-    <div class="form-float">
-      <%= form.label "special_tag","#{t 'activerecord.attributes.video.special_tags'}", :class => "inline-label" %>
-      <div>
-        <%= select_tag 'special_tags', options_from_collection_for_select(TagMeta.get('video', 'special'), 'name', 'name'), {include_blank: true}  %>
-        <%= button_tag "+", type: 'button', id: 'btn-add-special', class: 'btn-add' %>
-      </div>
-    </div>
-    <div class="form-float new-row" id="new-special-row">
-      <div id="special-status" class="status">
-        <%= "#{t :form_tag_enter}" %>
-      </div>
-      <%= button_tag "#{t :form_special_create}", type: 'button', id: 'btn-new-special', class: 'btn-create' %>
-      <div id="new-special" style="display: none">
-        <input type="text" name="new_special" id="new-special-field"/>
-        <%= button_tag "+", type: 'button', id: 'btn-create-special', class: 'btn-add' %>
-      </div>
-    </div>
-    <div style="clear:both;"></div>
-    <%= render 'partials/tags-list', locals: {tag_list: @video.special_list, type: 'special'} %>
-    <%= form.text_field :special_list, value: form.object.special_list.join(","), style: "visibility:hidden" %>
-    <div style="clear:both;"></div>
 
-    <%= form.submit :id => "submit-form"%>
+      <%= form.submit id: "submit-form"%>
     </div>
+
   <% end %>
-  </div>
+</div>
+
 

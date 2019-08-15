@@ -1,35 +1,48 @@
 <h1><%= t :videos_list %></h1>
-<%=link_to "#{t :videos_new}", action: :new, controller: 'videos' %>
 
-<table>
-  <% if @video.first.nil? %>
-    <tr>
-      <th><%= t :none %></th>
-    </tr>
-  <% else %>
-    <tr>
-      <th><%= t :'activerecord.attributes.video.title' %></th>
-      <th><%= t :'activerecord.attributes.video.date' %></th>
-      <th><%= t :'activerecord.attributes.video.speaker' %></th>
-      <th><%= t :'activerecord.attributes.video.passage' %></th>
-      <th><%= t :'activerecord.attributes.video.original_air' %></th>
-      <th><%= t :'activerecord.attributes.video.program_num' %></th>
+<%= render 'search' %>
+
+<%= form_with url: :destroy_selected_videos, id: 'delete-selected-form', local: true do %>
+
+<table id="index-table" class="table-small-font">
+  <% unless @video.first.nil? %>
+    <tr id="index-header-row">
+      <th style="width:9%"><%= t :'activerecord.attributes.video.program_num' %></th>
+      <th style="width:12%"><%= t :'activerecord.attributes.video.title' %></th>
+      <th style="width:120px"><%= t :'activerecord.attributes.video.broadcast_date' %></th>
+      <th style="width:13%"><%= t :'activerecord.attributes.video.program_name' %></th>
+      <th style="width:11%"><%= t :'activerecord.attributes.video.guest' %></th>
+      <th style="width:11%"><%= t :'activerecord.attributes.video.messenger' %></th>
+      <th style="width:10%"><%= t :bible_passage %></th>
+      <th style="width:13%"><%=  t :tag_genre  %></th>
+      <th style="width:13%"><%=  t :tag_theme  %></th>
+      <th style="width:13%"><%=  t :tag_special  %></th>
+      <th style="width:6%"><%= t :'activerecord.attributes.video.for_sale' %></th>
+      <th style="width:70px" colspan="3"><%=  t :table_action  %></th>
+      <th style="width:20px"><%=  check_box_tag 'select_all'  %></th>
+
     </tr>
     <% @video.each do |video| %>
       <tr>
-        <td><%= video.title %></td>
-        <td><%= video.date %></td>
-        <td><%= video.speaker %></td>
-        <td><%= video.passage %></td>
-        <td><%= video.original_air %></td>
         <td><%= video.program_num %></td>
-        <td><%= link_to "#{t :table_view}", video_path(video) %></td>
-        <td><%= link_to "#{t :table_edit}", edit_video_path(video) %></td>
-        <td><%= link_to "#{t :table_delete}", video_path(video),
-                        method: :delete,
-                        data: { confirm:  "#{t :table_confirm}" } %></td>
+        <td><%= video.title %></td>
+        <td><%= video.broadcast_date %></td>
+        <td><%= video.program_name %></td>
+        <td><%= video.guest %></td>
+        <td><%= video.messenger %></td>
+        <td><%= video.bible_book %> <%= video.bible_chapter_verse %></td>
+        <td><%= video.genre_list %></td>
+        <td><%= video.theme_list%></td>
+        <td><%= video.special_list%></td>
+        <td><%= video.for_sale ? "\u25ef" : "\u2715" %></td>
+        <td class="no-expand"><%=  link_to image_tag('magnifying-glass.png', title: "#{t :table_view}"), video_path(video)  %></td>
+        <td class="no-expand"><%=  link_to image_tag('edit.png', title: "#{t :table_edit}"), edit_video_path(video)  %></td>
+        <td class="no-expand"><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), video_path(video), method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
+        <td class="no-expand"><%= check_box_tag('selected[]', video.id) %></td>
       </tr>
     <% end %>
   <% end %>
+<% end %>
 </table>
-<%=link_to "#{t :back}", controller:'top' %>
+<%= paginate @video, window: 4 %>
+<%= page_entries_info @video, entry_name: "#{t :'activerecord.attributes.video.video'}"%>

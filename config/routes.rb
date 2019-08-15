@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'genres/create'
-  get 'genre/create'
   get '/:locale' => 'top#index'
   root 'top#index'
 
   scope '/:locale' do
     resources :images, :devotions, :audios, :videos do
       collection do
-        get :bulk
+        get :bulk, :search, :summary
         post :bulk, action: :bulk_submit
-        post :add_tag
+        post :destroy_selected
       end
     end
 
-    resources :messengers, :genres
+    resources :people, :programs
     resources :photos
 
     if Rails.env.development?

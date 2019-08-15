@@ -1,0 +1,34 @@
+<% if locals[:model].has_attribute?(:category) %>
+  var category = '<%= locals[:model].category %>'
+<% else %>
+  var category = '<%= locals[:model].class.name.downcase! %>'
+<% end %>
+
+var context = '<%= j locals[:model].context %>'
+var successDiv = document.querySelector('#' + category + '-dropdown-success')
+var failDiv = document.querySelector('#' + category + '-dropdown-fail')
+
+if (successDiv)
+    successDiv.remove()
+if (failDiv)
+    failDiv.remove()
+
+<% if !locals[:model].errors.any? %>
+var option = document.createElement('option')
+option.text = '<%= locals[:model].name %>'
+option.value = '<%= locals[:model].name %>'
+document.querySelector('#' + context + '_' + category).appendChild(option)
+document.querySelector('#' + category + '-dropdown-status').innerHTML =  '<div id="' + category + '-dropdown-success"><b>' + I18n.t('dropdown_success') + '</b></div>'
+<% else %>
+switch(JSON.parse('<%= j raw locals[:model].errors.as_json.to_json %>').name.toString()) {
+    case I18n.t('errors.messages.blank'):
+        document.querySelector('#' + category + '-dropdown-status').innerHTML = '<div id="' + category + '-dropdown-fail"><b>' + I18n.t('dropdown_fail_blank') + '</b></div>'
+        break
+    case I18n.t('errors.messages.taken'):
+        document.querySelector('#' + category + '-dropdown-status').innerHTML = '<div id="' + category + '-dropdown-fail"><b>' + I18n.t('dropdown_fail_exists') + '</b></div>'
+        break;
+    default:
+        document.querySelector('#' + category + '-dropdown').innerHTML = '<div id="' + category + '-dropdown-fail"><b>' + I18n.t('dropdown_fail') + '</b></div>'
+
+}
+<% end %>

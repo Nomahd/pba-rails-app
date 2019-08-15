@@ -1,34 +1,107 @@
-<div id="main-content">
-  <%=form_with model: @audio, local: true do |form| %>
+<div id="form-area">
+  <%= render 'partials/error', locals: { model: @audio } %>
+  <%= form_with url: programs_path, remote: true, id: 'form-program' do %><% end %>
+  <%= form_with url: people_path, remote: true, id: 'form-messenger' do %><% end %>
+  <%= form_with url: people_path, remote: true, id: 'form-guest' do %><% end %>
+  <%= form_with model: @audio, local: true, id: 'form-main', html: { autocomplete: 'off' } do |form| %>
 
-    <%= render 'partials/error', locals: { model: @audio } %>
+    <!--    Program Number row-->
+    <div class="form-row">
+      <%= form.label :program_num %>
+      <%= form.text_field :program_num %>
+    </div>
 
-
-      <%= form.label :title, :class => "required" %><br>
+    <!--    Title row-->
+    <div class="form-row">
+      <%= form.label :title, :class => 'required' %>
       <%= form.text_field :title %>
+    </div>
 
-      <%= form.label :date %><br>
-      <%= date_select :audio, :date%><br>
+    <!--    Broadcast Date row-->
+    <div class="form-row">
+      <%= form.label :broadcast_date, "#{t :'activerecord.attributes.audio.broadcast_date'}" %>
+      <%= date_select :audio, :broadcast_date%>
+    </div>
 
-      <%= form.label :description, :class => "required" %><br>
+    <!--    Program row-->
+    <div class="form-float">
+      <%= form.label :program_name, "#{t :'activerecord.attributes.audio.program_name'}", class: "inline-label" %>
+      <div>
+        <%= form.select :program_name, Program.where(context: :audio).collect {|p| [p.name ]}, { include_blank: true }, id: 'audio_program' %>
+      </div>
+    </div>
+    <div class="form-float form-new-row">
+      <div id="program-dropdown-status" class="dropdown-hidden">
+        <%= "#{t :program_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_program_add}", type: 'button', id: 'btn-dropdown-program', class: 'btn-create'%>
+      <div id="program-dropdown-new" style="display: none">
+        <%= text_field :program, :name, { form: 'form-program'} %>
+        <%= hidden_field :program, :context, {form: 'form-program', value: :audio} %>
+        <%= submit_tag "#{t :form_program_create}", { class: 'submit-ajax', form: 'form-program'} %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <!--    Description row-->
+    <div class="form-row">
+      <%= form.label :description %>
       <%= form.text_area :description %>
+    </div>
 
+    <!--    Filename row-->
+    <div class="form-row">
       <%= form.label :audio_file, :class => "required" %><br>
       <%= form.file_field :audio_file %>
+    </div>
 
-      <%= form.label :passage %><br>
-      <%= form.text_field :passage %>
+    <!--    Bible Passage row-->
+    <div class="form-row">
+      <%= form.label :bible_book, "#{t :form_bible_passage}" %>
+      <% if params[:locale] == "ja" %>
+        <%= form.select :bible_book, BibleBook.all.collect {|p| [ p.book_ja ]}, { include_blank: true } %>
+      <% else %>
+        <%= form.select :bible_book, BibleBook.all.collect {|p| [ p.book_en ]}, { include_blank: true } %>
+      <% end %>
+      <%= form.text_field :bible_chapter_verse %>
+    </div>
 
-      <%= form.label :speaker %><br>
-      <%= form.text_field :speaker %>
+    <!--    Messenger row-->
+    <div class="form-float">
+      <%= form.label :messenger, :class => "inline-label" %>
+      <div>
+        <%= form.select :messenger, Person.where(context: :audio, category: :messenger).order(:name).collect {|p| [p.name ]}, {include_blank: true } %>
+      </div>
+    </div>
+    <div class="form-float form-new-row">
+      <div id="messenger-dropdown-status" class="dropdown-hidden">
+        <%= "#{t :dropdown_enter}" %>
+      </div>
+      <%= button_tag "#{t :form_messenger_add}", type: 'button', id: 'btn-dropdown-messenger', class: 'btn-create'%>
+      <div id="messenger-dropdown-new" style="display: none">
+        <%= text_field :person, :name, { form: 'form-messenger'} %>
+        <%= hidden_field :person, :context, {form: 'form-messenger', value: :audio} %>
+        <%= hidden_field :person, :category, { form: 'form-messenger', value: :messenger} %>
+        <%= submit_tag "#{t :form_messenger_create}", { class: 'submit-ajax', form: 'form-messenger'} %>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
 
-      <%= form.label :original_air %><br>
-      <%= date_select :audio, :original_air%>
+    <%= render 'partials/tag_form', locals: { form: form, model: @audio} %>
 
-      <%= form.label :program_num %><br>
-      <%= form.text_field :program_num %>
+    <!--    Original Broadcast row-->
+    <div class="form-row">
+      <%= form.label :original_air, "#{t :'activerecord.attributes.audio.original_air'}" %>
+      <%= date_select :audio, :original_air, { include_blank: true } %>
+    </div>
+    <!--    For Sale row-->
+    <div class="form-row">
+      <%= form.label :for_sale %>
+      <%= form.check_box :for_sale %>
+    </div>
 
-      <%= form.submit %>
+    <%= form.submit id: "submit-form"%>
+    </div>
 
   <% end %>
 </div>

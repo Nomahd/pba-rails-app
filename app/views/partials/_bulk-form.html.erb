@@ -1,11 +1,11 @@
-<%= form_tag(locals[:bulk_path], multipart: true, method: :post) do %>
-  <%= file_field_tag "bulk_csv", id: 'file-field', accept: '.csv'  %>
+<%= form_with url: locals[:bulk_path], multipart: true, local: true, method: :post do %>
+  <%= file_field_tag "bulk_csv", class: 'file-field', accept: '.csv'  %>
 
-  <h2 id="bulk-h2">-- <%= "#{t :or}"%> --</h2>
+  <h2 class="bulk-or">-- <%= "#{t :or}"%> --</h2>
 
-  <div id="drag-drop">
-    <%= image_tag('files.png', id: 'drag-drop-img') %>
-    <p><%= "#{t :bulk_drag_drop}" %></p>
+  <div id="drag-drop-csv" class="drag-drop">
+    <%= image_tag('files.png', class: 'img') %>
+    <p><%= "#{t :bulk_drag_drop_csv}" %></p>
   </div>
 
   <%= button_tag "#{t :submit}", type: 'submit', id: 'submit-button', disabled: true %>

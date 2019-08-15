@@ -1,34 +1,46 @@
-<div id='main-content'>
-  <h1 id='main-content-h1'><%= t :audios_list %></h1>
-  <table>
-    <% if @audio.first.nil? %>
-      <tr>
-        <th><%= t :none %></th>
-      </tr>
-    <% else %>
-      <tr>
-        <th><%= t :'activerecord.attributes.audio.title' %></th>
-        <th><%= t :'activerecord.attributes.audio.date' %></th>
-        <th><%= t :'activerecord.attributes.audio.speaker' %></th>
-        <th><%= t :'activerecord.attributes.audio.passage' %></th>
-        <th><%= t :'activerecord.attributes.audio.original_air' %></th>
-        <th><%= t :'activerecord.attributes.audio.program_num' %></th>
+<h1><%= t :audios_list %></h1>
+
+<%= render 'search' %>
+
+<%= form_with url: :destroy_selected_audios, id: 'delete-selected-form', local: true do %>
+
+  <table id="index-table" class="table-small-font">
+    <% unless @audio.first.nil? %>
+      <tr id="index-header-row">
+        <th style="width:9%"><%= t :'activerecord.attributes.audio.program_num' %></th>
+        <th style="width:12%"><%= t :'activerecord.attributes.audio.title' %></th>
+        <th style="width:120px"><%= t :'activerecord.attributes.audio.broadcast_date' %></th>
+        <th style="width:13%"><%= t :'activerecord.attributes.audio.program_name' %></th>
+        <th style="width:11%"><%= t :'activerecord.attributes.audio.messenger' %></th>
+        <th style="width:10%"><%= t :bible_passage %></th>
+        <th style="width:13%"><%=  t :tag_genre  %></th>
+        <th style="width:13%"><%=  t :tag_theme  %></th>
+        <th style="width:13%"><%=  t :tag_special  %></th>
+        <th style="width:6%"><%= t :'activerecord.attributes.audio.for_sale' %></th>
+        <th style="width:70px" colspan="3"><%=  t :table_action  %></th>
+        <th style="width:20px"><%=  check_box_tag 'select_all'  %></th>
+
       </tr>
       <% @audio.each do |audio| %>
         <tr>
-          <td><%= audio.title %></td>
-          <td><%= audio.date %></td>
-          <td><%= audio.speaker %></td>
-          <td><%= audio.passage %></td>
-          <td><%= audio.original_air %></td>
           <td><%= audio.program_num %></td>
-          <td><%= link_to "#{t :table_view}", audio_path(audio) %></td>
-          <td><%= link_to "#{t :table_edit}", edit_audio_path(audio) %></td>
-          <td><%= link_to "#{t :table_delete}", audio_path(audio),
-                          method: :delete,
-                          data: { confirm: "#{t :table_confirm}" } %></td>
+          <td><%= audio.title %></td>
+          <td><%= audio.broadcast_date %></td>
+          <td><%= audio.program_name %></td>
+          <td><%= audio.messenger %></td>
+          <td><%= audio.bible_book %> <%= audio.bible_chapter_verse %></td>
+          <td><%= audio.genre_list %></td>
+          <td><%= audio.theme_list%></td>
+          <td><%= audio.special_list%></td>
+          <td><%= audio.for_sale ? "\u25ef" : "\u2715" %></td>
+          <td class="no-expand"><%=  link_to image_tag('magnifying-glass.png', title: "#{t :table_view}"), audio_path(audio)  %></td>
+          <td class="no-expand"><%=  link_to image_tag('edit.png', title: "#{t :table_edit}"), edit_audio_path(audio)  %></td>
+          <td class="no-expand"><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), audio_path(audio), method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
+          <td class="no-expand"><%= check_box_tag('selected[]', audio.id) %></td>
         </tr>
       <% end %>
     <% end %>
-  </table>
-</div>
+<% end %>
+</table>
+<%= paginate @audio, window: 4 %>
+<%= page_entries_info @audio, entry_name: "#{t :'activerecord.attributes.audio.audio'}"%>

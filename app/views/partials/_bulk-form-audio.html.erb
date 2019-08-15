@@ -1,0 +1,29 @@
+<%= form_with url: locals[:bulk_path], multipart: true, local: true, method: :post do %>
+<div id="bulk-area">
+
+  <div class="bulk-div">
+
+      <h3>CSV</h3>
+      <%= file_field_tag "bulk_csv", class: 'file-field', accept: '.csv'  %>
+
+      <h2 class="bulk-or">-- <%= "#{t :or}"%> --</h2>
+
+      <div class="drag-drop">
+        <%= image_tag('files.png', class: 'img') %>
+        <p><%= "#{t :bulk_drag_drop_csv}" %></p>
+      </div>
+  </div>
+  <div class="bulk-div">
+    <h3>ZIP</h3>
+    <%= file_field_tag "bulk_zip", class: 'file-field', accept: '.zip'  %>
+
+    <h2 class="bulk-or">-- <%= "#{t :or}"%> --</h2>
+
+    <div class="drag-drop">
+      <%= image_tag('files.png', class: 'img') %>
+      <p><%= "#{t :bulk_drag_drop_zip}" %></p>
+    </div>
+  </div>
+</div>
+  <%= button_tag "#{t :submit}", type: 'submit', id: 'submit-button', disabled: true %>
+<% end %>

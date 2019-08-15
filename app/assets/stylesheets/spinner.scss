@@ -1,0 +1,38 @@
+.lds-overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 100px;
+  left: 160px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.lds-dual-ring {
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  width: 256px;
+  height: 256px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 194px;
+  height: 194px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 15px solid #4682b4;
+  border-color: #4682b4 transparent #4682b4 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

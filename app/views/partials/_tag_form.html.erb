@@ -1,0 +1,68 @@
+<!--    Genre Tag row-->
+<div class="form-float">
+  <%= locals[:form].label 'genre_tag', "#{t :tag_genre}", :class => "inline-label" %>
+  <div>
+    <%= select_tag 'genre_tags', options_from_collection_for_select(TagMeta.where(category: 'genre').order(:name), 'name', 'name'), {include_blank: true}  %>
+    <%= button_tag "+", type: 'button', id: 'btn-add-genre', class: 'btn-add' %>
+  </div>
+</div>
+<div class="form-float form-new-row" id="new-genre-row">
+  <div id="genre-status" class="dropdown-hidden">
+    <%= "#{t :form_tag_enter}" %>
+  </div>
+  <%= button_tag "#{t :form_genre_create}", type: 'button', id: 'btn-new-genre', class: 'btn-create' %>
+  <div id="new-genre" style="display: none">
+    <input type="text" name="new_genre" id="new-genre-field"/>
+    <%= button_tag "#{t :create_tag}", type: 'button', id: 'btn-create-genre', class: 'btn-add' %>
+  </div>
+</div>
+<div style="clear:both;"></div>
+<%= render 'partials/tags-list', locals: {tag_list: locals[:model].genre_list, type: 'genre'} %>
+<%= locals[:form].text_field :genre_list, value: locals[:form].object.genre_list.join(","), style: "visibility:hidden" %>
+<div style="clear:both;"></div>
+
+<!--    Theme Tag row-->
+<div class="form-float">
+  <%= locals[:form].label "theme_tag", "#{t :tag_theme}", :class => "inline-label" %>
+  <div>
+    <%= select_tag 'theme_tags', options_from_collection_for_select(TagMeta.where(category: 'theme').order(:name), 'name', 'name'), {include_blank: true}  %>
+    <%= button_tag "+", type: 'button', id: 'btn-add-theme', class: 'btn-add' %>
+  </div>
+</div>
+<div class="form-float form-new-row" id="new-theme-row">
+  <div id="theme-status" class="dropdown-hidden">
+    <%= "#{t :form_tag_enter}" %>
+  </div>
+  <%= button_tag "#{t :form_theme_create}", type: 'button', id: 'btn-new-theme', class: 'btn-create' %>
+  <div id="new-theme" style="display: none">
+    <input type="text" name="new_theme" id="new-theme-field"/>
+    <%= button_tag "#{t :create_tag}", type: 'button', id: 'btn-create-theme', class: 'btn-add' %>
+  </div>
+</div>
+<div style="clear:both;"></div>
+<%= render 'partials/tags-list', locals: {tag_list: locals[:model].theme_list, type: 'theme'} %>
+<%= locals[:form].text_field :theme_list, value: locals[:form].object.theme_list.join(","), style: "visibility:hidden" %>
+<div style="clear:both;"></div>
+
+<!--    Special Tag row-->
+<div class="form-float">
+  <%= locals[:form].label "special_tag", "#{t :tag_special}", :class => "inline-label" %>
+  <div>
+    <%= select_tag 'special_tags', options_from_collection_for_select(TagMeta.where(category: 'special').order(:name), 'name', 'name'), {include_blank: true}  %>
+    <%= button_tag "+", type: 'button', id: 'btn-add-special', class: 'btn-add' %>
+  </div>
+</div>
+<div class="form-float form-new-row" id="new-special-row">
+  <div id="special-status" class="dropdown-hidden">
+    <%= "#{t :form_tag_enter}" %>
+  </div>
+  <%= button_tag "#{t :form_special_create}", type: 'button', id: 'btn-new-special', class: 'btn-create' %>
+  <div id="new-special" style="display: none">
+    <input type="text" name="new_special" id="new-special-field"/>
+    <%= button_tag "#{t :create_tag}", type: 'button', id: 'btn-create-special', class: 'btn-add' %>
+  </div>
+</div>
+<div style="clear:both;"></div>
+<%= render 'partials/tags-list', locals: {tag_list: locals[:model].special_list, type: 'special'} %>
+<%= locals[:form].text_field :special_list, value: locals[:form].object.special_list.join(","), style: "visibility:hidden" %>
+<div style="clear:both;"></div>
