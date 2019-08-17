@@ -1,13 +1,13 @@
 ja:
   app_name: "PBAモバイルアプリマネージャー"
-  audios_add: "オーディオを入れる"
-  audios_back: "オーディオへ戻る"
-  audios_edit: "オーディオを変更する"
+  audios_add: "ラジオ番組を入れる"
+  audios_back: "ラジオ番組へ戻る"
+  audios_edit: "ラジオ番組を変更する"
   audios_file_error: "が必要です"
-  audios_new_desc: "オーディオ一つを入れる"
-  audios_list: "オーディオのリスト"
-  audios_new: "新しいオーディオ"
-  audios_viewing: "オーディオの視察"
+  audios_new_desc: "ラジオ番組一つを入れる"
+  audios_list: "ラジオ番組のリスト"
+  audios_new: "新しいラジオ番組"
+  audios_viewing: "ラジオ番組の視察"
   back: "戻る"
   bible_passage: "聖書の箇所"
   browser_warning: "インターネットエクスプローラーかエッジ以外のブラウザはこのサイトが正しく機能するために使ったほうがいいです。"
@@ -69,7 +69,7 @@ ja:
   row: "列"
   submit: "保存する"
   summary_devotion: "デボーション概要"
-  summary_audio: "オーディオ概要"
+  summary_audio: "ラジオ番組概要"
   summary_video: "ビデオ概要"
   summary_select: "左にメニューアイテムお選びください"
   summary_total: "コンテント全額"
@@ -81,7 +81,7 @@ ja:
   tag_genre: "番組内容タッグ"
   tag_special: "特集タッグ"
   tag_theme: "特集タッグ"
-  top_audios: "オーディオ"
+  top_audios: "ラジオ番組"
   top_devotions: "デボーション"
   top_dropdown: "ドロップダウン設定"
   top_home: "ホーム"
@@ -98,7 +98,7 @@ ja:
   activerecord:
     attributes:
       audio:
-        audio: "オーディオ"
+        audio: "ラジオ番組"
         program_num: "プログラム番号"
         title: "タイトル"
         broadcast_date: "発売日"
@@ -107,8 +107,7 @@ ja:
         messenger: "メッセンジャー"
         bible_book: "聖書の本"
         bible_chapter_verse: "聖書の章と節"
-        link: "ビデオURL"
-        audio_file: "オーディオファイル"
+        audio_file: "ラジオ番組ファイル"
         original_air: "元の放送日"
         for_sale: "売る"
         created_at: "作られた日時t"
@@ -125,9 +124,6 @@ ja:
         bible_chapter_verse: "聖書の章と節"
         created_at: "作られた日時"
         updated_at: "変更された日時"
-        genre_list: "番組内容タッグのリスト"
-        special_list: "特集タッグのリスト"
-        theme_list: "特集タッグのリスト"
 
 
       video:
