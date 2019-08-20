@@ -18,8 +18,9 @@ Rails.application.routes.draw do
     if Rails.env.development?
       get 'view_tester/test'
     end
-
   end
+
+  get '/api/:today', to: 'api#today'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="Changed locale files">
+      <change afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/audios_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/audios_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/devotions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/devotions_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +409,7 @@
       <workItem from="1565584238905" duration="69835000" />
       <workItem from="1565886713729" duration="138000" />
       <workItem from="1565886974522" duration="9184000" />
-      <workItem from="1566062600799" duration="7876000" />
+      <workItem from="1566062600799" duration="10842000" />
     </task>
     <task id="LOCAL-00001" summary="Changed DB config and added /test/system/db_connection_test.rb file">
       <created>1554962157767</created>
@@ -574,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566067622382</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix Audio updating without file">
+      <created>1566285582977</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1566285582977</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +623,8 @@
     <MESSAGE value="Fixed Top Paths" />
     <MESSAGE value="Fixed broken string" />
     <MESSAGE value="Changed locale files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed locale files" />
+    <MESSAGE value="Fix Audio updating without file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Audio updating without file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
