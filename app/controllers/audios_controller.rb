@@ -56,6 +56,10 @@ class AudiosController < ApplicationController
 
   def update
     @audio = Audio.find(params[:id])
+    if @audio.audio_file.nil?
+      @audio.audio_file = 'ignore'
+    end
+
     if @audio.update(audio_params)
       redirect_to @audio
     else

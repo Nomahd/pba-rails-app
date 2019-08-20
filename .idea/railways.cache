@@ -3,9 +3,10 @@
                       root GET    /                                                                                        top#index
                bulk_images GET    /:locale/images/bulk(.:format)                                                           images#bulk
              search_images GET    /:locale/images/search(.:format)                                                         images#search
-               home_images GET    /:locale/images/home(.:format)                                                           images#home
+            summary_images GET    /:locale/images/summary(.:format)                                                        images#summary
                            POST   /:locale/images/bulk(.:format)                                                           images#bulk_submit
    destroy_selected_images POST   /:locale/images/destroy_selected(.:format)                                               images#destroy_selected
+            api_get_images GET    /:locale/images/api_get(.:format)                                                        images#api_get
                     images GET    /:locale/images(.:format)                                                                images#index
                            POST   /:locale/images(.:format)                                                                images#create
                  new_image GET    /:locale/images/new(.:format)                                                            images#new
@@ -16,9 +17,10 @@
                            DELETE /:locale/images/:id(.:format)                                                            images#destroy
             bulk_devotions GET    /:locale/devotions/bulk(.:format)                                                        devotions#bulk
           search_devotions GET    /:locale/devotions/search(.:format)                                                      devotions#search
-            home_devotions GET    /:locale/devotions/home(.:format)                                                        devotions#home
+         summary_devotions GET    /:locale/devotions/summary(.:format)                                                     devotions#summary
                            POST   /:locale/devotions/bulk(.:format)                                                        devotions#bulk_submit
 destroy_selected_devotions POST   /:locale/devotions/destroy_selected(.:format)                                            devotions#destroy_selected
+         api_get_devotions GET    /:locale/devotions/api_get(.:format)                                                     devotions#api_get
                  devotions GET    /:locale/devotions(.:format)                                                             devotions#index
                            POST   /:locale/devotions(.:format)                                                             devotions#create
               new_devotion GET    /:locale/devotions/new(.:format)                                                         devotions#new
@@ -29,9 +31,10 @@ destroy_selected_devotions POST   /:locale/devotions/destroy_selected(.:format) 
                            DELETE /:locale/devotions/:id(.:format)                                                         devotions#destroy
                bulk_audios GET    /:locale/audios/bulk(.:format)                                                           audios#bulk
              search_audios GET    /:locale/audios/search(.:format)                                                         audios#search
-               home_audios GET    /:locale/audios/home(.:format)                                                           audios#home
+            summary_audios GET    /:locale/audios/summary(.:format)                                                        audios#summary
                            POST   /:locale/audios/bulk(.:format)                                                           audios#bulk_submit
    destroy_selected_audios POST   /:locale/audios/destroy_selected(.:format)                                               audios#destroy_selected
+            api_get_audios GET    /:locale/audios/api_get(.:format)                                                        audios#api_get
                     audios GET    /:locale/audios(.:format)                                                                audios#index
                            POST   /:locale/audios(.:format)                                                                audios#create
                  new_audio GET    /:locale/audios/new(.:format)                                                            audios#new
@@ -42,9 +45,10 @@ destroy_selected_devotions POST   /:locale/devotions/destroy_selected(.:format) 
                            DELETE /:locale/audios/:id(.:format)                                                            audios#destroy
                bulk_videos GET    /:locale/videos/bulk(.:format)                                                           videos#bulk
              search_videos GET    /:locale/videos/search(.:format)                                                         videos#search
-               home_videos GET    /:locale/videos/home(.:format)                                                           videos#home
+            summary_videos GET    /:locale/videos/summary(.:format)                                                        videos#summary
                            POST   /:locale/videos/bulk(.:format)                                                           videos#bulk_submit
    destroy_selected_videos POST   /:locale/videos/destroy_selected(.:format)                                               videos#destroy_selected
+            api_get_videos GET    /:locale/videos/api_get(.:format)                                                        videos#api_get
                     videos GET    /:locale/videos(.:format)                                                                videos#index
                            POST   /:locale/videos(.:format)                                                                videos#create
                  new_video GET    /:locale/videos/new(.:format)                                                            videos#new
