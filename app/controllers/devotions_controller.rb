@@ -5,11 +5,11 @@ class DevotionsController < ApplicationController
   end
 
   def index
-    @devotion = Devotion.order('broadcast_date DESC, pba_id, title').page params[:page]
+    @devotion = Devotion.order('broadcast_date DESC, id DESC').page params[:page]
   end
 
   def search
-    @devotion = Devotion.search(params).order('broadcast_date DESC, pba_id, title').page params[:page]
+    @devotion = Devotion.search(params).order('broadcast_date DESC, id DESC').page params[:page]
     render 'index'
   end
 

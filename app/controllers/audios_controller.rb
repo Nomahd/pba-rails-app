@@ -5,11 +5,11 @@ class AudiosController < ApplicationController
   end
 
   def index
-    @audio = Audio.order('broadcast_date DESC, program_num, title').page params[:page]
+    @audio = Audio.order('broadcast_date DESC, id DESC').page params[:page]
   end
 
   def search
-    @audio = Audio.search(params).order('broadcast_date DESC, program_num, title').page params[:page]
+    @audio = Audio.search(params).order('broadcast_date DESC, id DESC').page params[:page]
     render 'index'
   end
 

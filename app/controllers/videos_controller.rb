@@ -6,11 +6,11 @@ class VideosController < MediaController
   end
 
   def index
-    @video = Video.order('broadcast_date DESC, program_num, title').page params[:page]
+    @video = Video.order('broadcast_date DESC, id DESC').page params[:page]
   end
 
   def search
-    @video = Video.search(params).order('broadcast_date DESC, program_num, title').page params[:page]
+    @video = Video.search(params).order('broadcast_date DESC, id DESC').page params[:page]
     render 'index'
   end
 
