@@ -20,7 +20,13 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/api/:today', to: 'api#today'
+  namespace :api do
+    get 'today-all', to: 'today_all'
+    get 'today', to: 'today'
+    get 'batch', to: 'batch'
+    get 'search', to: 'search'
+    get 'select', to: 'select'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

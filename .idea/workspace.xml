@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="Changed locale files">
-      <change afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterDir="false" />
+    <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/audio.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/audio.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,7 +141,7 @@
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
@@ -409,7 +411,8 @@
       <workItem from="1565584238905" duration="69835000" />
       <workItem from="1565886713729" duration="138000" />
       <workItem from="1565886974522" duration="9184000" />
-      <workItem from="1566062600799" duration="10842000" />
+      <workItem from="1566062600799" duration="12987000" />
+      <workItem from="1566455986267" duration="32903000" />
     </task>
     <task id="LOCAL-00001" summary="Changed DB config and added /test/system/db_connection_test.rb file">
       <created>1554962157767</created>
@@ -579,7 +582,35 @@
       <option name="project" value="LOCAL" />
       <updated>1566285582977</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Adding API Controller">
+      <created>1566289019150</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1566289019150</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Changed API response from array to pure object">
+      <created>1566291701137</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1566291701137</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Fixed labels">
+      <created>1566915594822</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1566915594822</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fix order">
+      <created>1567074593519</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1567074593519</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,9 +631,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changed DB config and added /test/system/db_connection_test.rb file" />
-    <MESSAGE value="Changed DB config and project name" />
-    <MESSAGE value="Remove /log and /tmp" />
     <MESSAGE value="More stuff" />
     <MESSAGE value="All 3 done but not tested yet" />
     <MESSAGE value="Ignore Rails error on FTP delete.&#10;Update production DB config" />
@@ -624,7 +652,11 @@
     <MESSAGE value="Fixed broken string" />
     <MESSAGE value="Changed locale files" />
     <MESSAGE value="Fix Audio updating without file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Audio updating without file" />
+    <MESSAGE value="Adding API Controller" />
+    <MESSAGE value="Changed API response from array to pure object" />
+    <MESSAGE value="Fixed labels" />
+    <MESSAGE value="Fix order" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix order" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -675,6 +707,6 @@
     <SUITE FILE_PATH="coverage/pba_rails_app@db_setup__pba_rails_app.rcov" NAME="db:setup: pba-rails-app Coverage Results" MODIFIED="1562434649739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@assets_clean_keep___pba_rails_app.rcov" NAME="assets:clean[keep]: pba-rails-app Coverage Results" MODIFIED="1558532164470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_drop__pba_rails_app.rcov" NAME="db:drop: pba-rails-app Coverage Results" MODIFIED="1558106434104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
-    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1566067352402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
+    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1567109560680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
   </component>
 </project>
