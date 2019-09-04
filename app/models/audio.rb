@@ -62,13 +62,20 @@ class Audio < ApplicationRecord
   end
 
   def self.bulk(csv, zip)
-    count_zip = ZipUtil.file_count(zip)
-    count_csv = BulkUtil.row_count(csv)
 
-    if count_csv == count_zip
+    if csv != nil and zip != nil
+      count_zip = ZipUtil.file_count(zip)
+      count_csv = BulkUtil.row_count(csv)
+      if count_csv == count_zip
+        BulkUtil.bulk_add(csv, Audio, 11, 13)
+      else
+        false
+      end
+    elsif csv != nil and zip == nil
       BulkUtil.bulk_add(csv, Audio, 11, 13)
-    else
-      false
+    elsif zip != nil and csv == nil
+      ZipUtil.upload(zip)
+      'zip'
     end
   end
 
@@ -117,6 +124,10 @@ class Audio < ApplicationRecord
     end
 
     search
+  end
+
+  def self.api_search(month, year, text)
+
   end
 
   private

@@ -31,22 +31,35 @@ class AudiosController < ApplicationController
   end
 
   def bulk_submit
-    @result = Audio.bulk(params[:bulk_csv].path, params[:bulk_zip].path)
+    csv_path = nil
+    zip_path = nil
+    if params[:bulk_csv] != nil
+      csv_path = params[:bulk_csv].path
+    end
+    if params[:bulk_zip] != nil
+      zip_path = params[:bulk_zip].path
+    end
+
+    @result = Audio.bulk(csv_path, zip_path)
 
     if @result == false
       render 'bulk/bulk-fail-unequal'
+    elsif @result == 'zip'
+      render 'bulk/bulk-zip-success'
     elsif @result[1].length > 0
       render 'bulk/bulk-fail'
     else
-      if Audio.zip_check(params[:bulk_csv].path, params[:bulk_zip].path)
-        Audio.zip_upload(params[:bulk_zip].path)
+      if zip_path and csv_path != nil
+        if Audio.zip_check(params[:bulk_csv].path, params[:bulk_zip].path)
+          Audio.zip_upload(params[:bulk_zip].path)
+        else
+          render 'bulk/bulk-fail-mismatch' and return
+        end
+      end
         @result[0].each do |instance|
           instance.save
         end
         render 'bulk/bulk-success'
-      else
-        render 'bulk/bulk-fail-mismatch'
-      end
     end
   end
 

@@ -37,11 +37,12 @@ function fileFieldEvent(index, ev, dragDropField, fileField, submitButtonArray) 
 
     submitButtonArray[index] = 1;
     let submitBool = false;
-    submitButtonArray.forEach((e) => {
-        if (e === 0) {
-            submitBool = true;
-        }
-    });
+    // let submitBool = false;
+    // submitButtonArray.forEach((e) => {
+    //     if (e === 0) {
+    //         submitBool = true;
+    //     }
+    // });
 
     let submitButton = document.querySelector('#submit-button');
     submitButton.disabled = submitBool;

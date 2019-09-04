@@ -20,6 +20,7 @@ ja:
   bulk_header: "一括作成"
   bulk_success: "成功"
   bulk_success_desc: "を入れた"
+  bulk_zip_success_desc: "ZIPのファイルの挿入成功です"
   bulk_csv_error: "CSVファイルではありません"
   bulk_zip_error: "ZIPファイルではありません"
   bulk_unequal: "ZIPファイル数とCSVの列数は違います"
@@ -94,7 +95,7 @@ ja:
   videos_new: "新しいビデオ"
   videos_new_desc: "ビデオ一つを入れる"
   videos_viewing: "ビデオの視察"
-
+  zip_warning: "ZIPはオーディオファイルが10つ以上挿入したら、かなり時間かかりますのでしないほうがいいです。たくさんオーディオファイルアップロードする場合、FTPでしてください。"
   activerecord:
     attributes:
       audio:

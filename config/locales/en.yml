@@ -51,6 +51,7 @@ en:
   bulk_header: "Bulk Create"
   bulk_success: "Success"
   bulk_success_desc: " successfully inserted"
+  bulk_zip_success_desc: "Files in ZIP successfully inserted"
   bulk_csv_error: "Not a CSV File"
   bulk_zip_error: "Not a ZIP File"
   bulk_unequal: "Unequal number of rows in CSV file and radio audio files in ZIP file"
@@ -125,6 +126,7 @@ en:
   videos_new: "New Video"
   videos_new_desc: "Add a single new video"
   videos_viewing: "Viewing Video"
+  zip_warning: "Adding a ZIP with more than 10 audio files at a time may take a significant amount of time, so it is not suggested. To upload many audio files, please use FTP."
 
   activerecord:
     attributes:
