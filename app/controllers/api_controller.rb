@@ -1,14 +1,17 @@
 class ApiController < ApplicationController
 
   def today_all
+    devotion = Devotion.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30)
+    audio = Audio.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30)
+    video = Video.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30)
     render json: { :today => {
-        :devotion => Devotion.select(:id, :title, :broadcast_date).order(:broadcast_date, :id).last,
-        :audio => Audio.select(:id, :title, :broadcast_date).order(:broadcast_date, :id).last,
-        :video => Video.select(:id, :title, :broadcast_date).order(:broadcast_date, :id).last },
+        :devotion => devotion.first,
+        :audio => audio.first,
+        :video => video.first},
                    :batch => {
-                       :devotion => Devotion.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30),
-                       :audio => Audio.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30),
-                       :video => Video.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30)
+                       :devotion => devotion,
+                       :audio => audio,
+                       :video => video
                    }}
   end
   def today
