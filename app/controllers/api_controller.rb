@@ -36,7 +36,8 @@ class ApiController < ApplicationController
 
   def batch
     ret = []
-    result = ActiveRecord::Base.connection.execute("SELECT  `" + params[:model] + "`.`id`, `" + params[:model] + "`.`title`, `" + params[:model] + "`.`broadcast_date` FROM `" + params[:model] + "` ORDER BY broadcast_date DESC, id DESC LIMIT 30")
+    db_model_name = params[:model].downcase + 's'
+    result = ActiveRecord::Base.connection.execute("SELECT  `" + db_model_name + "`.`id`, `" + db_model_name + "`.`title`, `" + db_model_name + "`.`broadcast_date` FROM `" + db_model_name + "` ORDER BY broadcast_date DESC, id DESC LIMIT 30")
     result.each do |d|
       ret.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
     end
@@ -49,9 +50,9 @@ class ApiController < ApplicationController
   end
 
   def search
-    model = Object.const_get(params[:model].capitalize.delete_suffix('s'))
+    model = Object.const_get(params[:model])
     search = []
-
+    db_model_name = params[:model].downcase + 's'
     unless params[:text].blank?
       tags = []
       text = params[:text].split
@@ -66,7 +67,7 @@ class ApiController < ApplicationController
       puts tags
 
       array = []
-      baseQuery = "SELECT  `" + params[:model] + "`.`id`, `" + params[:model] + "`.`title`, `" + params[:model] + "`.`broadcast_date` FROM `" + params[:model] + "` WHERE "
+      baseQuery = "SELECT  `" + db_model_name + "`.`id`, `" + db_model_name + "`.`title`, `" + db_model_name + "`.`broadcast_date` FROM `" + db_model_name + "` WHERE "
       query = baseQuery
       text.each_with_index do |t, i|
         unless i == 0
@@ -84,7 +85,7 @@ class ApiController < ApplicationController
 
     unless params[:year].blank? and params[:month].blank?
       array = []
-      baseQuery = "SELECT  `" + params[:model] + "`.`id`, `" + params[:model] + "`.`title`, `" + params[:model] + "`.`broadcast_date` FROM `" + params[:model] + "`"
+      baseQuery = "SELECT  `" + db_model_name + "`.`id`, `" + db_model_name + "`.`title`, `" + db_model_name + "`.`broadcast_date` FROM `" + db_model_name + "`"
 
       query = baseQuery
       unless params[:month].blank?
