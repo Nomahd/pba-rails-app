@@ -35,8 +35,12 @@ class ApiController < ApplicationController
   end
 
   def batch
-    model = Object.const_get(params[:model])
-    render json: model.select(:id, :title, :broadcast_date).order('broadcast_date DESC, id DESC').limit(30)
+    ret = []
+    result = ActiveRecord::Base.connection.execute("SELECT  `" + params[:model] + "`.`id`, `" + params[:model] + "`.`title`, `" + params[:model] + "`.`broadcast_date` FROM `" + params[:model] + "` ORDER BY broadcast_date DESC, id DESC LIMIT 30")
+    result.each do |d|
+      ret.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
+    end
+    render json: ret
   end
 
   def select
@@ -45,12 +49,71 @@ class ApiController < ApplicationController
   end
 
   def search
-    model = Object.const_get(params[:model])
-    if params[:text].nil?
-      # model.
+    model = Object.const_get(params[:model].capitalize.delete_suffix('s'))
+    search = []
+
+    unless params[:text].blank?
+      tags = []
+      text = params[:text].split
+      text.each do |t|
+        tagged = model.tagged_with(t).as_json
+        unless tagged[0].nil?
+          tagged[0].slice!('id', 'title', 'broadcast_date')
+          fix_tagged = {:id=>tagged[0]["id"], :title=>tagged[0]["title"], :broadcast_date=>tagged[0]["broadcast_date"]}
+        end
+        tags.push(fix_tagged)
+      end
+      puts tags
+
+      array = []
+      baseQuery = "SELECT  `" + params[:model] + "`.`id`, `" + params[:model] + "`.`title`, `" + params[:model] + "`.`broadcast_date` FROM `" + params[:model] + "` WHERE "
+      query = baseQuery
+      text.each_with_index do |t, i|
+        unless i == 0
+          query += " OR "
+        end
+        query += "title LIKE '%" + t + "%'"
+      end
+      result = ActiveRecord::Base.connection.execute(query)
+      result.each do |d|
+        array.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
+      end
+      search = array + tags
+      puts search
     end
-    puts params[:year].inspect
-    puts params[:text].inspect
-    # render json: model.api_search(params[:month], params[:year], params:[:text])
+
+    unless params[:year].blank? and params[:month].blank?
+      array = []
+      baseQuery = "SELECT  `" + params[:model] + "`.`id`, `" + params[:model] + "`.`title`, `" + params[:model] + "`.`broadcast_date` FROM `" + params[:model] + "`"
+
+      query = baseQuery
+      unless params[:month].blank?
+        monthQuery = " WHERE (extract(month from broadcast_date) = '" + params[:month] + "')"
+        query += monthQuery
+      end
+
+      unless params[:year].blank?
+        if params[:month].blank?
+          query += " WHERE "
+        else
+          query += " AND "
+        end
+        yearQuery = " (extract(year from broadcast_date) = '" + params[:year] + "')"
+        query += yearQuery
+      end
+
+      result = ActiveRecord::Base.connection.execute(query)
+      result.each do |d|
+        array.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
+      end
+      puts array
+      if search.empty?
+        search = array
+      else
+        search = search & array
+      end
+    end
+
+    render json: search.take(50)
   end
 end
