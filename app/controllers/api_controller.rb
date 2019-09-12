@@ -61,10 +61,9 @@ class ApiController < ApplicationController
         unless tagged[0].nil?
           tagged[0].slice!('id', 'title', 'broadcast_date')
           fix_tagged = {:id=>tagged[0]["id"], :title=>tagged[0]["title"], :broadcast_date=>tagged[0]["broadcast_date"]}
+          tags.push(fix_tagged)
         end
-        tags.push(fix_tagged)
       end
-      puts tags
 
       array = []
       baseQuery = "SELECT  `" + db_model_name + "`.`id`, `" + db_model_name + "`.`title`, `" + db_model_name + "`.`broadcast_date` FROM `" + db_model_name + "` WHERE "
@@ -80,7 +79,6 @@ class ApiController < ApplicationController
         array.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
       end
       search = array + tags
-      puts search
     end
 
     unless params[:year].blank? and params[:month].blank?
@@ -107,7 +105,6 @@ class ApiController < ApplicationController
       result.each do |d|
         array.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
       end
-      puts array
       if search.empty?
         search = array
       else
