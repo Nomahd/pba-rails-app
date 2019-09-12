@@ -111,7 +111,7 @@ class ApiController < ApplicationController
         search = search & array
       end
     end
-
-    render json: search.take(50)
+    sorted = search.sort_by {|obj| obj[:broadcast_date]}.reverse
+    render json: sorted.take(50)
   end
 end
