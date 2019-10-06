@@ -40,14 +40,14 @@ class Devotion < ApplicationRecord
   end
 
   def self.save(file)
-    unless File.directory?('tmp/csv')
-      FileUtils.mkdir_p('tmp/csv')
+    unless File.directory?('public/uploads')
+      FileUtils.mkdir_p('public/uploads')
     end
-    FileUtils.cp(file, 'tmp/csv')
+    FileUtils.cp(file, 'public/uploads')
   end
 
   def self.bulk(file)
-    filepath = 'tmp/csv/' + file
+    filepath = 'public/uploads/' + file
     BulkAddJob.perform_later(filepath, "Devotion", 7, 9)
   end
 
