@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_181912) do
+ActiveRecord::Schema.define(version: 2019_09_30_135006) do
 
   create_table "audios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "program_num"
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(version: 2019_08_15_181912) do
     t.string "book_en"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "delayed_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
   create_table "devotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,6 +74,8 @@ ActiveRecord::Schema.define(version: 2019_08_15_181912) do
     t.string "name"
     t.string "context"
     t.string "category"
+    t.text "profile"
+    t.string "photo_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,6 +93,18 @@ ActiveRecord::Schema.define(version: 2019_08_15_181912) do
     t.string "context"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "schedule", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "order"
+    t.string "station"
+    t.string "program"
+    t.string "start_day"
+    t.string "end_day"
+    t.string "time"
+    t.string "extra_day_start"
+    t.string "extra_day_end"
+    t.string "extra_time"
   end
 
   create_table "tag_meta", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

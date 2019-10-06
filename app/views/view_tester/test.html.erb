@@ -1,2 +1,6 @@
-<h1>ViewTester#test</h1>
-<p>Find me in app/views/view_tester/test.html.erb</p>
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'channels/test', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<h1>Progress Bar Test</h1>
+<div id="test">
+</div>

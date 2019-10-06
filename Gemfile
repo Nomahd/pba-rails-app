@@ -63,3 +63,7 @@ gem 'kaminari'
 gem 'i18n-js'
 
 gem 'rubyzip'
+
+gem 'sidekiq'
+
+gem 'redis'

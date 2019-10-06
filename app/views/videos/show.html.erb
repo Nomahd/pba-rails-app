@@ -1,2 +1,3 @@
 <h1><%= t :videos_viewing %></h1>
+<%= link_to "#{t :table_edit}", edit_video_path(:id => @video.id), :class => 'edit-class' %>
 <%= render 'partials/show', locals: { record: @video } %>

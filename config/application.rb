@@ -18,5 +18,6 @@ module PbaApp
     config.i18n.available_locales = [:en, :ja]
     config.i18n.default_locale = :ja
     ActsAsTaggableOn.remove_unused_tags = true
+    config.active_job.queue_adapter = :sidekiq
   end
 end

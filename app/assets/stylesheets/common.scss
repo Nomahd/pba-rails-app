@@ -30,6 +30,7 @@ textarea  {
   height: calc(100% - 130px);
   padding-top: 30px;
   margin-left: 200px;
+  margin-right: 20px;
   text-align: center;
   overflow-y: auto;
 }
@@ -114,6 +115,10 @@ table {
     padding: 5px;
   }
 
+}
+
+.warning {
+  color: red;
 }
 
 

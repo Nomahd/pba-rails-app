@@ -1,3 +1,7 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'dropdown', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'tag', 'data-turbolinks-track': 'reload' %>
+<% end %>
 <div id="form-area">
   <%= render 'partials/error', locals: { model: @devotion } %>
   <%= form_with url: people_path, remote: true, id: 'form-messenger' do %><% end %>

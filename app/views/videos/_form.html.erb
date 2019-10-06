@@ -1,3 +1,7 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'dropdown', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'tag', 'data-turbolinks-track': 'reload' %>
+<% end %>
 <div id="form-area">
   <%= render 'partials/error', locals: { model: @video } %>
   <%= form_with url: programs_path, remote: true, id: 'form-program' do %><% end %>

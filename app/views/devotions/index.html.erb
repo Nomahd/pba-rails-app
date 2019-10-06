@@ -1,3 +1,7 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'date', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'delete_selected', 'data-turbolinks-track': 'reload' %>
+<% end %>
 <h1><%= t :devotions_list %></h1>
 
 <%= render 'search' %>

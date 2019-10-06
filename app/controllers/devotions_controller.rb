@@ -31,16 +31,12 @@ class DevotionsController < ApplicationController
   end
 
   def bulk_submit
-    @result = Devotion.bulk(params[:bulk_csv].path)
+    Devotion.save(params[:bulk_csv].path)
+    redirect_to bulk_progress_devotions_path csv_path: params[:bulk_csv].path
+  end
 
-    if @result[1].length > 0
-      render 'bulk/bulk-fail'
-    else
-      @result[0].each do |instance|
-        instance.save
-      end
-      render 'bulk/bulk-success'
-    end
+  def bulk_execute
+    Devotion.bulk(params[:filename])
   end
 
   def edit

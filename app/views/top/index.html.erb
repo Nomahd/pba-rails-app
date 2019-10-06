@@ -15,11 +15,10 @@
   <%#=link_to images_path, class: "top_nav" do %>
     <%#= image_tag('photo-camera.png') %>
 <!--    <div><%#= "#{t :top_images}" %></div>-->
-  <%# end %>
-  <%#=link_to "", class: "top_nav" do %>
-    <%#= image_tag('tag.png') %>
-<!--    <div><%#= "#{t :top_dropdown}" %></div>-->
-  <%# end %>
+  <%=link_to options_path, class: "top_nav" do %>
+    <%= image_tag('settings.png') %>
+    <div><%= "#{t :top_options}" %></div>
+  <% end %>
 </div>
 
 

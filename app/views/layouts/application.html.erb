@@ -7,6 +7,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'browser', 'data-turbolinks-track': 'reload'%>
+    <%= javascript_include_tag 'load', 'data-turbolinks-track': 'reload'%>
+    <%= javascript_include_tag 'locale', 'data-turbolinks-track': 'reload'%>
+    <%= javascript_include_tag 'cable', 'data-turbolinks-track': 'reload'%>
+    <%= yield(:js) %>
   </head>
 
   <body data-locale="<%= I18n.locale %>">

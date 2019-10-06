@@ -1,5 +1,8 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'bulk', 'data-turbolinks-track': 'reload' %>
+<% end %>
 <h1><%= "#{t :bulk_header}" %></h1>
 <h3><%= "#{t :bulk_desc}" %></h3>
 
-<%= render 'partials/bulk-form', locals: { bulk_path: bulk_videos_path } %>
+<%= render 'partials/bulk-form', locals: { bulk_path: bulk_submit_videos_path } %>
 

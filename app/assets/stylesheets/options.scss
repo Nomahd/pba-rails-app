@@ -1,0 +1,20 @@
+.general-header {
+  text-align: left;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.delete-button {
+  margin: 100px 50px;
+  width: 150px;
+  height: 100px;
+  background-color: red !important;
+
+  &:hover {
+    background-color: #730E15 !important;
+  }
+}

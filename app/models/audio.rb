@@ -61,35 +61,34 @@ class Audio < ApplicationRecord
     [Audio.count, Audio.order(:broadcast_date).last]
   end
 
-  def self.bulk(csv, zip)
-
-    if csv != nil and zip != nil
-      count_zip = ZipUtil.file_count(zip)
-      count_csv = BulkUtil.row_count(csv)
-      if count_csv == count_zip
-        BulkUtil.bulk_add(csv, Audio, 11, 13)
-      else
-        false
+  def self.save(csv, zip)
+    unless File.directory?('tmp/csv')
+      FileUtils.mkdir_p('tmp/csv')
+    end
+    unless File.directory?('tmp/zip')
+      FileUtils.mkdir_p('tmp/zip')
+    end
+    unless csv == nil
+      FileUtils.cp(csv, 'tmp/csv')
+    end
+    unless zip == nil
+      uploaded_file = zip
+      File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'wb') do |file|
+        file.write(uploaded_file.read)
       end
-    elsif csv != nil and zip == nil
-      BulkUtil.bulk_add(csv, Audio, 11, 13)
-    elsif zip != nil and csv == nil
-      ZipUtil.upload(zip)
-      'zip'
     end
   end
 
-  def self.zip_check(csv, zip)
-    filename_array = BulkUtil.extract_audio_filenames(csv)
-    if ZipUtil.match_names(zip, filename_array)
-      return true
-    else
-      return false
+  def self.save(file)
+    unless File.directory?('tmp/csv')
+      FileUtils.mkdir_p('tmp/csv')
     end
+    FileUtils.cp(file, 'tmp/csv')
   end
 
-  def self.zip_upload(zip)
-    ZipUtil.upload(zip)
+  def self.bulk(file)
+    filepath = 'tmp/csv/' + file
+    BulkAddJob.perform_later(filepath, "Audio", 7, 9)
   end
 
   def self.search(params)
@@ -124,10 +123,6 @@ class Audio < ApplicationRecord
     end
 
     search
-  end
-
-  def self.api_search(month, year, text)
-
   end
 
   private

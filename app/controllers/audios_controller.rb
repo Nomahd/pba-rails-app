@@ -31,36 +31,12 @@ class AudiosController < ApplicationController
   end
 
   def bulk_submit
-    csv_path = nil
-    zip_path = nil
-    if params[:bulk_csv] != nil
-      csv_path = params[:bulk_csv].path
-    end
-    if params[:bulk_zip] != nil
-      zip_path = params[:bulk_zip].path
-    end
+    Audio.save(params[:bulk_csv].path)
+    redirect_to bulk_progress_audios_path csv_path: params[:bulk_csv].path
+  end
 
-    @result = Audio.bulk(csv_path, zip_path)
-
-    if @result == false
-      render 'bulk/bulk-fail-unequal'
-    elsif @result == 'zip'
-      render 'bulk/bulk-zip-success'
-    elsif @result[1].length > 0
-      render 'bulk/bulk-fail'
-    else
-      if zip_path and csv_path != nil
-        if Audio.zip_check(params[:bulk_csv].path, params[:bulk_zip].path)
-          Audio.zip_upload(params[:bulk_zip].path)
-        else
-          render 'bulk/bulk-fail-mismatch' and return
-        end
-      end
-        @result[0].each do |instance|
-          instance.save
-        end
-        render 'bulk/bulk-success'
-    end
+  def bulk_execute
+    Audio.bulk(params[:filename])
   end
 
   def edit
@@ -94,6 +70,6 @@ class AudiosController < ApplicationController
 
   private
   def audio_params
-    params.require(:audio).permit(:program_num, :title, :broadcast_date, :program_name, :description, :messenger,  :bible_book, :bible_chapter_verse, :filename, :original_air, :for_sale, :audio_file)
+    params.require(:audio).permit(:program_num, :title, :broadcast_date, :program_name, :description, :messenger,  :bible_book, :bible_chapter_verse, :filename, :original_air, :for_sale, :audio_file,  :genre_list, :theme_list, :special_list)
   end
 end

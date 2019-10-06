@@ -21,19 +21,16 @@ class ZipUtil
         end
       end
     end
-
     true
-
   end
 
   def self.upload(zip)
-    FileUtils.mkdir_p('tmp')
     Zip::File.open(zip) do |zip_file|
       zip_file.each do |file|
-        fpath = File.join('tmp', file.name)
+        fpath = File.join('tmp/zip', file.name)
         zip_file.extract(file, fpath) unless File.exist?(fpath)
         FTPUtil.ftp_add(fpath, '/audio/' + file.name)
-        File.delete(fpath) if File.exists?(fpath)
+        # File.delete(fpath) if File.exists?(fpath)
       end
     end
   end

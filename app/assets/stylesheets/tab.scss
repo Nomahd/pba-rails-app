@@ -1,0 +1,28 @@
+.tab-bar {
+  margin: 0 auto;
+  display: inline-block;
+  //display: flex;
+  //flex-flow: row nowrap;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab {
+  background-color: inherit;
+  padding: 14px 50px;
+  transition: 0.3s;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  border-radius: unset;
+  &:hover {
+    background-color: #ddd !important;
+  }
+
+  &.active {
+    background-color: #ccc !important;
+  }
+}

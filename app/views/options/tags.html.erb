@@ -1,0 +1,12 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'tabs', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<h1><%= "#{t :options_tags}" %></h1>
+<div class="tab-bar">
+  <button class="tab"><%= "#{t :tag_genre}" %></button>
+  <button class="tab"><%= "#{t :tag_theme}" %></button>
+  <button class="tab"><%= "#{t :tag_special}" %></button>
+</div>
+<div>
+  <%= form %>
+</div>

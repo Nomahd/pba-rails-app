@@ -55,8 +55,16 @@ class Video < ApplicationRecord
     [Video.count, Video.order(:broadcast_date).last]
   end
 
+  def self.save(file)
+    unless File.directory?('tmp/csv')
+      FileUtils.mkdir_p('tmp/csv')
+    end
+    FileUtils.cp(file, 'tmp/csv')
+  end
+
   def self.bulk(file)
-   BulkUtil.bulk_add(file, Video, 13, 15)
+    filepath = 'tmp/csv/' + file
+    BulkAddJob.perform_later(filepath, "Video", 7, 9)
   end
 
   def self.search(params)

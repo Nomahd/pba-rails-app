@@ -1,7 +1,15 @@
 class ViewTesterController < ApplicationController
+  after_action :job_process, only: [:test]
   def test
-    @result = [55, [1,2,3,4,5,6,7,8,9, 55,2,3,4,5,6,7,8,9, 55,2,3,4,5,6,7,8,9, 55,2,3,4,5,6,7,8,9, 55,2,3,4,5,6,7,8,9, 55,2,3,4,5,6,7,8,9, 55,2,3,4,5,6,7,8,9, 55]]
 
-    render 'common/bulk-fail'
+    render 'view_tester/test'
+  end
+
+  def async
+    ProgressTestJob.perform_later
+  end
+
+  def job_process
+    ProgressTestJob.set(wait: 3.seconds).perform_later
   end
 end

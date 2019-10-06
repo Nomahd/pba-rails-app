@@ -1,2 +1,3 @@
 <h1><%= t :audios_viewing %></h1>
+<%= link_to "#{t :table_edit}", edit_audio_path(:id => @audio.id), :class => 'edit-class' %>
 <%= render 'partials/show', locals: { record: @audio } %>

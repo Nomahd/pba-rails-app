@@ -1,0 +1,26 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'channels/progress', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<h1 id="csv-meta"
+    file="<% unless params[:csv_path].nil? %><%= File.basename(params[:csv_path]) %><% end %>"
+    zip="<% unless params[:zip_path].nil? %><%= File.basename(params[:zip_path]) %><% end %>"
+    model="<%= locals[:model] %>"
+    locale="<%= I18n.locale %>"> <%= "#{t :bulk_progress}" %></h1>
+
+<div id="csv-progress-div">
+  <h3>Progress: <span id="csv-current">0</span> / <span id="csv-total"></span></h3>
+  <div id="csv-progress-bar">
+    <div id="csv-inner-progress">
+      0%
+    </div>
+  </div>
+</div>
+
+<div id="csv-fail-div">
+  <table id="csv-fail-table">
+    <tr>
+      <th id="csv-fail-table-line"><%= "#{t :error_line}" %></th>
+      <th><%= "#{t :error_header}"%></th>
+    </tr>
+  </table>
+</div>

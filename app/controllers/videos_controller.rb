@@ -32,16 +32,12 @@ class VideosController < MediaController
   end
 
   def bulk_submit
-    @result = Video.bulk(params[:bulk_csv].path)
+    Video.save(params[:bulk_csv].path)
+    redirect_to bulk_progress_videos_path csv_path: params[:bulk_csv].path
+  end
 
-    if @result[1].length > 0
-      render 'bulk/bulk-fail'
-    else
-      @result[0].each do |instance|
-        instance.save
-      end
-      render 'bulk/bulk-success'
-    end
+  def bulk_execute
+    Video.bulk(params[:filename])
   end
 
   def edit
@@ -72,7 +68,7 @@ class VideosController < MediaController
 
   private
   def video_params
-    params.require(:video).permit(:program_num, :title, :broadcast_date, :program_name, :description, :guest, :messenger, :bible_book, :bible_chapter_verse, :link, :filename, :original_air, :for_sale)
+    params.require(:video).permit(:program_num, :title, :broadcast_date, :program_name, :description, :guest, :messenger, :bible_book, :bible_chapter_verse, :link, :filename, :original_air, :for_sale, :genre_list, :theme_list, :special_list)
   end
 end
 

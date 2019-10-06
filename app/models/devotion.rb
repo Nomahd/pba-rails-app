@@ -39,8 +39,16 @@ class Devotion < ApplicationRecord
     [Devotion.count, Devotion.order(:broadcast_date).last]
   end
 
+  def self.save(file)
+    unless File.directory?('tmp/csv')
+      FileUtils.mkdir_p('tmp/csv')
+    end
+    FileUtils.cp(file, 'tmp/csv')
+  end
+
   def self.bulk(file)
-    BulkUtil.bulk_add(file, Devotion, 7, 9)
+    filepath = 'tmp/csv/' + file
+    BulkAddJob.perform_later(filepath, "Devotion", 7, 9)
   end
 
   def self.search(params)
