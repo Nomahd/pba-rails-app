@@ -31,12 +31,12 @@ class DevotionsController < ApplicationController
   end
 
   def bulk_submit
-    Devotion.save(params[:bulk_csv].path)
-    redirect_to bulk_progress_devotions_path csv_path: params[:bulk_csv].path
+    id = Devotion.save(params[:bulk_csv].tempfile.read)
+    redirect_to bulk_progress_devotions_path csv_id: id
   end
 
   def bulk_execute
-    Devotion.bulk(params[:filename])
+    Devotion.bulk(Bulk.find(params[:id]).csv.force_encoding("UTF-8").split("\r\n"), params[:id])
   end
 
   def edit

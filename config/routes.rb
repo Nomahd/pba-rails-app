@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :bulks
   get 'tag/create'
   get 'tag_controller/create'
   get 'tag_meta/create'
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   root 'top#index'
 
   scope '/:locale' do
-    resources :images, :devotions, :audios, :videos do
+    resources :images, :devotions, :audios, :videos, :bulks do
       collection do
         get :bulk, :search, :summary, :bulk_progress
         post :bulk_execute, :bulk_submit
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
 
     get 'options', to: 'options#index'
     get 'options/delete'
+    get 'options/delete-progress'
     post 'options/delete-audios'
     post 'options/delete-videos'
     post 'options/delete-devotions'

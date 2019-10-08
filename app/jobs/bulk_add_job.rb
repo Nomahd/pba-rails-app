@@ -1,12 +1,11 @@
 class BulkAddJob < ApplicationJob
   queue_as :default
 
-  discard_on StandardError
+  # discard_on StandardError
 
-  def perform(filename, classname, start_index, end_index)
+  def perform(rows, classname, start_index, end_index, id)
 
-    BulkUtil.bulk_add(filename, classname, start_index, end_index)
-    File.chmod(0777, filename)
-    File.delete(filename)
+    BulkUtil.bulk_add(rows, classname, start_index, end_index)
+    Bulk.destroy(id)
   end
 end

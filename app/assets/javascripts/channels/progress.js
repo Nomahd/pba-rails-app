@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Rails.ajax({
                 url: url,
                 type: 'POST',
-                data: 'filename=' + meta.getAttribute('file')
+                data: 'id=' + meta.getAttribute('csv_id')
             })
         },
         disconnected: () => {

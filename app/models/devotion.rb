@@ -40,15 +40,12 @@ class Devotion < ApplicationRecord
   end
 
   def self.save(file)
-    unless File.directory?('public/uploads')
-      FileUtils.mkdir_p('public/uploads')
-    end
-    FileUtils.cp(file, 'public/uploads')
+    csv = Bulk.create({:csv => file})
+    csv.id
   end
 
-  def self.bulk(file)
-    filepath = 'public/uploads/' + file
-    BulkAddJob.perform_later(filepath, "Devotion", 7, 9)
+  def self.bulk(rows, id)
+    BulkAddJob.perform_later(rows, "Devotion", 7, 9, id)
   end
 
   def self.search(params)

@@ -61,34 +61,13 @@ class Audio < ApplicationRecord
     [Audio.count, Audio.order(:broadcast_date).last]
   end
 
-  def self.save(csv, zip)
-    unless File.directory?('public/uploads')
-      FileUtils.mkdir_p('public/uploads')
-    end
-    unless File.directory?('tmp/zip')
-      FileUtils.mkdir_p('tmp/zip')
-    end
-    unless csv == nil
-      FileUtils.cp(csv, 'public/uploads')
-    end
-    unless zip == nil
-      uploaded_file = zip
-      File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'wb') do |file|
-        file.write(uploaded_file.read)
-      end
-    end
-  end
-
   def self.save(file)
-    unless File.directory?('public/uploads')
-      FileUtils.mkdir_p('public/uploads')
-    end
-    FileUtils.cp(file, 'public/uploads')
+    csv = Bulk.create({:csv => file})
+    csv.id
   end
 
-  def self.bulk(file)
-    filepath = 'public/uploads/' + file
-    BulkAddJob.perform_later(filepath, "Audio", 7, 9)
+  def self.bulk(rows, id)
+    BulkAddJob.perform_later(rows, "Audio", 7, 9, id)
   end
 
   def self.search(params)

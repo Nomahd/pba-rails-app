@@ -1,7 +1,7 @@
 <h1><%= "#{t :options_delete}" %></h1>
 <h2 class="warning"><%= "#{t :options_delete_desc}" %></h2>
 <div id="button-container">
-  <%= button_to "#{t :'activerecord.attributes.devotion.devotion'}", options_delete_devotions_path, class: 'delete-button', data: {confirm: "#{t :options_delete_confirm}"}%>
-  <%= button_to "#{t :'activerecord.attributes.audio.audio'}", options_delete_audios_path, class: 'delete-button', data: {confirm: "#{t :options_delete_confirm}"}%>
-  <%= button_to "#{t :'activerecord.attributes.video.video'}", options_delete_videos_path, class: 'delete-button', data: {confirm: "#{t :options_delete_confirm}"}%>
+  <%= link_to "#{t :'activerecord.attributes.devotion.devotion'}", options_delete_progress_path, class: 'delete-button', data: {confirm: "#{t :options_delete_confirm}"}%>
+  <%= link_to "#{t :'activerecord.attributes.audio.audio'}", options_delete_progress_path, class: 'delete-button', data: {confirm: "#{t :options_delete_confirm}"}%>
+  <%= link_to "#{t :'activerecord.attributes.video.video'}", options_delete_progress_path, class: 'delete-button', data: {confirm: "#{t :options_delete_confirm}"}%>
 </div>

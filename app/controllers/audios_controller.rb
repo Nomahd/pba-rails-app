@@ -31,12 +31,12 @@ class AudiosController < ApplicationController
   end
 
   def bulk_submit
-    Audio.save(params[:bulk_csv].path)
-    redirect_to bulk_progress_audios_path csv_path: params[:bulk_csv].path
+    id = Audio.save(params[:bulk_csv].tempfile.read)
+    redirect_to bulk_progress_audios_path csv_id: id
   end
 
   def bulk_execute
-    Audio.bulk(params[:filename])
+    Audio.bulk(Bulk.find(params[:id]).csv.force_encoding("UTF-8").split("\r\n"), params[:id])
   end
 
   def edit

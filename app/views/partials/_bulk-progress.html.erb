@@ -2,10 +2,9 @@
   <%= javascript_include_tag 'channels/progress', 'data-turbolinks-track': 'reload' %>
 <% end %>
 <h1 id="csv-meta"
-    file="<% unless params[:csv_path].nil? %><%= File.basename(params[:csv_path]) %><% end %>"
-    zip="<% unless params[:zip_path].nil? %><%= File.basename(params[:zip_path]) %><% end %>"
+    locale="<%= I18n.locale %>"
     model="<%= locals[:model] %>"
-    locale="<%= I18n.locale %>"> <%= "#{t :bulk_progress}" %></h1>
+    csv_id="<%= params[:csv_id] %>"> <%= "#{t :bulk_progress}" %></h1>
 
 <div id="csv-progress-div">
   <h3>Progress: <span id="csv-current">0</span> / <span id="csv-total"></span></h3>
