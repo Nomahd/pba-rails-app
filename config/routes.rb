@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :bulks
-  get 'tag/create'
-  get 'tag_controller/create'
-  get 'tag_meta/create'
   get '/:locale' => 'top#index'
   root 'top#index'
 
   scope '/:locale' do
-    resources :images, :devotions, :audios, :videos, :bulks do
+    resources :devotions, :audios, :videos do
       collection do
         get :bulk, :search, :summary, :bulk_progress
         post :bulk_execute, :bulk_submit
@@ -30,9 +26,12 @@ Rails.application.routes.draw do
     post 'options/delete_audios'
     post 'options/delete_videos'
     post 'options/delete_devotions'
-    get 'options/people'
     get 'options/tags'
+    post 'options/tags', to: 'options#tag_create'
+    delete 'options/tags/:id', to: 'options#tag_destroy', as: 'options_tag'
+    post 'options/tags/destroy_selected', to: 'options#tag_destroy_selected'
     get 'options/schedule'
+    get 'options/people'
   end
 
   namespace :api do

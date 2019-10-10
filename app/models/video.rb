@@ -61,7 +61,7 @@ class Video < ApplicationRecord
   end
 
   def self.bulk(rows, id)
-    BulkAddJob.perform_later(rows, "Video", 7, 9, id)
+    BulkAddJob.perform_later(rows, "Video", 13, 15, id)
   end
 
   def self.search(params)

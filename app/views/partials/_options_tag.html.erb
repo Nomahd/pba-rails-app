@@ -1,0 +1,40 @@
+<%= form_with scope: :tag, url: options_tags_path, method: :post, remote: true, class: 'option-tag-form' do |f| %>
+  <%= f.label :name, "#{t :options_tag_new}" %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :category, value: locals[:type] %>
+  <%= f.submit %>
+<% end %>
+<% if locals[:type] == 'genre' %>
+  <% @tags = @genre_tags %>
+<% elsif locals[:type] == 'theme' %>
+  <% @tags = @theme_tags %>
+<% elsif locals[:type] == 'special' %>
+  <% @tags = @special_tags %>
+<% end %>
+<%= form_with url: :options_tags_destroy_selected, id: 'delete-selected-form-' + locals[:type], local: true do %>
+  <div>
+    <%= submit_tag "#{t :general_delete_selected}", form: "delete-selected-form-" + locals[:type], id: 'delete-selected-' + locals[:type], disabled: true, data: {confirm: "#{t :general_delete_confirm}"} %>
+  </div>
+  <table class="tag-table">
+    <tr id="index-header-row">
+      <th><%= "#{t :options_tag_name}" %></th>
+      <th><%= "#{t :options_tag_uses}" %></th>
+      <th><%= "#{t :options_tag_delete}" %></th>
+      <th style="width:20px"><%=  check_box_tag 'select_all_' + locals[:type] %></th>
+    </tr>
+
+    <% @tags.each do |tag| %>
+    <tr>
+      <td><%= tag.name %></td>
+      <td><% if ActsAsTaggableOn::Tag.where(name: tag.name).blank? %>
+          <%= 0 %>
+          <% else %>
+          <%= ActsAsTaggableOn::Tag.where(name: tag.name).first.taggings_count %>
+          <% end %></td>
+
+      <td class="no-expand"><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), options_tag_path(tag.id), method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
+      <td class="no-expand"><%= check_box_tag('selected_' + locals[:type] + '[]', tag.id) %></td>
+    </tr>
+    <% end %>
+<% end %>
+</table>

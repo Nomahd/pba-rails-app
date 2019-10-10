@@ -23,6 +23,10 @@
   }
 
   &.active {
-    background-color: #ccc !important;
+    background-color: lightblue !important;
   }
+}
+
+.tab-content {
+  display: none;
 }

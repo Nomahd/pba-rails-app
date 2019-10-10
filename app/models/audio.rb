@@ -22,7 +22,7 @@ class Audio < ApplicationRecord
 
   acts_as_taggable_on :genres, :themes, :specials
 
-  attr_accessor :audio_file, :old_file
+  attr_accessor :audio_file
 
   before_save do
     if for_sale.nil?
@@ -65,7 +65,7 @@ class Audio < ApplicationRecord
   end
 
   def self.bulk(rows, id)
-    BulkAddJob.perform_later(rows, "Audio", 7, 9, id)
+    BulkAddJob.perform_later(rows, "Audio", 11, 13, id)
   end
 
   def self.search(params)
@@ -114,7 +114,7 @@ class Audio < ApplicationRecord
     elsif self.audio_file.nil? and self.filename.blank?
       self.errors.add(:audio_file, I18n.t('audios_file_error'))
       self.errors.add(:filename, I18n.t('audios_file_error'))
-    else
+    elsif audio_file != 'ignore'
       self.filename = audio_file.original_filename
     end
   end
