@@ -49,13 +49,11 @@ class Audio < ApplicationRecord
     end
   end
 
-  before_validation :check_audio_file, if: :ignore_file?
+  before_validation :check_audio_file
 
   before_create :ftp_add, if: :ignore_file?
 
-  before_update :ftp_replace, if: :ignore_file?
-
-  before_destroy :ftp_destroy, if: :ignore_file?
+  before_update :ftp_add, if: :ignore_file?
 
   def self.summary
     [Audio.count, Audio.order(:broadcast_date).last]
@@ -111,23 +109,17 @@ class Audio < ApplicationRecord
   end
 
   def check_audio_file
-    if self.audio_file.nil?
+    if self.audio_file.nil? and !self.filename.blank?
+      self.audio_file = 'ignore'
+    elsif self.audio_file.nil? and self.filename.blank?
       self.errors.add(:audio_file, I18n.t('audios_file_error'))
+      self.errors.add(:filename, I18n.t('audios_file_error'))
     else
-      self.old_file = self.filename
       self.filename = audio_file.original_filename
     end
   end
 
   def ftp_add
     FTPUtil.ftp_add(audio_file.path, "/audio/" + self.filename)
-  end
-
-  def ftp_replace
-    FTPUtil.ftp_replace("/audio/" + old_file, audio_file.path, "/audio/" + self.filename)
-  end
-
-  def ftp_destroy
-    FTPUtil.ftp_delete("/audio/" + self.filename)
   end
 end

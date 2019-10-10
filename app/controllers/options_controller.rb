@@ -1,17 +1,15 @@
 class OptionsController < ApplicationController
 
   def delete_audios
-    Audio.destroy_all
-    render 'options/delete-success'
+    DeleteJob.perform_later('Audio')
   end
 
   def delete_devotions
-    Devotion.destroy_all
-    render 'options/delete-success'
+    DeleteJob.perform_later('Devotion')
   end
 
   def delete_videos
-    Video.destroy_all
-    render 'options/delete-success'
+    DeleteJob.perform_later('Video')
   end
+
 end

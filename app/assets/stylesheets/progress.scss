@@ -1,12 +1,12 @@
-#csv-progress-div {
+[id$=-progress-div] {
   visibility: hidden;
 }
 
-#csv-progress-bar {
+[id$=-progress-bar] {
   background-color: lightgrey;
 }
 
-#csv-inner-progress {
+[id$=-inner-progress] {
   background-color: limegreen;
   width: 0;
 }

@@ -1,7 +1,7 @@
 class BulkAddJob < ApplicationJob
   queue_as :default
 
-  # discard_on StandardError
+  discard_on StandardError
 
   def perform(rows, classname, start_index, end_index, id)
 

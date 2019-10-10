@@ -1,6 +1,7 @@
 <% content_for(:js) do %>
   <%= javascript_include_tag 'dropdown', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'tag', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'audio', 'data-turbolinks-track': 'reload'  %>
 <% end %>
 <div id="form-area">
   <%= render 'partials/error', locals: { model: @audio } %>
@@ -56,10 +57,17 @@
     <div class="form-row">
       <% if action_name == 'new' %>
         <%= form.label :audio_file, :class => "required" %>
-        <% else %>
+      <% else %>
         <%= form.label :audio_file %>
       <% end %>
-      <%= form.file_field :audio_file %>
+      <%= form.file_field :audio_file, id: 'audio-file-field' %>
+      <div><%= "#{t :or}" %></div>
+      <% if action_name == 'new' %>
+        <%= form.label :filename, :class => "required" %>
+      <% else %>
+        <%= form.label :filename %>
+      <% end %>
+      <%= form.text_field :filename, id: 'audio-filename-field' %>
     </div>
 
     <!--    Bible Passage row-->

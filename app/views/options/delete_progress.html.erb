@@ -1,0 +1,16 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'channels/delete', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<h1 id="delete-meta"
+    locale="<%= I18n.locale %>"
+    model="<%= params[:model] %>"> <%= "#{t :delete_progress}" %></h1>
+
+<div id="delete-progress-div">
+  <h3><%= "#{t :progress}" %>: <span id="delete-current">0</span> / <span id="delete-total"></span></h3>
+  <div id="delete-progress-bar">
+    <div id="delete-inner-progress">
+      0%
+    </div>
+  </div>
+</div>
+</div>

@@ -7,7 +7,7 @@
     csv_id="<%= params[:csv_id] %>"> <%= "#{t :bulk_progress}" %></h1>
 
 <div id="csv-progress-div">
-  <h3>Progress: <span id="csv-current">0</span> / <span id="csv-total"></span></h3>
+  <h3><%= "#{t :progress}" %>: <span id="csv-current">0</span> / <span id="csv-total"></span></h3>
   <div id="csv-progress-bar">
     <div id="csv-inner-progress">
       0%

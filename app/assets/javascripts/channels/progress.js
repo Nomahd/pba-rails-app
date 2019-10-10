@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('progress.js')
     let progress = 0;
     let processed = 0;
     let total = -1;
@@ -42,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 failArray.push(data.fail)
             }
             if(processed === total) {
+                if (processed === 0 && total === 0) {
+                    document.querySelector('#csv-inner-progress').style.width = '100%';
+                    document.querySelector('#csv-inner-progress').innerHTML = '100%';
+                }
                 document.querySelector('#csv-meta').innerHTML = I18n.t('bulk_error');
                 if (failArray.length > 0) {
                     document.querySelector('#csv-fail-div').style.visibility = 'visible';
