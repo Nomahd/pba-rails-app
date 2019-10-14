@@ -16,7 +16,7 @@ class Person < ApplicationRecord
 
   before_create :ftp_add, if: :link_photo
   before_update :ftp_replace, if: :link_photo
-  before_destroy :ftp_destroy
+  before_destroy :ftp_destroy, if: :link_photo
 
   def self.destroy_selected(audio_messenger, devotion_messenger, video_messenger, video_guest)
     selected = nil
