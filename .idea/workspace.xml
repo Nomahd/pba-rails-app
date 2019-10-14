@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pba-rails-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pba-rails-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/audio.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/audio.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/devotion.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/devotion.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/video.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/video.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/csv_util.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/csv_util.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -421,7 +415,7 @@
       <workItem from="1568034855604" duration="10456000" />
       <workItem from="1568282741474" duration="117679000" />
       <workItem from="1569925546198" duration="82404000" />
-      <workItem from="1570686001422" duration="110234000" />
+      <workItem from="1570686001422" duration="112564000" />
     </task>
     <task id="LOCAL-00001" summary="Changed DB config and added /test/system/db_connection_test.rb file">
       <created>1554962157767</created>
@@ -717,7 +711,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571056956834</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Changed bulk_util paths to csv_util">
+      <created>1571057660405</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1571057660405</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Fixed FTP Destroy for Person">
+      <created>1571058851958</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1571058851958</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -748,8 +756,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Last Time I promise" />
-    <MESSAGE value="Fix Audio Search" />
     <MESSAGE value="Fix Search order" />
     <MESSAGE value="Fixed Top Paths" />
     <MESSAGE value="Fixed broken string" />
@@ -773,7 +779,9 @@
     <MESSAGE value="Added delete channel and job&#10;Fix Audio form and model" />
     <MESSAGE value="Added Tag management&#10;Made delete_selecetd more generic" />
     <MESSAGE value="Added schedule manager and speaker manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added schedule manager and speaker manager" />
+    <MESSAGE value="Changed bulk_util paths to csv_util" />
+    <MESSAGE value="Fixed FTP Destroy for Person" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed FTP Destroy for Person" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

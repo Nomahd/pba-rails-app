@@ -33,7 +33,6 @@ class CSVUtil
     csv.shift
     csv.shift
     hash_keys = Schedule.attribute_names[1,9]
-    puts hash_keys.inspect
     csv.each do |row|
       schedule = Schedule.new(Hash[hash_keys.zip(row[0, 9])])
       schedule_array.push(schedule)
