@@ -7,11 +7,16 @@
       <li class="<%= 'menu-active' if controller.action_name == :index.to_s %>"><%= link_to "#{t :menu_list}", controller: controller.controller_name %></li>
       <li class="<%= 'menu-active' if controller.action_name == :new.to_s %>"><%= link_to "#{t :menu_create}", controller: controller.controller_name, action: :new %></li>
       <li class="<%= 'menu-active' if controller.action_name == :bulk.to_s %>"><%= link_to "#{t :menu_bulk}", controller: controller.controller_name, action: :bulk %></li>
-    <% elsif controller.controller_name == :options.to_s %>
-      <li class="<%= 'menu-active' if controller.action_name == :tags.to_s %>"><%= link_to "#{t :menu_tags}", controller: controller.controller_name, action: :tags %></li>
-      <li class="<%= 'menu-active' if controller.action_name == :people.to_s %>"><%= link_to "#{t :menu_people}", controller: controller.controller_name, action: :people %></li>
-      <li class="<%= 'menu-active' if controller.action_name == :schedule.to_s %>"><%= link_to "#{t :menu_schedule}", controller: controller.controller_name, action: :schedule %></li>
-      <li class="<%= 'menu-active' if controller.action_name == :delete.to_s %>"><%= link_to "#{t :menu_delete}", controller: controller.controller_name, action: :delete %></li>
+    <% elsif controller.controller_name == :options.to_s or
+        controller.controller_name == :tag_meta.to_s or
+        controller.controller_name == :people.to_s or
+        controller.controller_name == :programs.to_s or
+        controller.controller_name == :schedule.to_s %>
+      <li class="<%= 'menu-active' if controller.controller_name == :tag_meta.to_s %>"><%= link_to "#{t :menu_tags}", tag_meta_path %></li>
+      <li class="<%= 'menu-active' if controller.controller_name == :people.to_s %>"><%= link_to "#{t :menu_people}", people_path %></li>
+      <li class="<%= 'menu-active' if controller.controller_name == :programs.to_s %>"><%= link_to "#{t :menu_programs}", programs_path %></li>
+      <li class="<%= 'menu-active' if controller.controller_name == :schedule.to_s %>"><%= link_to "#{t :menu_schedule}", schedule_index_path %></li>
+      <li class="<%= 'menu-active' if controller.action_name == :delete.to_s %>"><%= link_to "#{t :menu_delete}", options_delete_path %></li>
     <% end %>
   </ul>
 <% end %>

@@ -1,0 +1,18 @@
+<h1><%= "#{t :options_schedule_error}" %></h1>
+<h2 class="bulk-error"><%= "#{t :options_schedule_error_desc}" %></h2>
+
+<table class="bulk-error bulk-error-table">
+  <tr>
+    <th><%= "#{t :error_line}" %></th>
+    <th><%= "#{t :error_header}"%></th>
+  </tr>
+
+  <% @errors.each_with_index do |error, index| %>
+    <tr>
+      <td><%= index + 2 %></td>
+      <td><% error.errors.full_messages.each do |message| %>
+          <%= message %><br>
+          <% end %></td>
+    </tr>
+  <% end %>
+</table>

@@ -8,19 +8,28 @@
   flex-flow: row wrap;
 }
 
+.tab-flex {
+  display: inline-block;
+  width: 45%;
+}
+.tab-content-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .delete-button {
-  margin: 100px 50px;
+  margin: 50px 50px 0;
   padding: 50px 0;
   width: 200px;
-  background-color: red !important;
+  background-color: red;
   color: white !important;
   border-radius: 10px;
   &:hover {
-    background-color: #730E15 !important;
+    background-color: #730E15;
   }
 }
 
-.option-tag-form {
+.option-form {
   padding: 20px 0;
 
   label {
@@ -28,5 +37,28 @@
   }
 }
 
-.tag-table {
+span[id^='result-'] {
+  position: absolute;
+  margin-left: 5px;
+}
+
+.new-button {
+  display: inline-block;
+  margin: 25px 0;
+  padding: 15px 0;
+  width: 150px;
+  background-color: steelblue;
+  color: white !important;
+  border-radius: 10px;
+  &:hover {
+    background-color: #579bdc;
+  }
+
+  &-red {
+    @extend .new-button;
+    background-color: red;
+    &:hover {
+      background-color: #730E15;
+    }
+  }
 }

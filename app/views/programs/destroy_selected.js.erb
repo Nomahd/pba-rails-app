@@ -1,0 +1,12 @@
+<% unless params[:selected_audio].nil? %>
+var rows = <%= raw params[:selected_audio] %>
+<% end %>
+<% unless params[:selected_video].nil? %>
+var rows = <%= raw params[:selected_video] %>
+<% end %>
+
+rows.forEach(function(id) {
+      var row = document.querySelector("tr[id='" + id + "']")
+      row.parentNode.removeChild(row)
+})
+

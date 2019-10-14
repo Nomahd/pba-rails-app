@@ -1,9 +1,13 @@
-<%= form_with scope: :tag, url: options_tags_path, method: :post, remote: true, class: 'option-tag-form' do |f| %>
-  <%= f.label :name, "#{t :options_tag_new}" %>
-  <%= f.text_field :name %>
-  <%= f.hidden_field :category, value: locals[:type] %>
-  <%= f.submit %>
-<% end %>
+<div>
+  <%= form_with scope: :tag, url: tag_meta_path, method: :post, remote: true, html: { autocomplete: 'off' }, class: 'option-form' do |f| %>
+    <%= f.label :name, "#{t :options_tag_new}" %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :category, value: locals[:type] %>
+    <%= f.submit id: 'tag-add-new' %>
+    <span id="result-<%= locals[:type] %>" ></span>
+  <% end %>
+</div>
+
 <% if locals[:type] == 'genre' %>
   <% @tags = @genre_tags %>
 <% elsif locals[:type] == 'theme' %>
@@ -11,20 +15,21 @@
 <% elsif locals[:type] == 'special' %>
   <% @tags = @special_tags %>
 <% end %>
-<%= form_with url: :options_tags_destroy_selected, id: 'delete-selected-form-' + locals[:type], local: true do %>
+
+<%= form_with url: :destroy_selected_tag_meta, id: 'delete-selected-form-' + locals[:type], remote: true do %>
   <div>
     <%= submit_tag "#{t :general_delete_selected}", form: "delete-selected-form-" + locals[:type], id: 'delete-selected-' + locals[:type], disabled: true, data: {confirm: "#{t :general_delete_confirm}"} %>
   </div>
-  <table class="tag-table">
+  <table id="tag-table-<%= locals[:type] %>">
     <tr id="index-header-row">
       <th><%= "#{t :options_tag_name}" %></th>
       <th><%= "#{t :options_tag_uses}" %></th>
-      <th><%= "#{t :options_tag_delete}" %></th>
+      <th><%= "#{t :options_content_delete}" %></th>
       <th style="width:20px"><%=  check_box_tag 'select_all_' + locals[:type] %></th>
     </tr>
 
     <% @tags.each do |tag| %>
-    <tr>
+    <tr id="<%= tag.id %>">
       <td><%= tag.name %></td>
       <td><% if ActsAsTaggableOn::Tag.where(name: tag.name).blank? %>
           <%= 0 %>
@@ -32,8 +37,8 @@
           <%= ActsAsTaggableOn::Tag.where(name: tag.name).first.taggings_count %>
           <% end %></td>
 
-      <td class="no-expand"><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), options_tag_path(tag.id), method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
-      <td class="no-expand"><%= check_box_tag('selected_' + locals[:type] + '[]', tag.id) %></td>
+      <td><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), tag_metum_path(tag.id), remote: true, method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
+      <td><%= check_box_tag('selected_' + locals[:type] + '[]', tag.id) %></td>
     </tr>
     <% end %>
 <% end %>

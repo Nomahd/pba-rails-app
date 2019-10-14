@@ -1,0 +1,38 @@
+<h1><%= "#{t :options_schedule}" %></h1>
+
+<% if @schedules.blank? %>
+<div>
+  <%= link_to "#{t :options_schedule_new}", new_schedule_path, class: 'new-button' %>
+</div>
+<% else %>
+<div>
+  <table id="index-table" style="table-layout: fixed !important;">
+    <tr id="index-header-row">
+      <th><%= "#{t :'activerecord.attributes.schedule.category'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.program'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.station'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.start_day'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.end_day'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.time'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.extra_day_start'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.extra_day_end'}" %></th>
+      <th><%= "#{t :'activerecord.attributes.schedule.extra_time'}" %></th>
+    </tr>
+
+    <%  @schedules.each do |schedule|  %>
+      <tr>
+        <td><%= schedule.category %></td>
+        <td><%= schedule.program %></td>
+        <td><%= schedule.station %></td>
+        <td><%= schedule.start_day %></td>
+        <td><%= schedule.end_day %></td>
+        <td><%= schedule.time %></td>
+        <td><%= schedule.extra_day_start %></td>
+        <td><%= schedule.extra_day_end %></td>
+        <td><%= schedule.extra_time %></td>
+      </tr>
+    <%  end  %>
+</table>
+  <%=  link_to "#{t :options_schedule_delete}", destroy_selected_schedule_index_path, method: :post, class: 'new-button-red', data: { confirm: "#{t :general_delete_confirm}"} %>
+</div>
+<% end %>

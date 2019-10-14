@@ -1,0 +1,20 @@
+<% content_for(:js) do %>
+  <%= javascript_include_tag 'tabs', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'delete_selected', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<h1><%= "#{t :options_people}" %></h1>
+<div class="tab-bar">
+  <button class="tab"><%= "#{t :options_people_audio}" %></button>
+  <button class="tab"><%= "#{t :options_people_devotion}" %></button>
+  <button class="tab"><%= "#{t :options_people_video}" %></button>
+</div>
+<div class="tab-content">
+  <%= render 'options_people', locals: {type: 'audio', category: 'messenger'}%>
+</div>
+<div class="tab-content">
+  <%= render 'options_people', locals: {type: 'devotion', category: 'messenger'}%>
+</div>
+<div class="tab-content tab-content-flex">
+  <div class="tab-flex"><%= render 'options_people', locals: {type: 'video', category: 'messenger'}%></div>
+  <div class="tab-flex"><%= render 'options_people', locals: {type: 'video', category: 'guest'}%></div>
+</div>

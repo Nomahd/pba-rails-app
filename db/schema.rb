@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_08_134935) do
+ActiveRecord::Schema.define(version: 2019_10_13_093506) do
 
   create_table "audios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "program_num"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 2019_10_08_134935) do
     t.binary "csv"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "day_of_week"
   end
 
   create_table "devotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,10 +91,10 @@ ActiveRecord::Schema.define(version: 2019_10_08_134935) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedule", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "order"
-    t.string "station"
+  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category"
     t.string "program"
+    t.string "station"
     t.string "start_day"
     t.string "end_day"
     t.string "time"

@@ -1,1 +1,15 @@
-<%= render 'partials/create', locals: { model: @program } %>
+var resultField = document.querySelector('#result-' + '<%= @result[:type] %>')
+<% if @result[:result] == :fail %>
+resultField.innerHTML = '<%= "#{t :options_content_failure}" %>' + '<%= @result[:reason] %>'
+
+<% else %>
+resultField.innerHTML = '<%= "#{t :options_programs_success}" %>'
+var table = document.querySelector('#program-table-' + '<%= @result[:type] %>')
+var row = table.insertRow(1)
+row.id = <%= @program.id %>
+    row.insertCell(0).innerHTML = '<%= @program.name %>'
+row.insertCell(1).innerHTML = '<%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"),  program_path(@program.id), remote: true, method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %>'
+row.insertCell(2).innerHTML = '<%= check_box_tag('selected_' + @result[:type] + '[]', @program.id) %>'
+tableEvent = new Event('tableAdd')
+document.dispatchEvent(tableEvent)
+<% end %>

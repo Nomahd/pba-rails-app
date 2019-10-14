@@ -1,0 +1,16 @@
+var resultField = document.querySelector('#result-' + '<%= @result[:type] %>')
+<% if @result[:result] == :fail %>
+resultField.innerHTML = '<%= "#{t :options_content_failure}" %>' + '<%= @result[:reason] %>'
+
+<% else %>
+resultField.innerHTML = '<%= "#{t :options_tag_success}" %>'
+var table = document.querySelector('#tag-table-' + '<%= @result[:type] %>')
+var row = table.insertRow(1)
+row.id = <%= @tag.id %>
+row.insertCell(0).innerHTML = '<%= @tag.name %>'
+row.insertCell(1).innerHTML = '0'
+row.insertCell(2).innerHTML = '<%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), tag_metum_path(@tag.id), remote: true, method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %>'
+row.insertCell(3).innerHTML = '<%= check_box_tag('selected_' + @result[:type] + '[]', @tag.id) %>'
+tableEvent = new Event('tableAdd')
+document.dispatchEvent(tableEvent)
+<% end %>

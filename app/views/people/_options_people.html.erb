@@ -1,0 +1,37 @@
+<div>
+  <%= link_to "#{t :options_people_new}" + (locals[:category] == 'messenger' ? "#{t :options_people_messenger}" : "#{t :options_people_guest}"),
+              new_person_path(context: locals[:type], category: locals[:category]), class: 'new-button' %>
+</div>
+
+<% if locals[:type] == 'devotion' %>
+  <% @people = @devotion_people %>
+<% elsif locals[:type] == 'audio' %>
+  <% @people = @radio_people %>
+<% elsif locals[:type] == 'video' and locals[:category] == 'messenger'%>
+  <% @people = @tv_people_messenger %>
+<% elsif locals[:type] == 'video' and locals[:category] == 'guest'%>
+  <% @people = @tv_people_guest %>
+<% end %>
+
+<%= form_with url: :destroy_selected_people, id: 'delete-selected-form-' + locals[:type] + locals[:category], remote: true do %>
+  <div>
+    <%= submit_tag "#{t :general_delete_selected}", form: "delete-selected-form-" + locals[:type] + locals[:category], id: 'delete-selected-' + locals[:type], disabled: true, data: {confirm: "#{t :general_delete_confirm}"} %>
+  </div>
+  <table id="people-table-<%= locals[:type] + locals[:category]%>">
+    <tr id="index-header-row">
+      <th><%= "#{t :options_people_name}" %></th>
+      <th><%= "#{t :options_content_edit}" %></th>
+      <th><%= "#{t :options_content_delete}" %></th>
+      <th style="width:20px"><%=  check_box_tag 'select_all_' + locals[:type] + locals[:category]%></th>
+    </tr>
+
+    <% @people.each do |person| %>
+      <tr id="<%= person.id %>">
+        <td><%= person.name %></td>
+        <td><%=  link_to image_tag('edit.png', title: "#{t :table_edit}"), edit_person_path(person)  %></td>
+        <td><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), person_path(person.id), remote: true, method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
+        <td><%= check_box_tag('selected_' + locals[:type] + locals[:category] + '[]', person.id) %></td>
+      </tr>
+    <% end %>
+<% end %>
+</table>

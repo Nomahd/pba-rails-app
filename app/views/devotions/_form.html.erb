@@ -2,9 +2,9 @@
   <%= javascript_include_tag 'dropdown', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'tag', 'data-turbolinks-track': 'reload' %>
 <% end %>
-<div id="form-area">
+<div class="form-area">
   <%= render 'partials/error', locals: { model: @devotion } %>
-  <%= form_with url: people_path, remote: true, id: 'form-messenger' do %><% end %>
+  <%= form_with url: quick_create_people_path, remote: true, id: 'form-messenger', html: { autocomplete: 'off' } do %><% end %>
   <%= form_with model: @devotion, local: true, id: 'form-main', html: { autocomplete: 'off' } do |form| %>
 
 <!--    PBA ID row-->

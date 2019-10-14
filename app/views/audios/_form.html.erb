@@ -3,10 +3,10 @@
   <%= javascript_include_tag 'tag', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'audio', 'data-turbolinks-track': 'reload'  %>
 <% end %>
-<div id="form-area">
+<div class="form-area">
   <%= render 'partials/error', locals: { model: @audio } %>
-  <%= form_with url: programs_path, remote: true, id: 'form-program' do %><% end %>
-  <%= form_with url: people_path, remote: true, id: 'form-messenger' do %><% end %>
+  <%= form_with url: quick_create_programs_path, remote: true, id: 'form-program', html: { autocomplete: 'off' } do %><% end %>
+  <%= form_with url: quick_create_people_path, remote: true, id: 'form-messenger', html: { autocomplete: 'off' } do %><% end %>
   <%= form_with model: @audio, local: true, id: 'form-main', html: { autocomplete: 'off' } do |form| %>
 
     <!--    Program Number row-->
@@ -36,7 +36,7 @@
     </div>
     <div class="form-float form-new-row">
       <div id="program-dropdown-status" class="dropdown-hidden">
-        <%= "#{t :program_enter}" %>
+        <%= "#{t :options_program_enter}" %>
       </div>
       <%= button_tag "#{t :form_program_add}", type: 'button', id: 'btn-dropdown-program', class: 'btn-create'%>
       <div id="program-dropdown-new" style="display: none">
@@ -60,8 +60,8 @@
       <% else %>
         <%= form.label :audio_file %>
       <% end %>
-      <%= form.file_field :audio_file, id: 'audio-file-field' %>
-      <div><%= "#{t :or}" %></div>
+      <%= form.file_field :audio_file, id: 'audio-file-field', accept: 'audio/*'%>
+      <div class="form-or"><%= "#{t :or}" %></div>
       <% if action_name == 'new' %>
         <%= form.label :filename, :class => "required" %>
       <% else %>

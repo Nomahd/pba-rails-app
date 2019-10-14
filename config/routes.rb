@@ -12,26 +12,26 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :people, :programs, :tag_meta
-    resources :photos
+    scope :options do
+      get '/', to: 'options#index', as: :options
+      get 'delete', to: 'options#delete', as: :options_delete
+      get 'delete_progress', to: 'options#delete_progress', as: :options_delete_progress
+      post 'delete_audios', to: 'options#delete_audios', as: :options_delete_audios
+      post 'delete_videos', to: 'options#delete_videos', as: :options_delete_videos
+      post 'delete_devotions', to: 'options#delete_devotions', as: :options_delete_devotions
+      resources :tag_meta, :people, :programs, :schedule do
+        collection do
+          post :quick_create
+          post :destroy_selected
+        end
+      end
+
+    end
 
     if Rails.env.development?
       get 'view_tester/test'
       get 'view_tester/async'
     end
-
-    get 'options', to: 'options#index'
-    get 'options/delete'
-    get 'options/delete_progress'
-    post 'options/delete_audios'
-    post 'options/delete_videos'
-    post 'options/delete_devotions'
-    get 'options/tags'
-    post 'options/tags', to: 'options#tag_create'
-    delete 'options/tags/:id', to: 'options#tag_destroy', as: 'options_tag'
-    post 'options/tags/destroy_selected', to: 'options#tag_destroy_selected'
-    get 'options/schedule'
-    get 'options/people'
   end
 
   namespace :api do

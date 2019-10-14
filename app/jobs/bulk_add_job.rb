@@ -5,7 +5,7 @@ class BulkAddJob < ApplicationJob
 
   def perform(rows, classname, start_index, end_index, id)
 
-    BulkUtil.bulk_add(rows, classname, start_index, end_index)
+    CSVUtil.bulk_add(rows, classname, start_index, end_index)
     Bulk.destroy(id)
   end
 end

@@ -1,0 +1,36 @@
+<div>
+  <%= form_with scope: :program, url: programs_path, method: :post, remote: true, html: { autocomplete: 'off' }, class: 'option-form' do |f| %>
+    <%= f.label :name, "#{t :options_programs_new}" %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :context, value: locals[:type] %>
+    <%= f.submit id: 'program-add-new' %>
+    <span id="result-<%= locals[:type] %>" ></span>
+  <% end %>
+</div>
+
+<% if locals[:type] == 'audio' %>
+  <% @programs = @radio_programs %>
+<% elsif locals[:type] == 'video' %>
+  <% @programs = @tv_programs %>
+<% end %>
+
+<%= form_with url: :destroy_selected_programs, id: 'delete-selected-form-' + locals[:type], remote: true do %>
+  <div>
+    <%= submit_tag "#{t :general_delete_selected}", form: "delete-selected-form-" + locals[:type], id: 'delete-selected-' + locals[:type], disabled: true, data: {confirm: "#{t :general_delete_confirm}"} %>
+  </div>
+  <table id="program-table-<%= locals[:type] %>">
+    <tr id="index-header-row">
+      <th><%= "#{t :options_programs_name}" %></th>
+      <th><%= "#{t :options_content_delete}" %></th>
+      <th style="width:20px"><%=  check_box_tag 'select_all_' + locals[:type] %></th>
+    </tr>
+
+    <% @programs.each do |program| %>
+      <tr id="<%= program.id %>">
+        <td><%= program.name %></td>
+        <td><%=  link_to image_tag('garbage.png', title: "#{t :table_delete}"), program_path(program.id), remote: true, method: :delete, data: { confirm: "#{t :general_delete_confirm}"} %></td>
+        <td><%= check_box_tag('selected_' + locals[:type] + '[]', program.id) %></td>
+      </tr>
+    <% end %>
+<% end %>
+</table>

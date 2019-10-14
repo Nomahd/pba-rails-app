@@ -1,6 +1,6 @@
 require 'csv'
 
-class BulkUtil
+class CSVUtil
 
   def self.row_count(file)
     csv = CSV.open(file)
@@ -25,6 +25,21 @@ class BulkUtil
       filenames.push(row[8])
     end
     filenames
+  end
+
+  def self.schedule_add(file)
+    schedule_array = []
+    csv = CSV.open(file)
+    csv.shift
+    csv.shift
+    hash_keys = Schedule.attribute_names[1,9]
+    puts hash_keys.inspect
+    csv.each do |row|
+      schedule = Schedule.new(Hash[hash_keys.zip(row[0, 9])])
+      schedule_array.push(schedule)
+    end
+    schedule_array
+
   end
 
   def self.bulk_add(rows, modelString, mainIndex, finalIndex)
