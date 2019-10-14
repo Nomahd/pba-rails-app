@@ -1,6 +1,5 @@
 require_relative '../utils/ftp_util'
-require_relative '../utils/bulk_util'
-require_relative '../utils/zip_util'
+require_relative '../utils/csv_util'
 
 class Audio < ApplicationRecord
 

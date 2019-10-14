@@ -1,4 +1,4 @@
-require_relative '../utils/bulk_util'
+require_relative '../utils/csv_util'
 
 class Devotion < ApplicationRecord
   validates :pba_id,

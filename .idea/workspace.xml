@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/bulk/bulk-zip-success.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pba-rails-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pba-rails-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bulk.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bulk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bulk.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/audios_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/audios_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/audio.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/audio.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/audios/bulk.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/audios/bulk.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/ja.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/ja.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/devotion.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/devotion.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/video.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/video.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +93,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/audios" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -105,15 +103,16 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\RubyMine 2019.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\views\videos" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\utils" />
-      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\models\" />
-      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\models" />
-      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\models\utilities" />
+      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\assets\images" />
+      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\views\tag_meta" />
+      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\views\options" />
       <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\views\partials" />
+      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\views\audios" />
+      <recent name="C:\Users\Nomahd\Repos\Rails\pba-rails-app\app\views\videos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -128,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rails.Development: pba-app">
+  <component name="RunManager" selected="Rake.db:migrate DEV">
     <configuration name="Development: pba-app" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="pba-rails-app" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -418,7 +417,11 @@
       <workItem from="1565886713729" duration="138000" />
       <workItem from="1565886974522" duration="9184000" />
       <workItem from="1566062600799" duration="12987000" />
-      <workItem from="1566455986267" duration="40223000" />
+      <workItem from="1566455986267" duration="68734000" />
+      <workItem from="1568034855604" duration="10456000" />
+      <workItem from="1568282741474" duration="117679000" />
+      <workItem from="1569925546198" duration="82404000" />
+      <workItem from="1570686001422" duration="110234000" />
     </task>
     <task id="LOCAL-00001" summary="Changed DB config and added /test/system/db_connection_test.rb file">
       <created>1554962157767</created>
@@ -623,11 +626,112 @@
       <option name="project" value="LOCAL" />
       <updated>1567190539373</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Allowing separate ZIP and CSV upload for Audio">
+      <created>1567582555898</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1567582555898</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improved API">
+      <created>1567591226558</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1567591226558</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Improved API speed">
+      <created>1568139081577</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1568139081577</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Search API added">
+      <created>1568327656671</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1568327656671</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Fix Search API">
+      <created>1568328189408</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1568328189408</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Fixed no text = null array API search bug">
+      <created>1568331286472</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1568331286472</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added sorting to search">
+      <created>1568331768283</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1568331768283</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Reduced to 50 per page">
+      <created>1569481595609</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1569481595609</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added settings and new progress bars">
+      <created>1570364905777</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1570364905777</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Changed upload directory and add Procfile">
+      <created>1570367957008</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1570367957008</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Added delete channel and job&#10;Fix Audio form and model">
+      <created>1570694478047</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1570694478047</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Added Tag management&#10;Made delete_selecetd more generic">
+      <created>1570731924740</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1570731924740</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added schedule manager and speaker manager">
+      <created>1571056956834</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1571056956834</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -644,19 +748,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="All 3 done but not tested yet" />
-    <MESSAGE value="Ignore Rails error on FTP delete.&#10;Update production DB config" />
-    <MESSAGE value="Secured database entries" />
-    <MESSAGE value="Fixed syntax errors" />
-    <MESSAGE value="Changed to double quotes" />
-    <MESSAGE value="Version 0.1" />
-    <MESSAGE value="Version 0.2&#10;&#10;Added controller permits&#10;Got rid of uglifier since it breaks stuff&#10;Made styles more consistent" />
-    <MESSAGE value="Version 0.3&#10;&#10;Big changes especially in style" />
-    <MESSAGE value="Version 0.4" />
-    <MESSAGE value="Big update Version 1.0" />
-    <MESSAGE value="Fix migration" />
-    <MESSAGE value="Fix migration again" />
-    <MESSAGE value="Fix migration again and again" />
     <MESSAGE value="Last Time I promise" />
     <MESSAGE value="Fix Audio Search" />
     <MESSAGE value="Fix Search order" />
@@ -669,7 +760,20 @@
     <MESSAGE value="Fixed labels" />
     <MESSAGE value="Fix order" />
     <MESSAGE value="Adding API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding API" />
+    <MESSAGE value="Allowing separate ZIP and CSV upload for Audio" />
+    <MESSAGE value="Improved API" />
+    <MESSAGE value="Improved API speed" />
+    <MESSAGE value="Search API added" />
+    <MESSAGE value="Fix Search API" />
+    <MESSAGE value="Fixed no text = null array API search bug" />
+    <MESSAGE value="Added sorting to search" />
+    <MESSAGE value="Reduced to 50 per page" />
+    <MESSAGE value="Added settings and new progress bars" />
+    <MESSAGE value="Changed upload directory and add Procfile" />
+    <MESSAGE value="Added delete channel and job&#10;Fix Audio form and model" />
+    <MESSAGE value="Added Tag management&#10;Made delete_selecetd more generic" />
+    <MESSAGE value="Added schedule manager and speaker manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added schedule manager and speaker manager" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -681,16 +785,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/app/models/video.rb</url>
-          <line>64</line>
+          <line>69</line>
           <properties a="-1">
             <option name="block-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/views/people/create.js.erb</url>
-          <line>24</line>
-          <option name="timeStamp" value="29" />
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/views/options/delete.html.erb</url>
+          <line>3</line>
+          <properties a="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/models/devotion.rb</url>
+          <line>58</line>
+          <properties a="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/tag_meta_controller.rb</url>
+          <line>1</line>
+          <properties a="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/schedule_controller.rb</url>
+          <line>8</line>
+          <properties a="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -707,11 +838,11 @@
     <SUITE FILE_PATH="coverage/pba_rails_app@Production__pba_app.rcov" NAME="Production: pba-app Coverage Results" MODIFIED="1558532338170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_schema_load__pba_rails_app.rcov" NAME="db:schema:load: pba-rails-app Coverage Results" MODIFIED="1562434221061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1559621187997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
-    <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate_DEV.rcov" NAME="db:migrate DEV Coverage Results" MODIFIED="1565893169659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
+    <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate_DEV.rcov" NAME="db:migrate DEV Coverage Results" MODIFIED="1570959336692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate__pba_app.rcov" NAME="db:migrate: pba-app Coverage Results" MODIFIED="1556622322177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_setup__pba_rails_app.rcov" NAME="db:setup: pba-rails-app Coverage Results" MODIFIED="1562434649739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@assets_clean_keep___pba_rails_app.rcov" NAME="assets:clean[keep]: pba-rails-app Coverage Results" MODIFIED="1558532164470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_drop__pba_rails_app.rcov" NAME="db:drop: pba-rails-app Coverage Results" MODIFIED="1558106434104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
-    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1567506179287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
+    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1570896899734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
   </component>
 </project>

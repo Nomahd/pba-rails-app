@@ -1,87 +1,106 @@
-                    Prefix Verb   URI Pattern                                                                              Controller#Action
-                           GET    /:locale(.:format)                                                                       top#index
-                      root GET    /                                                                                        top#index
-               bulk_images GET    /:locale/images/bulk(.:format)                                                           images#bulk
-             search_images GET    /:locale/images/search(.:format)                                                         images#search
-            summary_images GET    /:locale/images/summary(.:format)                                                        images#summary
-                           POST   /:locale/images/bulk(.:format)                                                           images#bulk_submit
-   destroy_selected_images POST   /:locale/images/destroy_selected(.:format)                                               images#destroy_selected
-                    images GET    /:locale/images(.:format)                                                                images#index
-                           POST   /:locale/images(.:format)                                                                images#create
-                 new_image GET    /:locale/images/new(.:format)                                                            images#new
-                edit_image GET    /:locale/images/:id/edit(.:format)                                                       images#edit
-                     image GET    /:locale/images/:id(.:format)                                                            images#show
-                           PATCH  /:locale/images/:id(.:format)                                                            images#update
-                           PUT    /:locale/images/:id(.:format)                                                            images#update
-                           DELETE /:locale/images/:id(.:format)                                                            images#destroy
-            bulk_devotions GET    /:locale/devotions/bulk(.:format)                                                        devotions#bulk
-          search_devotions GET    /:locale/devotions/search(.:format)                                                      devotions#search
-         summary_devotions GET    /:locale/devotions/summary(.:format)                                                     devotions#summary
-                           POST   /:locale/devotions/bulk(.:format)                                                        devotions#bulk_submit
-destroy_selected_devotions POST   /:locale/devotions/destroy_selected(.:format)                                            devotions#destroy_selected
-                 devotions GET    /:locale/devotions(.:format)                                                             devotions#index
-                           POST   /:locale/devotions(.:format)                                                             devotions#create
-              new_devotion GET    /:locale/devotions/new(.:format)                                                         devotions#new
-             edit_devotion GET    /:locale/devotions/:id/edit(.:format)                                                    devotions#edit
-                  devotion GET    /:locale/devotions/:id(.:format)                                                         devotions#show
-                           PATCH  /:locale/devotions/:id(.:format)                                                         devotions#update
-                           PUT    /:locale/devotions/:id(.:format)                                                         devotions#update
-                           DELETE /:locale/devotions/:id(.:format)                                                         devotions#destroy
-               bulk_audios GET    /:locale/audios/bulk(.:format)                                                           audios#bulk
-             search_audios GET    /:locale/audios/search(.:format)                                                         audios#search
-            summary_audios GET    /:locale/audios/summary(.:format)                                                        audios#summary
-                           POST   /:locale/audios/bulk(.:format)                                                           audios#bulk_submit
-   destroy_selected_audios POST   /:locale/audios/destroy_selected(.:format)                                               audios#destroy_selected
-                    audios GET    /:locale/audios(.:format)                                                                audios#index
-                           POST   /:locale/audios(.:format)                                                                audios#create
-                 new_audio GET    /:locale/audios/new(.:format)                                                            audios#new
-                edit_audio GET    /:locale/audios/:id/edit(.:format)                                                       audios#edit
-                     audio GET    /:locale/audios/:id(.:format)                                                            audios#show
-                           PATCH  /:locale/audios/:id(.:format)                                                            audios#update
-                           PUT    /:locale/audios/:id(.:format)                                                            audios#update
-                           DELETE /:locale/audios/:id(.:format)                                                            audios#destroy
-               bulk_videos GET    /:locale/videos/bulk(.:format)                                                           videos#bulk
-             search_videos GET    /:locale/videos/search(.:format)                                                         videos#search
-            summary_videos GET    /:locale/videos/summary(.:format)                                                        videos#summary
-                           POST   /:locale/videos/bulk(.:format)                                                           videos#bulk_submit
-   destroy_selected_videos POST   /:locale/videos/destroy_selected(.:format)                                               videos#destroy_selected
-                    videos GET    /:locale/videos(.:format)                                                                videos#index
-                           POST   /:locale/videos(.:format)                                                                videos#create
-                 new_video GET    /:locale/videos/new(.:format)                                                            videos#new
-                edit_video GET    /:locale/videos/:id/edit(.:format)                                                       videos#edit
-                     video GET    /:locale/videos/:id(.:format)                                                            videos#show
-                           PATCH  /:locale/videos/:id(.:format)                                                            videos#update
-                           PUT    /:locale/videos/:id(.:format)                                                            videos#update
-                           DELETE /:locale/videos/:id(.:format)                                                            videos#destroy
-                    people GET    /:locale/people(.:format)                                                                people#index
-                           POST   /:locale/people(.:format)                                                                people#create
-                new_person GET    /:locale/people/new(.:format)                                                            people#new
-               edit_person GET    /:locale/people/:id/edit(.:format)                                                       people#edit
-                    person GET    /:locale/people/:id(.:format)                                                            people#show
-                           PATCH  /:locale/people/:id(.:format)                                                            people#update
-                           PUT    /:locale/people/:id(.:format)                                                            people#update
-                           DELETE /:locale/people/:id(.:format)                                                            people#destroy
-                  programs GET    /:locale/programs(.:format)                                                              programs#index
-                           POST   /:locale/programs(.:format)                                                              programs#create
-               new_program GET    /:locale/programs/new(.:format)                                                          programs#new
-              edit_program GET    /:locale/programs/:id/edit(.:format)                                                     programs#edit
-                   program GET    /:locale/programs/:id(.:format)                                                          programs#show
-                           PATCH  /:locale/programs/:id(.:format)                                                          programs#update
-                           PUT    /:locale/programs/:id(.:format)                                                          programs#update
-                           DELETE /:locale/programs/:id(.:format)                                                          programs#destroy
-                    photos GET    /:locale/photos(.:format)                                                                photos#index
-                           POST   /:locale/photos(.:format)                                                                photos#create
-                 new_photo GET    /:locale/photos/new(.:format)                                                            photos#new
-                edit_photo GET    /:locale/photos/:id/edit(.:format)                                                       photos#edit
-                     photo GET    /:locale/photos/:id(.:format)                                                            photos#show
-                           PATCH  /:locale/photos/:id(.:format)                                                            photos#update
-                           PUT    /:locale/photos/:id(.:format)                                                            photos#update
-                           DELETE /:locale/photos/:id(.:format)                                                            photos#destroy
-          view_tester_test GET    /:locale/view_tester/test(.:format)                                                      view_tester#test
-                 api_today GET    /api/today(.:format)                                                                     api#today
-                 api_batch GET    /api/batch(.:format)                                                                     api#batch
-        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
- rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
-        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
- update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
-      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+                         Prefix Verb   URI Pattern                                                                              Controller#Action
+                                GET    /:locale(.:format)                                                                       top#index
+                           root GET    /                                                                                        top#index
+                 bulk_devotions GET    /:locale/devotions/bulk(.:format)                                                        devotions#bulk
+               search_devotions GET    /:locale/devotions/search(.:format)                                                      devotions#search
+              summary_devotions GET    /:locale/devotions/summary(.:format)                                                     devotions#summary
+        bulk_progress_devotions GET    /:locale/devotions/bulk_progress(.:format)                                               devotions#bulk_progress
+         bulk_execute_devotions POST   /:locale/devotions/bulk_execute(.:format)                                                devotions#bulk_execute
+          bulk_submit_devotions POST   /:locale/devotions/bulk_submit(.:format)                                                 devotions#bulk_submit
+     destroy_selected_devotions POST   /:locale/devotions/destroy_selected(.:format)                                            devotions#destroy_selected
+                      devotions GET    /:locale/devotions(.:format)                                                             devotions#index
+                                POST   /:locale/devotions(.:format)                                                             devotions#create
+                   new_devotion GET    /:locale/devotions/new(.:format)                                                         devotions#new
+                  edit_devotion GET    /:locale/devotions/:id/edit(.:format)                                                    devotions#edit
+                       devotion GET    /:locale/devotions/:id(.:format)                                                         devotions#show
+                                PATCH  /:locale/devotions/:id(.:format)                                                         devotions#update
+                                PUT    /:locale/devotions/:id(.:format)                                                         devotions#update
+                                DELETE /:locale/devotions/:id(.:format)                                                         devotions#destroy
+                    bulk_audios GET    /:locale/audios/bulk(.:format)                                                           audios#bulk
+                  search_audios GET    /:locale/audios/search(.:format)                                                         audios#search
+                 summary_audios GET    /:locale/audios/summary(.:format)                                                        audios#summary
+           bulk_progress_audios GET    /:locale/audios/bulk_progress(.:format)                                                  audios#bulk_progress
+            bulk_execute_audios POST   /:locale/audios/bulk_execute(.:format)                                                   audios#bulk_execute
+             bulk_submit_audios POST   /:locale/audios/bulk_submit(.:format)                                                    audios#bulk_submit
+        destroy_selected_audios POST   /:locale/audios/destroy_selected(.:format)                                               audios#destroy_selected
+                         audios GET    /:locale/audios(.:format)                                                                audios#index
+                                POST   /:locale/audios(.:format)                                                                audios#create
+                      new_audio GET    /:locale/audios/new(.:format)                                                            audios#new
+                     edit_audio GET    /:locale/audios/:id/edit(.:format)                                                       audios#edit
+                          audio GET    /:locale/audios/:id(.:format)                                                            audios#show
+                                PATCH  /:locale/audios/:id(.:format)                                                            audios#update
+                                PUT    /:locale/audios/:id(.:format)                                                            audios#update
+                                DELETE /:locale/audios/:id(.:format)                                                            audios#destroy
+                    bulk_videos GET    /:locale/videos/bulk(.:format)                                                           videos#bulk
+                  search_videos GET    /:locale/videos/search(.:format)                                                         videos#search
+                 summary_videos GET    /:locale/videos/summary(.:format)                                                        videos#summary
+           bulk_progress_videos GET    /:locale/videos/bulk_progress(.:format)                                                  videos#bulk_progress
+            bulk_execute_videos POST   /:locale/videos/bulk_execute(.:format)                                                   videos#bulk_execute
+             bulk_submit_videos POST   /:locale/videos/bulk_submit(.:format)                                                    videos#bulk_submit
+        destroy_selected_videos POST   /:locale/videos/destroy_selected(.:format)                                               videos#destroy_selected
+                         videos GET    /:locale/videos(.:format)                                                                videos#index
+                                POST   /:locale/videos(.:format)                                                                videos#create
+                      new_video GET    /:locale/videos/new(.:format)                                                            videos#new
+                     edit_video GET    /:locale/videos/:id/edit(.:format)                                                       videos#edit
+                          video GET    /:locale/videos/:id(.:format)                                                            videos#show
+                                PATCH  /:locale/videos/:id(.:format)                                                            videos#update
+                                PUT    /:locale/videos/:id(.:format)                                                            videos#update
+                                DELETE /:locale/videos/:id(.:format)                                                            videos#destroy
+                        options GET    /:locale/options(.:format)                                                               options#index
+                 options_delete GET    /:locale/options/delete(.:format)                                                        options#delete
+        options_delete_progress GET    /:locale/options/delete_progress(.:format)                                               options#delete_progress
+          options_delete_audios POST   /:locale/options/delete_audios(.:format)                                                 options#delete_audios
+          options_delete_videos POST   /:locale/options/delete_videos(.:format)                                                 options#delete_videos
+       options_delete_devotions POST   /:locale/options/delete_devotions(.:format)                                              options#delete_devotions
+          quick_create_tag_meta POST   /:locale/options/tag_meta/quick_create(.:format)                                         tag_meta#quick_create
+      destroy_selected_tag_meta POST   /:locale/options/tag_meta/destroy_selected(.:format)                                     tag_meta#destroy_selected
+                       tag_meta GET    /:locale/options/tag_meta(.:format)                                                      tag_meta#index
+                                POST   /:locale/options/tag_meta(.:format)                                                      tag_meta#create
+                  new_tag_metum GET    /:locale/options/tag_meta/new(.:format)                                                  tag_meta#new
+                 edit_tag_metum GET    /:locale/options/tag_meta/:id/edit(.:format)                                             tag_meta#edit
+                      tag_metum GET    /:locale/options/tag_meta/:id(.:format)                                                  tag_meta#show
+                                PATCH  /:locale/options/tag_meta/:id(.:format)                                                  tag_meta#update
+                                PUT    /:locale/options/tag_meta/:id(.:format)                                                  tag_meta#update
+                                DELETE /:locale/options/tag_meta/:id(.:format)                                                  tag_meta#destroy
+            quick_create_people POST   /:locale/options/people/quick_create(.:format)                                           people#quick_create
+        destroy_selected_people POST   /:locale/options/people/destroy_selected(.:format)                                       people#destroy_selected
+                         people GET    /:locale/options/people(.:format)                                                        people#index
+                                POST   /:locale/options/people(.:format)                                                        people#create
+                     new_person GET    /:locale/options/people/new(.:format)                                                    people#new
+                    edit_person GET    /:locale/options/people/:id/edit(.:format)                                               people#edit
+                         person GET    /:locale/options/people/:id(.:format)                                                    people#show
+                                PATCH  /:locale/options/people/:id(.:format)                                                    people#update
+                                PUT    /:locale/options/people/:id(.:format)                                                    people#update
+                                DELETE /:locale/options/people/:id(.:format)                                                    people#destroy
+          quick_create_programs POST   /:locale/options/programs/quick_create(.:format)                                         programs#quick_create
+      destroy_selected_programs POST   /:locale/options/programs/destroy_selected(.:format)                                     programs#destroy_selected
+                       programs GET    /:locale/options/programs(.:format)                                                      programs#index
+                                POST   /:locale/options/programs(.:format)                                                      programs#create
+                    new_program GET    /:locale/options/programs/new(.:format)                                                  programs#new
+                   edit_program GET    /:locale/options/programs/:id/edit(.:format)                                             programs#edit
+                        program GET    /:locale/options/programs/:id(.:format)                                                  programs#show
+                                PATCH  /:locale/options/programs/:id(.:format)                                                  programs#update
+                                PUT    /:locale/options/programs/:id(.:format)                                                  programs#update
+                                DELETE /:locale/options/programs/:id(.:format)                                                  programs#destroy
+    quick_create_schedule_index POST   /:locale/options/schedule/quick_create(.:format)                                         schedule#quick_create
+destroy_selected_schedule_index POST   /:locale/options/schedule/destroy_selected(.:format)                                     schedule#destroy_selected
+                 schedule_index GET    /:locale/options/schedule(.:format)                                                      schedule#index
+                                POST   /:locale/options/schedule(.:format)                                                      schedule#create
+                   new_schedule GET    /:locale/options/schedule/new(.:format)                                                  schedule#new
+                  edit_schedule GET    /:locale/options/schedule/:id/edit(.:format)                                             schedule#edit
+                       schedule GET    /:locale/options/schedule/:id(.:format)                                                  schedule#show
+                                PATCH  /:locale/options/schedule/:id(.:format)                                                  schedule#update
+                                PUT    /:locale/options/schedule/:id(.:format)                                                  schedule#update
+                                DELETE /:locale/options/schedule/:id(.:format)                                                  schedule#destroy
+               view_tester_test GET    /:locale/view_tester/test(.:format)                                                      view_tester#test
+              view_tester_async GET    /:locale/view_tester/async(.:format)                                                     view_tester#async
+                  api_today_all GET    /api/today-all(.:format)                                                                 api#today_all
+                      api_today GET    /api/today(.:format)                                                                     api#today
+                      api_batch GET    /api/batch(.:format)                                                                     api#batch
+                     api_search GET    /api/search(.:format)                                                                    api#search
+                     api_select GET    /api/select(.:format)                                                                    api#select
+             rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+      rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+             rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+      update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+           rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
