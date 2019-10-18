@@ -1,5 +1,20 @@
 class ApiController < ApplicationController
 
+  def person
+    person = Person.where(name: params[:messenger], context: params[:context], category: params[:category]).take 1
+    render json: person
+  end
+
+  def people
+    people = Person.where(context: params[:context], category: params[:category]).select(:name)
+    render json: people
+  end
+
+  def schedule
+    schedule = Schedule.all
+    render json: schedule
+  end
+
   def today_all
     devotion = []
     audio = []
@@ -54,8 +69,10 @@ class ApiController < ApplicationController
     search_results = []
     db_model_name = params[:model].downcase.pluralize
 
+    puts "start search"
     # Checking text
     unless params[:text].blank?
+      puts "search text"
       text = params[:text].split
 
       # Search tags
@@ -160,10 +177,47 @@ class ApiController < ApplicationController
         puts search_results.inspect
       else
         search_results = search_results & date_search_array
-        puts "search dates"
+        puts "search with dates"
         puts search_results.inspect
       end
     end
+
+    unless params[:messenger].blank? and params[:guest].blank?
+      puts "search people"
+      people_search_array = []
+      query_base_people = "SELECT  `" + db_model_name + "`.`id`, `" + db_model_name + "`.`title`, `" + db_model_name + "`.`broadcast_date` FROM `" + db_model_name + "`"
+
+      query_people = query_base_people
+      unless params[:messenger].blank?
+        messenger_query = " WHERE messenger = '" + params[:messenger] + "'"
+        query_people += messenger_query
+      end
+
+      unless params[:guest].blank?
+        if params[:messenger].blank?
+          query_people += " WHERE "
+        else
+          query_people += " AND "
+        end
+        guest_query = " guest = '" + params[:guest] + "'"
+        query_people += guest_query
+      end
+
+      people_results = ActiveRecord::Base.connection.execute(query_people)
+      people_results.each do |d|
+        people_search_array.push({:id => d[0], :title => d[1], :broadcast_date => d[2]})
+      end
+      if search_results.empty?
+        search_results = people_search_array
+        puts "search only people"
+        puts search_results.inspect
+      else
+        search_results = search_results & people_search_array
+        puts "search with people"
+        puts search_results.inspect
+      end
+    end
+
     puts "final result"
     puts search_results.inspect
     sorted_search_results = search_results.sort_by {|obj| obj[:broadcast_date]}.reverse

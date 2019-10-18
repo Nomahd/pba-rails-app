@@ -25,7 +25,12 @@
       <h2 class="bulk-or" style="text-align: center">-- <%= "#{t :or}"%> --</h2>
       <div class="form-row drag-drop" style="width:80%; height: 400px">
         <% if action_name == 'edit' %>
-          <%= image_tag('http://pba.evangeltek.com/profile_pictures/' + @person.photo_link, class: 'profile-pic') %>
+          <% if @person.photo_link.nil? %>
+            <%= image_tag('avatar.png') %>
+            <p><%= "#{t :photo_drag_drop}" %></p>
+          <% else %>
+            <%= image_tag('http://pba.evangeltek.com/profile_pictures/' + @person.photo_link, class: 'profile-pic') %>
+          <% end %>
         <% else %>
           <%= image_tag('avatar.png') %>
           <p><%= "#{t :photo_drag_drop}" %></p>

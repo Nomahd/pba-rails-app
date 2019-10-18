@@ -40,6 +40,9 @@ Rails.application.routes.draw do
     get 'batch'
     get 'search'
     get 'select'
+    get 'people'
+    get 'person'
+    get 'schedule'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

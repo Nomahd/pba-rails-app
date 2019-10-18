@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eace22f1-98d2-4474-aa43-331ae85c9fee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191015160143_bigger_blob.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/person.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/person.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/people/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/people/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -122,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate DEV">
+  <component name="RunManager" selected="Rails.Development: pba-app">
     <configuration name="Development: pba-app" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="pba-rails-app" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -416,7 +421,7 @@
       <workItem from="1568034855604" duration="10456000" />
       <workItem from="1568282741474" duration="117679000" />
       <workItem from="1569925546198" duration="82404000" />
-      <workItem from="1570686001422" duration="117990000" />
+      <workItem from="1570686001422" duration="130251000" />
     </task>
     <task id="LOCAL-00001" summary="Changed DB config and added /test/system/db_connection_test.rb file">
       <created>1554962157767</created>
@@ -733,7 +738,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571060096708</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Fix and improve API search">
+      <created>1571149151469</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1571149151469</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,7 +776,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed Top Paths" />
     <MESSAGE value="Fixed broken string" />
     <MESSAGE value="Changed locale files" />
     <MESSAGE value="Fix Audio updating without file" />
@@ -789,7 +800,8 @@
     <MESSAGE value="Changed bulk_util paths to csv_util" />
     <MESSAGE value="Fixed FTP Destroy for Person" />
     <MESSAGE value="Fix schedule order issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix schedule order issue" />
+    <MESSAGE value="Fix and improve API search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix and improve API search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -854,11 +866,11 @@
     <SUITE FILE_PATH="coverage/pba_rails_app@Production__pba_app.rcov" NAME="Production: pba-app Coverage Results" MODIFIED="1558532338170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_schema_load__pba_rails_app.rcov" NAME="db:schema:load: pba-rails-app Coverage Results" MODIFIED="1562434221061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1559621187997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
-    <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate_DEV.rcov" NAME="db:migrate DEV Coverage Results" MODIFIED="1571060101702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
+    <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate_DEV.rcov" NAME="db:migrate DEV Coverage Results" MODIFIED="1571155367359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_migrate__pba_app.rcov" NAME="db:migrate: pba-app Coverage Results" MODIFIED="1556622322177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_setup__pba_rails_app.rcov" NAME="db:setup: pba-rails-app Coverage Results" MODIFIED="1562434649739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@assets_clean_keep___pba_rails_app.rcov" NAME="assets:clean[keep]: pba-rails-app Coverage Results" MODIFIED="1558532164470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
     <SUITE FILE_PATH="coverage/pba_rails_app@db_drop__pba_rails_app.rcov" NAME="db:drop: pba-rails-app Coverage Results" MODIFIED="1558106434104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
-    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1570896899734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
+    <SUITE FILE_PATH="coverage/pba_rails_app@Development__pba_app.rcov" NAME="Development: pba-app Coverage Results" MODIFIED="1571405862340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pba-rails-app" />
   </component>
 </project>

@@ -52,7 +52,11 @@ class Person < ApplicationRecord
   end
 
   def ftp_replace
-    FTPUtil.ftp_replace("/profile_pictures/" + old_photo, photo.path, "/profile_pictures/" + self.photo_link)
+    if old_photo.nil?
+      FTPUtil.ftp_add(photo.path, "/profile_pictures/" + self.photo_link)
+    else
+      FTPUtil.ftp_replace("/profile_pictures/" + old_photo, photo.path, "/profile_pictures/" + self.photo_link)
+    end
   end
 
   def ftp_destroy

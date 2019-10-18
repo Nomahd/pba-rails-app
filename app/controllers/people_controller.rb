@@ -1,10 +1,10 @@
 class PeopleController < ApplicationController
 
   def index
-    @devotion_people = Person.where(context: :devotion)
-    @radio_people = Person.where(context: :audio)
-    @tv_people_messenger = Person.where(context: :video, category: :messenger)
-    @tv_people_guest = Person.where(context: :video, category: :guest)
+    @devotion_people = Person.where(context: :devotion).order(:name)
+    @radio_people = Person.where(context: :audio).order(:name)
+    @tv_people_messenger = Person.where(context: :video, category: :messenger).order(:name)
+    @tv_people_guest = Person.where(context: :video, category: :guest).order(:name)
   end
 
   def new
