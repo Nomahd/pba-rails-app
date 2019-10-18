@@ -6,7 +6,7 @@ class ApiController < ApplicationController
   end
 
   def people
-    people = Person.where(context: params[:context], category: params[:category]).select(:name)
+    people = Person.all
     render json: people
   end
 
