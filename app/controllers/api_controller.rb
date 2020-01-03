@@ -6,7 +6,7 @@ class ApiController < ApplicationController
   end
 
   def people
-    people = Person.all
+    people = Person.where(category: :messenger)
     render json: people
   end
 
@@ -199,7 +199,7 @@ class ApiController < ApplicationController
         else
           query_people += " AND "
         end
-        guest_query = " guest = '" + params[:guest] + "'"
+        guest_query = " guest LIKE '%" + params[:guest] + "%'"
         query_people += guest_query
       end
 
